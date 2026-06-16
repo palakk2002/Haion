@@ -335,7 +335,7 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
 
       {/* Specifications Bar (Only for Scooter service) */}
       {content.id === 'scooter' && (
-        <div className="w-full bg-[#0da2ff] py-10 text-white select-none">
+        <div className="w-full bg-zinc-950 py-10 text-white select-none">
           <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Km Range */}
             <div className="flex flex-col items-center text-center">
@@ -424,7 +424,7 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
                     <rect x="-3" y="-18" width="6" height="8" rx="1" transform="rotate(45)" />
                     <rect x="-3" y="-18" width="6" height="8" rx="1" transform="rotate(90)" />
                     <rect x="-3" y="-18" width="6" height="8" rx="1" transform="rotate(135)" />
-                    <circle cx="0" cy="0" r="6" fill="#0da2ff" />
+                    <circle cx="0" cy="0" r="6" fill="none" />
                   </g>
                   <g transform="translate(64, 44)" fill="rgba(255,255,255,0.55)" className="gear-slate">
                     <circle cx="0" cy="0" r="11" />
@@ -432,7 +432,7 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
                     <rect x="-2.5" y="-14" width="5" height="6" rx="1" transform="rotate(67.5)" />
                     <rect x="-2.5" y="-14" width="5" height="6" rx="1" transform="rotate(112.5)" />
                     <rect x="-2.5" y="-14" width="5" height="6" rx="1" transform="rotate(157.5)" />
-                    <circle cx="0" cy="0" r="5" fill="#0da2ff" />
+                    <circle cx="0" cy="0" r="5" fill="none" />
                   </g>
                   <g transform="translate(48, 66)" fill="rgba(255,255,255,0.7)" className="gear-orange">
                     <circle cx="0" cy="0" r="14" />
@@ -440,7 +440,7 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
                     <rect x="-3" y="-18" width="6" height="8" rx="1" transform="rotate(60)" />
                     <rect x="-3" y="-18" width="6" height="8" rx="1" transform="rotate(105)" />
                     <rect x="-3" y="-18" width="6" height="8" rx="1" transform="rotate(150)" />
-                    <circle cx="0" cy="0" r="6" fill="#0da2ff" />
+                    <circle cx="0" cy="0" r="6" fill="none" />
                   </g>
                 </svg>
               </div>
@@ -464,9 +464,9 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
                       transform-origin: 50px 70px;
                     }
                   `}</style>
-                  <path d="M20,75 A35,35 0 0,1 80,75" stroke="rgba(255,255,255,0.3)" strokeWidth="4" strokeLinecap="round" fill="none" />
-                  <path d="M20,75 A35,35 0 0,1 32,45" stroke="#00f2fe" strokeWidth="5" strokeLinecap="round" fill="none" />
-                  <path d="M32,45 A35,35 0 0,1 50,30" stroke="#4facfe" strokeWidth="5" strokeLinecap="round" fill="none" />
+                  <path d="M20,75 A35,35 0 0,1 80,75" stroke="rgba(255,255,255,0.25)" strokeWidth="4" strokeLinecap="round" fill="none" />
+                  <path d="M20,75 A35,35 0 0,1 32,45" stroke="rgba(255,255,255,0.75)" strokeWidth="5" strokeLinecap="round" fill="none" />
+                  <path d="M32,45 A35,35 0 0,1 50,30" stroke="rgba(255,255,255,0.95)" strokeWidth="5" strokeLinecap="round" fill="none" />
                   <path d="M50,30 A35,35 0 0,1 80,75" stroke="rgba(255,255,255,0.4)" strokeWidth="5" strokeLinecap="round" fill="none" />
                   <g transform="translate(50, 70)" className="animate-needle">
                     <line x1="0" y1="0" x2="0" y2="-34" stroke="#ffffff" strokeWidth="3" strokeLinecap="round" />
@@ -559,35 +559,22 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
           <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             {/* Left Content */}
             <div className="lg:col-span-5 text-left">
-              <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 font-display">
-                <span className="text-[#0da2ff] font-bold">LED</span> <span className="text-[#8b1c1c] font-bold">Light</span>
+              <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 font-display text-zinc-950">
+                LED <span className="bg-gradient-to-r from-zinc-950 to-amber-500 bg-clip-text text-transparent">Light</span>
               </h2>
               <p className="text-zinc-500 text-sm leading-relaxed mb-8 font-light max-w-md">
                 LED lights are all the rage these days. Haion equipped with LED headlights and Tail Lights. Saves a lot of energy. Looks stylish and modern.
               </p>
-              <div className="flex gap-4">
-                <button 
-                  onClick={() => onViewProduct('x1')}
-                  className="bg-[#0da2ff] hover:bg-[#0091eb] text-white text-xs font-bold px-6 py-3.5 rounded-lg uppercase tracking-widest transition-all duration-300 shadow-md cursor-pointer hover:scale-[1.02]"
-                >
-                  View More
-                </button>
-                <button 
-                  className="bg-white hover:bg-zinc-50 text-zinc-800 border border-zinc-300 text-xs font-bold px-6 py-3.5 rounded-lg uppercase tracking-widest transition-all duration-300 shadow-sm cursor-pointer hover:scale-[1.02]"
-                >
-                  Reserve
-                </button>
-              </div>
             </div>
 
             {/* Right Images */}
             <div className="lg:col-span-7 grid grid-cols-2 gap-6 w-full">
               {/* Headlight Image */}
-              <div className="rounded-3xl overflow-hidden bg-zinc-950 aspect-[4/5] flex items-center justify-center relative shadow-md group border border-zinc-200/20">
+              <div className="rounded-3xl overflow-hidden bg-white aspect-[4/5] flex items-center justify-center relative shadow-md group border border-zinc-200/20">
                 <img 
-                  src="/body.jpeg" 
+                  src="/front.jpeg" 
                   alt="LED Headlight" 
-                  className="w-full h-full object-cover rotate-90 scale-[1.6] group-hover:scale-[1.7] transition-transform duration-500" 
+                  className="w-full h-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-500" 
                 />
               </div>
 
@@ -599,6 +586,90 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
                   className="w-full h-full object-cover rotate-90 scale-[1.4] group-hover:scale-[1.5] transition-transform duration-500" 
                 />
               </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Digital Meter Section (Only for Scooter service) */}
+      {content.id === 'scooter' && (
+        <div className="w-full py-16 bg-white border-b border-zinc-200/60 text-left select-none">
+          <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            {/* Left Image */}
+            <div className="lg:col-span-7 flex items-center justify-center relative w-full">
+              <div className="rounded-3xl overflow-hidden bg-white aspect-[16/10] flex items-center justify-center relative shadow-md group border border-zinc-200/20 w-full">
+                <img 
+                  src="/front.jpeg" 
+                  alt="Digital Meter Console" 
+                  className="w-full h-full object-cover mix-blend-multiply group-hover:scale-[1.03] transition-transform duration-500" 
+                />
+              </div>
+            </div>
+
+            {/* Right Content */}
+            <div className="lg:col-span-5 text-left">
+              <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 font-display text-zinc-950">
+                Digital <span className="bg-gradient-to-r from-zinc-950 to-amber-500 bg-clip-text text-transparent">Meter</span>
+              </h2>
+              <p className="text-zinc-500 text-sm leading-relaxed mb-8 font-light max-w-md">
+                Stylish and Modern digital Meter giver your scooter a new look. It has several indicators. Speedometer, Tripmeter and Battery are major part of Digital Meter.
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* DISC Brakes Section (Only for Scooter service) */}
+      {content.id === 'scooter' && (
+        <div className="w-full py-16 bg-[#f8f9fa] border-b border-zinc-200/60 text-left select-none">
+          <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            {/* Left Content */}
+            <div className="lg:col-span-5 text-left">
+              <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 font-display text-zinc-950">
+                DISC <span className="bg-gradient-to-r from-zinc-950 to-amber-500 bg-clip-text text-transparent">Brakes</span>
+              </h2>
+              <p className="text-zinc-500 text-sm leading-relaxed mb-8 font-light max-w-md">
+                A disc brake is a type of brake that uses rotors and calipers to stop the wheels from turning. It is the safest electric scooter brake out there because of their strong stopping power in both dry and wet conditions.
+              </p>
+            </div>
+
+            {/* Right Image */}
+            <div className="lg:col-span-7 flex items-center justify-center relative w-full">
+              <div className="rounded-3xl overflow-hidden bg-zinc-950 aspect-[16/10] flex items-center justify-center relative shadow-md group border border-zinc-200/20 w-full">
+                <img 
+                  src="/back.jpeg" 
+                  alt="Disc Brakes" 
+                  className="w-full h-full object-cover rotate-90 scale-[1.8] origin-center group-hover:scale-[1.9] transition-transform duration-500" 
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Dual Suspension Section (Only for Scooter service) */}
+      {content.id === 'scooter' && (
+        <div className="w-full py-16 bg-white border-b border-zinc-200/60 text-left select-none">
+          <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+            {/* Left Image */}
+            <div className="lg:col-span-7 flex items-center justify-center relative w-full">
+              <div className="rounded-3xl overflow-hidden bg-zinc-950 aspect-[16/10] flex items-center justify-center relative shadow-md group border border-zinc-200/20 w-full">
+                <img 
+                  src="/back.jpeg" 
+                  alt="Dual Suspension" 
+                  className="w-full h-full object-cover rotate-90 scale-[1.4] group-hover:scale-[1.5] transition-transform duration-500" 
+                />
+              </div>
+            </div>
+
+            {/* Right Content */}
+            <div className="lg:col-span-5 text-left">
+              <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 font-display text-zinc-950">
+                Dual <span className="bg-gradient-to-r from-zinc-950 to-amber-500 bg-clip-text text-transparent">Suspension</span>
+              </h2>
+              <p className="text-zinc-500 text-sm leading-relaxed mb-8 font-light max-w-md">
+                An electric scooter suspension system is a mechanism that balances road handling and ride quality. The suspension absorbs the impact of riding on uneven terrain and makes the ride smoother for the rider.
+              </p>
             </div>
           </div>
         </div>

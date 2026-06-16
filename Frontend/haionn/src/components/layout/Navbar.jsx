@@ -138,17 +138,7 @@ export default function Navbar({ onAboutUsClick, onHomeAppliancesClick, onHomeCl
               Home Appliances
             </a>
 
-            {/* Company Profile Link */}
-            <a
-              href="#about-us"
-              onClick={(e) => {
-                e.preventDefault();
-                onAboutUsClick();
-              }}
-              className="text-sm font-semibold text-zinc-600 hover:text-amber-500 transition-colors duration-300 py-1"
-            >
-              Company Profile
-            </a>
+
 
           </div>
 
@@ -241,17 +231,7 @@ export default function Navbar({ onAboutUsClick, onHomeAppliancesClick, onHomeCl
         >
           Home Appliances
         </a>
-        <a
-          href="#about-us"
-          onClick={(e) => {
-            e.preventDefault();
-            setIsOpen(false);
-            onAboutUsClick();
-          }}
-          className="font-display text-xl font-semibold text-zinc-800 hover:text-amber-500 transition-colors duration-300"
-        >
-          Company Profile
-        </a>
+
         <a
           href="#download"
           onClick={() => setIsOpen(false)}
