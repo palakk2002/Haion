@@ -12,7 +12,7 @@ export default function DownloadCTA() {
   ];
 
   return (
-    <section id="download" className="relative py-24 bg-[#f8f9fa] overflow-hidden">
+    <section id="download" className="relative py-12 md:py-24 bg-[#f8f9fa] overflow-hidden">
       {/* Background neon elements */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-purple-500/5 rounded-full blur-[120px] pointer-events-none" />
 

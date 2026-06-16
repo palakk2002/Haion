@@ -6,7 +6,6 @@ import TrustStats from './components/sections/TrustStats';
 import Features from './components/sections/Features';
 import Categories from './components/sections/Categories';
 import AppExperience from './components/sections/AppExperience';
-import Products from './components/sections/Products';
 import ProductsTabs from './components/sections/ProductsTabs';
 import WhyChooseHaion from './components/sections/WhyChooseHaion';
 import ProductDetails from './components/sections/ProductDetails';
@@ -16,7 +15,6 @@ import ServiceDetailsPage from './components/sections/ServiceDetailsPage';
 import StorePage from './components/sections/StorePage';
 import Offers from './components/sections/Offers';
 import HowItWorks from './components/sections/HowItWorks';
-import Brands from './components/sections/Brands';
 import Testimonials from './components/sections/Testimonials';
 import FAQ from './components/sections/FAQ';
 import Contact from './components/sections/Contact';
@@ -133,9 +131,6 @@ function App() {
             {/* 1. CINEMATIC HERO SECTION */}
             <Hero />
 
-            {/* 9. BRANDS SECTION (Moving up slightly for better Apple/Tesla flow right below Hero) */}
-            <Brands />
-
             {/* 2. TRUST & SOCIAL PROOF */}
             <TrustStats />
 
@@ -153,9 +148,6 @@ function App() {
 
             {/* 5. APP EXPERIENCE SECTION */}
             <AppExperience />
-
-            {/* 6. FEATURED PRODUCTS SHOWCASE */}
-            <Products />
 
             {/* 6a. HAION OWNERSHIP ADVANTAGE GRID */}
             <HaionAdvantage />

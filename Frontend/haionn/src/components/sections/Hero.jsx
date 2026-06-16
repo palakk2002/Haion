@@ -127,13 +127,17 @@ export default function Hero() {
           {extendedSlides.map((item, idx) => (
             <div 
               key={idx}
-              className="h-full relative"
+              className="h-full relative overflow-hidden"
               style={{ width: `${100 / extendedSlides.length}%` }}
             >
               <img 
                 src={item.bgImage} 
                 alt={`Cinematic slide backdrop ${idx}`} 
-                className="w-full h-full object-cover brightness-100 contrast-100" 
+                className={`w-full h-full object-cover brightness-100 contrast-100 transition-all ${
+                  item.tag === "Introducing Haion BaaS" 
+                    ? "scale-[1.35] origin-bottom md:scale-100" 
+                    : ""
+                }`} 
                 loading={idx === 0 ? "eager" : "lazy"}
               />
             </div>
@@ -216,7 +220,7 @@ export default function Hero() {
       </div>
 
       {/* Infinite scrolling bottom ticker list */}
-      <div className="w-full bg-transparent py-4 z-10 relative overflow-hidden select-none">
+      <div className="hidden md:block w-full bg-transparent py-4 z-10 relative overflow-hidden select-none">
         <div className="relative w-full flex overflow-x-hidden">
           <div className="flex gap-12 items-center whitespace-nowrap animate-infinite-scroll py-1 text-[9px] sm:text-[10px] tracking-wider font-semibold uppercase font-display">
             {slide?.details?.map((det, idx) => (

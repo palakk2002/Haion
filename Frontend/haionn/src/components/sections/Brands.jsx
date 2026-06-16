@@ -4,7 +4,7 @@ import { ScrollReveal } from '../ui';
 
 export default function Brands() {
   return (
-    <section className="relative py-12 bg-[#f8f9fa] overflow-hidden border-y border-black/5">
+    <section className="relative py-6 md:py-12 bg-[#f8f9fa] overflow-hidden border-y border-black/5">
       <div className="max-w-7xl mx-auto px-6 mb-6 text-center">
         <span className="text-[10px] uppercase tracking-widest font-semibold text-zinc-400">
           Partnered with Global Giants

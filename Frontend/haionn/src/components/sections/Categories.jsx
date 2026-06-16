@@ -4,31 +4,19 @@ import { categoriesData } from '../../data/mockData';
 import { SectionHeading } from '../ui';
 import { FiArrowRight, FiArrowLeft, FiX, FiStar } from 'react-icons/fi';
 
-// Import assets
-import categoryPhone from '../../assets/category-phone.png';
-import categoryLaptop from '../../assets/category-laptop.png';
-import categoryWearable from '../../assets/hero-wearable.png';
-import categoryAudio from '../../assets/hero-audio.png';
-import categoryAccessory from '../../assets/haion-charger.png';
-import categoryAppliance from '../../assets/appliance-purifier.png';
-
 const categoryImages = {
-  smartphones: categoryPhone,
-  laptops: categoryLaptop,
-  wearables: categoryWearable,
-  audio: categoryAudio,
-  accessories: categoryAccessory,
-  appliances: categoryAppliance
+  ac: '/ac-removebg-preview.png',
+  tv: '/tv2.jpg',
+  washing: '/washing_machine_3-removebg-preview (1).png',
+  mixer: '/mixer2-removebg-preview.png'
 };
 
 // Custom brand-aligned colors for the background card blocks
 const categoryThemeColors = {
-  smartphones: { bg: 'bg-gradient-to-b from-[#ab7e2c]/80 to-[#e88d01]/90', glow: 'shadow-[#e88d01]/30', text: 'text-amber-100' },
-  laptops: { bg: 'bg-gradient-to-b from-[#2b1d07]/90 to-[#7e5b1d]/90', glow: 'shadow-[#ab7e2c]/30', text: 'text-amber-200' },
-  wearables: { bg: 'bg-gradient-to-b from-[#ffd233]/80 to-[#ab7e2c]/90', glow: 'shadow-[#ffd233]/20', text: 'text-amber-950' },
-  audio: { bg: 'bg-gradient-to-b from-[#543b12]/95 to-[#2b1d07]/95', glow: 'shadow-[#543b12]/30', text: 'text-amber-100' },
-  accessories: { bg: 'bg-gradient-to-b from-[#ab7e2c]/90 to-[#543b12]/90', glow: 'shadow-[#ab7e2c]/20', text: 'text-amber-100' },
-  appliances: { bg: 'bg-gradient-to-b from-[#ffd233]/90 to-[#e88d01]/90', glow: 'shadow-[#e88d01]/20', text: 'text-amber-950' }
+  ac: { bg: 'bg-gradient-to-b from-[#ab7e2c]/80 to-[#e88d01]/90', glow: 'shadow-[#e88d01]/30', text: 'text-amber-100' },
+  tv: { bg: 'bg-gradient-to-b from-[#2b1d07]/90 to-[#7e5b1d]/90', glow: 'shadow-[#ab7e2c]/30', text: 'text-amber-200' },
+  washing: { bg: 'bg-gradient-to-b from-[#ffd233]/80 to-[#ab7e2c]/90', glow: 'shadow-[#ffd233]/20', text: 'text-amber-950' },
+  mixer: { bg: 'bg-gradient-to-b from-[#543b12]/95 to-[#2b1d07]/95', glow: 'shadow-[#543b12]/30', text: 'text-amber-100' }
 };
 
 export default function Categories() {
@@ -63,7 +51,7 @@ export default function Categories() {
   };
 
   return (
-    <section id="categories" className="relative py-24 bg-[#f8f9fa] overflow-hidden select-none border-y border-zinc-200/60">
+    <section id="categories" className="relative py-12 md:py-24 bg-[#f8f9fa] overflow-hidden select-none border-y border-zinc-200/60">
       {/* Background radial highlights */}
       <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-purple-500/[0.03] rounded-full blur-[120px] pointer-events-none" />
       <div className="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-amber-500/[0.03] rounded-full blur-[100px] pointer-events-none" />
@@ -80,7 +68,7 @@ export default function Categories() {
           <div className="flex flex-col md:flex-row gap-8 justify-center items-center min-h-[420px]">
             <AnimatePresence mode="popLayout">
               {getVisibleCategories().map((cat, index) => {
-                const theme = categoryThemeColors[cat.id] || categoryThemeColors.smartphones;
+                const theme = categoryThemeColors[cat.id] || categoryThemeColors.ac;
                 return (
                   <motion.div
                     key={cat.id}

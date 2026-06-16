@@ -4,7 +4,7 @@ import { ScrollReveal, AnimatedCounter } from '../ui';
 
 export default function TrustStats() {
   return (
-    <section className="relative py-16 bg-[#f8f9fa] overflow-hidden border-y border-black/5">
+    <section className="relative py-8 md:py-16 bg-[#f8f9fa] overflow-hidden border-y border-black/5">
       {/* Mesh Background Accent */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[150px] bg-purple-500/5 rounded-full blur-[80px] pointer-events-none z-0" />
       

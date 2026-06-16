@@ -130,7 +130,7 @@ export default function ProductsTabs({ onViewDetails }) {
   const [activeTab, setActiveTab] = useState('evs'); // 'evs' or 'appliances'
 
   return (
-    <section id="showcase-tabs" className="relative py-24 bg-[#f8f9fa] overflow-hidden border-t border-black/5">
+    <section id="showcase-tabs" className="relative py-12 md:py-24 bg-[#f8f9fa] overflow-hidden border-t border-black/5">
       {/* Decorative background glows */}
       <div className="absolute top-[20%] left-[-10%] w-[300px] h-[300px] bg-purple-500/5 rounded-full blur-[100px] pointer-events-none" />
       <div className="absolute bottom-[20%] right-[-10%] w-[350px] h-[350px] bg-purple-500/5 rounded-full blur-[120px] pointer-events-none" />

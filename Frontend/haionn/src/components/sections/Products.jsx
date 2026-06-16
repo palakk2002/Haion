@@ -5,7 +5,7 @@ import { FiStar, FiArrowUpRight } from 'react-icons/fi';
 
 export default function Products() {
   return (
-    <section id="products" className="relative py-24 bg-[#f8f9fa] overflow-hidden">
+    <section id="products" className="relative py-12 md:py-24 bg-[#f8f9fa] overflow-hidden">
       {/* Visual Accents */}
       <div className="absolute top-[30%] right-[-10%] w-[400px] h-[400px] bg-purple-500/5 rounded-full blur-[120px] pointer-events-none" />
 

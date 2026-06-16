@@ -12,7 +12,7 @@ const iconMap = {
 
 export default function Offers() {
   return (
-    <section id="offers" className="relative py-24 bg-[#f8f9fa] overflow-hidden">
+    <section id="offers" className="relative py-12 md:py-24 bg-[#f8f9fa] overflow-hidden">
       {/* Background radial soft lights */}
       <div className="absolute top-[20%] left-[-15%] w-[450px] h-[450px] bg-purple-500/5 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-[20%] right-[-15%] w-[450px] h-[450px] bg-indigo-500/5 rounded-full blur-[140px] pointer-events-none" />

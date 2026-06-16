@@ -40,111 +40,71 @@ export const featuresData = [
 
 export const categoriesData = [
   {
-    id: "smartphones",
-    title: "Smartphones",
-    emoji: "📱",
-    description: "Next-gen foldables & flagships",
-    count: "450+ Products",
+    id: "ac",
+    title: "Air Conditioners",
+    emoji: "❄️",
+    description: "Energy-efficient smart inverter cooling",
+    count: "5-Star Rated",
     gradient: "from-blue-600/30 to-indigo-600/30",
     color: "#3b82f6",
-    subtitle: "Premium Mobile Devices",
-    longDescription: "Experience pure innovation at your fingertips. Our smartphones are equipped with cutting-edge processor power, beautiful high-refresh OLED displays, and ultra-high resolution cameras designed to capture life's finest moments with pristine clarity.",
-    features: ["120Hz LTPO OLED Display", "200MP Triple Camera Systems", "Ultra-fast GaN Fast Charging"],
+    subtitle: "Smart Cooling Solutions",
+    longDescription: "Keep your home perfectly cool and comfortable with Haion's range of smart inverter split air conditioners. Designed with 100% copper condensers, advanced air filtration systems, and silent operations to ensure optimal sleep and energy efficiency.",
+    features: ["5-Star Inverter Tech", "100% Copper Condenser", "Smart App Schedules"],
     subProducts: [
-      { name: "AeroPhone Pro Max", tag: "Flagship", price: "₹89,999", rating: "4.9" },
-      { name: "AeroPhone Lite", tag: "Best Value", price: "₹45,999", rating: "4.7" },
-      { name: "Haion Fold X", tag: "Futuristic", price: "₹1,24,999", rating: "4.8" }
+      { name: "Haion AeroBreeze 1.5T", tag: "5-Star AC", price: "₹36,999", rating: "4.8" },
+      { name: "Haion AeroBreeze 2.0T", tag: "Heavy Duty", price: "₹45,999", rating: "4.9" },
+      { name: "Haion AeroBreeze 1.0T", tag: "Compact Rooms", price: "₹29,999", rating: "4.7" }
     ]
   },
   {
-    id: "laptops",
-    title: "Laptops & Computing",
-    emoji: "💻",
-    description: "Pro workhorses & gaming beasts",
-    count: "280+ Products",
+    id: "tv",
+    title: "Smart LED TVs",
+    emoji: "📺",
+    description: "Cinematic 4K UHD & QLED displays",
+    count: "Premium Quality",
     gradient: "from-purple-600/30 to-pink-600/30",
     color: "#a855f7",
-    subtitle: "High-Performance Workstations",
-    longDescription: "Unchain your workflow with computing machines designed for professional creators, developers, and enthusiast gamers. Crafted with premium aerospace-grade aluminum chassis and featuring incredible long-lasting battery configurations.",
-    features: ["Liquid Retina Display support", "Up to 32GB Unified Memory", "Enthusiast GPU cooling tech"],
+    subtitle: "Immersive Visuals",
+    longDescription: "Reimagine your home entertainment with Haion's ultra-thin bezel-less smart TVs. Experience cinema-like visuals right in your living room with Dolby Vision support, HDR10+, quantum dot displays, and powerful Dolby Audio speakers.",
+    features: ["Dolby Vision Support", "120Hz Refresh Rate", "Google TV OS Integrated"],
     subProducts: [
-      { name: "QuantumBook Pro M4", tag: "Performance", price: "₹1,39,999", rating: "4.8" },
-      { name: "QuantumBook Air", tag: "Ultra-portable", price: "₹89,999", rating: "4.6" },
-      { name: "Haion Station Elite", tag: "Desktop replacement", price: "₹2,19,999", rating: "4.9" }
+      { name: "Haion CinemaMax 55", tag: "4K UHD TV", price: "₹38,999", rating: "4.8" },
+      { name: "Haion VisionPro 65", tag: "QLED Panel", price: "₹48,999", rating: "4.9" },
+      { name: "Haion OLED Q1 50", tag: "Infinite Contrast", price: "₹59,999", rating: "4.9" }
     ]
   },
   {
-    id: "wearables",
-    title: "Smart Watches & Wearables",
-    emoji: "⌚",
-    description: "Health track, notifications, LTE",
-    count: "180+ Products",
+    id: "washing",
+    title: "Washing Machines",
+    emoji: "🧺",
+    description: "Fully automatic front & top load washers",
+    count: "Ultra-Clean Tech",
     gradient: "from-amber-500/30 to-orange-600/30",
     color: "#f59e0b",
-    subtitle: "Intelligent Body Sensors",
-    longDescription: "Track your fitness journey, receive lightning-fast updates, and navigate with high-precision dual-frequency GPS. The ultimate Companion that keeps you healthy and fully synced with your ecosystem.",
-    features: ["Dual-Frequency GPS Tracking", "ECG and SpO2 Health Sensors", "Up to 7 Days Battery Life"],
+    subtitle: "Smart Care Laundry",
+    longDescription: "Gentle on clothes, tough on stains. Haion's range of fully automatic front-loading and top-loading washing machines are engineered with advanced inverter direct-drive motors, custom steam-wash programs, and smart Wi-Fi scheduling.",
+    features: ["Inverter Direct Drive", "Hygiene Steam Wash", "Smart Diagnosis Support"],
     subProducts: [
-      { name: "Chronos Watch Ultra 3", tag: "Sports & Health", price: "₹34,999", rating: "4.7" },
-      { name: "Chronos Watch Lite", tag: "Sleek Style", price: "₹12,999", rating: "4.5" },
-      { name: "Haion Ring Smart", tag: "Minimal Tracker", price: "₹19,999", rating: "4.6" }
+      { name: "Haion HydroClean Pro 7kg", tag: "Best Seller", price: "₹24,999", rating: "4.8" },
+      { name: "Haion HydroClean Max 8.5kg", tag: "Large Family", price: "₹32,999", rating: "4.9" },
+      { name: "Haion Semi-Auto Duo 7.5kg", tag: "Eco Wash", price: "₹12,999", rating: "4.7" }
     ]
   },
   {
-    id: "audio",
-    title: "Premium Audio & Headphones",
-    emoji: "🎧",
-    description: "Lossless sound & ANC monitors",
-    count: "320+ Products",
+    id: "mixer",
+    title: "Mixer Grinders",
+    emoji: "🌪️",
+    description: "Heavy duty high-torque blenders & grinders",
+    count: "Kitchen Companion",
     gradient: "from-cyan-500/30 to-blue-500/30",
     color: "#06b6d4",
-    subtitle: "High Fidelity Acoustic Space",
-    longDescription: "Immerse yourself in crystal clear high-fidelity acoustic soundscapes. Featuring state-of-the-art hybrid Active Noise Cancellation (ANC), customized EQ tuning profiles, and comfortable memory-foam ear cushions.",
-    features: ["Hi-Res Wireless Audio Certified", "Up to -45dB Hybrid ANC", "Over 60 Hours Playback Time"],
+    subtitle: "Precision Food Prep",
+    longDescription: "Tackle daily grinding, blending, and food preparation in seconds. Powered by 1000W high-torque commercial copper motors, featuring leak-proof stainless steel jars, active speed sensors, and silent fan-cooling.",
+    features: ["1000W High-Torque Motor", "Leak-Proof SS Jars", "Smart Speed Sensors"],
     subProducts: [
-      { name: "Aura Sound ANC-9", tag: "Audiophile", price: "₹24,999", rating: "4.9" },
-      { name: "Aura Pods Pro 2", tag: "Daily Companion", price: "₹12,999", rating: "4.8" },
-      { name: "Haion Bar Cinema", tag: "Soundbar", price: "₹18,999", rating: "4.7" }
-    ]
-  },
-  {
-    id: "accessories",
-    title: "Smart Accessories",
-    emoji: "🔌",
-    description: "GaN chargers, docks, hubs",
-    count: "600+ Products",
-    gradient: "from-emerald-500/30 to-teal-500/30",
-    color: "#10b981",
-    subtitle: "Power Hubs & Adapters",
-    longDescription: "Keep your workspace clutter-free and your devices optimally charged. Power up all your devices with multi-port high-efficiency gallium nitride (GaN) fast-chargers, hubs, and docks engineered to last.",
-    features: ["Next-Gen Gallium Nitride Tech", "Multi-Port Smart Power Sharing", "Thermal Overload Protection"],
-    subProducts: [
-      { name: "Haion GaN Charger 140W", tag: "Top Rated", price: "₹4,999", rating: "4.9" },
-      { name: "Haion Hub Pro 8-in-1", tag: "Productivity", price: "₹3,499", rating: "4.8" },
-      { name: "Haion Battery Safe Mag", tag: "Magnetic Power", price: "₹2,999", rating: "4.6" }
-    ]
-  },
-  {
-    id: "appliances",
-    title: "Home Appliances",
-    emoji: "🏠",
-    description: "IoT air purifiers, vacuum robots",
-    count: "150+ Products",
-    gradient: "from-rose-500/30 to-red-500/30",
-    color: "#f43f5e",
-    subtitle: "Connected IoT Living",
-    longDescription: "Control and monitor your entire home environment with intelligent, connected IoT appliances. Sync tasks directly to your phone, set automated cleaning routines, and maintain absolute safety inside your smart space.",
-    features: ["Integrated Mobile Dashboard", "Smart Automated Schedules", "1-Year Full Brand Warranty"],
-    subProducts: [
-      { name: "SmartChill Pro 450L", tag: "New", price: "₹54,999", rating: "4.8" },
-      { name: "FrostBreeze Duo 600L", tag: "New", price: "₹84,999", rating: "4.9" },
-      { name: "PowerBlend X1", tag: "New", price: "₹8,999", rating: "4.7" },
-      { name: "TurboMix Pro", tag: "New", price: "₹6,499", rating: "4.8" },
-      { name: "CinemaMax 55", tag: "New", price: "₹38,999", rating: "4.7" },
-      { name: "VisionPro 65", tag: "New", price: "₹48,999", rating: "4.8" },
-      { name: "OLED Q1 50", tag: "New", price: "₹59,999", rating: "4.9" },
-      { name: "EliteView 75", tag: "New", price: "₹1,29,999", rating: "4.9" },
-      { name: "AeroBreeze AC", tag: "New", price: "₹36,999", rating: "4.8" }
+      { name: "Haion PowerBlend X1", tag: "Heavy Duty", price: "₹8,999", rating: "4.8" },
+      { name: "Haion TurboMix Pro", tag: "High Speed", price: "₹6,499", rating: "4.7" },
+      { name: "Haion QuickPrep 750W", tag: "Compact", price: "₹4,999", rating: "4.6" }
     ]
   }
 ];

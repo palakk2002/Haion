@@ -22,7 +22,7 @@ const advantageCards = [
 
 export default function HaionAdvantage() {
   return (
-    <section id="haion-advantage" className="relative py-24 bg-[#e9ded4] overflow-hidden select-none">
+    <section id="haion-advantage" className="relative py-12 md:py-24 bg-[#e9ded4] overflow-hidden select-none">
       {/* Decorative top wave/glow to blend with previous sections */}
       <div className="absolute inset-x-0 bottom-0 h-40 bg-white" style={{ clipPath: 'ellipse(60% 80% at 50% 100%)' }} />
 

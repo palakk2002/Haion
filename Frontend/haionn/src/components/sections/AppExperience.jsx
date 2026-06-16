@@ -17,7 +17,7 @@ const infographicSteps = appExperienceScreens.slice(0, 4);
 
 export default function AppExperience() {
   return (
-    <section id="experience" className="relative py-24 bg-white overflow-hidden">
+    <section id="experience" className="relative py-12 md:py-24 bg-white overflow-hidden">
       {/* Background Visual Accents */}
       <div className="absolute top-1/2 left-[-15%] w-[450px] h-[450px] bg-amber-500/5 rounded-full blur-[140px] pointer-events-none" />
 

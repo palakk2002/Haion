@@ -4,7 +4,7 @@ import factoryImg from '../../assets/haion.jpg';
 
 export default function WhoWeAre() {
   return (
-    <section id="who-we-are" className="relative py-24 bg-white overflow-hidden">
+    <section id="who-we-are" className="relative py-12 md:py-24 bg-white overflow-hidden">
       {/* Background glow visual accent */}
       <div className="absolute top-1/2 left-[-15%] w-[450px] h-[450px] bg-purple-500/5 rounded-full blur-[140px] pointer-events-none" />
 

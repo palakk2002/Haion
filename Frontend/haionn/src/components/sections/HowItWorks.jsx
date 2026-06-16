@@ -12,7 +12,7 @@ const iconMap = {
 
 export default function HowItWorks() {
   return (
-    <section className="relative py-24 bg-[#f8f9fa] overflow-hidden">
+    <section className="relative py-12 md:py-24 bg-[#f8f9fa] overflow-hidden">
       {/* Background accents */}
       <div className="absolute top-[40%] left-[-10%] w-[400px] h-[400px] bg-purple-500/5 rounded-full blur-[130px] pointer-events-none" />
 

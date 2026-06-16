@@ -262,7 +262,7 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
       <div 
         className={`relative w-full ${
           content.id === 'scooter' 
-            ? 'bg-cover bg-center py-16 md:py-24 text-white border-b border-zinc-800 shadow-md' 
+            ? 'bg-cover bg-center py-10 md:py-24 text-white border-b border-zinc-800 shadow-md' 
             : 'bg-transparent text-zinc-950 py-8 mb-12'
         }`}
         style={content.id === 'scooter' ? { backgroundImage: 'url("/haion_tropical_scooters.png")' } : {}}
@@ -335,7 +335,7 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
 
       {/* Specifications Bar (Only for Scooter service) */}
       {content.id === 'scooter' && (
-        <div className="w-full bg-zinc-950 py-10 text-white select-none">
+        <div className="w-full bg-zinc-950 py-6 md:py-10 text-white select-none">
           <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Km Range */}
             <div className="flex flex-col items-center text-center">
@@ -485,7 +485,7 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
 
       {/* 360 Degree Viewer (Only for Scooter service) */}
       {content.id === 'scooter' && (
-        <div className="w-full py-16 bg-white border-b border-zinc-150 text-center select-none">
+        <div className="w-full py-8 md:py-16 bg-white border-b border-zinc-150 text-center select-none">
           <div className="max-w-4xl mx-auto px-6">
             
             {/* Header with dividers */}
@@ -555,20 +555,20 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
 
       {/* LED Light Section (Only for Scooter service) */}
       {content.id === 'scooter' && (
-        <div className="w-full py-16 bg-[#f8f9fa] border-b border-zinc-200/60 text-left select-none">
+        <div className="w-full py-8 md:py-16 bg-[#f8f9fa] border-b border-zinc-200/60 text-left select-none">
           <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             {/* Left Content */}
             <div className="lg:col-span-5 text-left">
-              <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 font-display text-zinc-950">
+              <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 md:mb-6 font-display text-zinc-950">
                 LED <span className="bg-gradient-to-r from-zinc-950 to-amber-500 bg-clip-text text-transparent">Light</span>
               </h2>
-              <p className="text-zinc-500 text-sm leading-relaxed mb-8 font-light max-w-md">
+              <p className="text-zinc-500 text-sm leading-relaxed mb-6 md:mb-8 font-light max-w-md">
                 LED lights are all the rage these days. Haion equipped with LED headlights and Tail Lights. Saves a lot of energy. Looks stylish and modern.
               </p>
             </div>
 
             {/* Right Images */}
-            <div className="lg:col-span-7 grid grid-cols-2 gap-6 w-full">
+            <div className="lg:col-span-7 grid grid-cols-2 gap-4 md:gap-6 w-full">
               {/* Headlight Image */}
               <div className="rounded-3xl overflow-hidden bg-white aspect-[4/5] flex items-center justify-center relative shadow-md group border border-zinc-200/20">
                 <img 
@@ -593,7 +593,7 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
 
       {/* Digital Meter Section (Only for Scooter service) */}
       {content.id === 'scooter' && (
-        <div className="w-full py-16 bg-white border-b border-zinc-200/60 text-left select-none">
+        <div className="w-full py-8 md:py-16 bg-white border-b border-zinc-200/60 text-left select-none">
           <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             {/* Left Image */}
             <div className="lg:col-span-7 flex items-center justify-center relative w-full">
@@ -608,10 +608,10 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
 
             {/* Right Content */}
             <div className="lg:col-span-5 text-left">
-              <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 font-display text-zinc-950">
+              <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 md:mb-6 font-display text-zinc-950">
                 Digital <span className="bg-gradient-to-r from-zinc-950 to-amber-500 bg-clip-text text-transparent">Meter</span>
               </h2>
-              <p className="text-zinc-500 text-sm leading-relaxed mb-8 font-light max-w-md">
+              <p className="text-zinc-500 text-sm leading-relaxed mb-6 md:mb-8 font-light max-w-md">
                 Stylish and Modern digital Meter giver your scooter a new look. It has several indicators. Speedometer, Tripmeter and Battery are major part of Digital Meter.
               </p>
             </div>
@@ -621,14 +621,14 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
 
       {/* DISC Brakes Section (Only for Scooter service) */}
       {content.id === 'scooter' && (
-        <div className="w-full py-16 bg-[#f8f9fa] border-b border-zinc-200/60 text-left select-none">
+        <div className="w-full py-8 md:py-16 bg-[#f8f9fa] border-b border-zinc-200/60 text-left select-none">
           <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             {/* Left Content */}
             <div className="lg:col-span-5 text-left">
-              <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 font-display text-zinc-950">
+              <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 md:mb-6 font-display text-zinc-950">
                 DISC <span className="bg-gradient-to-r from-zinc-950 to-amber-500 bg-clip-text text-transparent">Brakes</span>
               </h2>
-              <p className="text-zinc-500 text-sm leading-relaxed mb-8 font-light max-w-md">
+              <p className="text-zinc-500 text-sm leading-relaxed mb-6 md:mb-8 font-light max-w-md">
                 A disc brake is a type of brake that uses rotors and calipers to stop the wheels from turning. It is the safest electric scooter brake out there because of their strong stopping power in both dry and wet conditions.
               </p>
             </div>
@@ -649,7 +649,7 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
 
       {/* Dual Suspension Section (Only for Scooter service) */}
       {content.id === 'scooter' && (
-        <div className="w-full py-16 bg-white border-b border-zinc-200/60 text-left select-none">
+        <div className="w-full py-8 md:py-16 bg-white border-b border-zinc-200/60 text-left select-none">
           <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
             {/* Left Image */}
             <div className="lg:col-span-7 flex items-center justify-center relative w-full">
@@ -664,10 +664,10 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
 
             {/* Right Content */}
             <div className="lg:col-span-5 text-left">
-              <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6 font-display text-zinc-950">
+              <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-4 md:mb-6 font-display text-zinc-950">
                 Dual <span className="bg-gradient-to-r from-zinc-950 to-amber-500 bg-clip-text text-transparent">Suspension</span>
               </h2>
-              <p className="text-zinc-500 text-sm leading-relaxed mb-8 font-light max-w-md">
+              <p className="text-zinc-500 text-sm leading-relaxed mb-6 md:mb-8 font-light max-w-md">
                 An electric scooter suspension system is a mechanism that balances road handling and ride quality. The suspension absorbs the impact of riding on uneven terrain and makes the ride smoother for the rider.
               </p>
             </div>
@@ -744,7 +744,7 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
 
         {/* Dynamic Safeguard Features Section */}
         {content.id === 'safeguard' && (
-          <div className="mt-24 border-t border-zinc-200/40 pt-16">
+          <div className="mt-12 md:mt-24 border-t border-zinc-200/40 pt-8 md:pt-16">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-zinc-950 font-display">
                 Why the <span className="bg-gradient-to-r from-zinc-950 to-amber-500 bg-clip-text text-transparent">Safeguard</span> is Important
@@ -887,7 +887,7 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
 
         {/* Dynamic Scooter Gallery Section */}
         {content.id === 'scooter' && (
-          <div className="mt-24 border-t border-zinc-200/40 pt-16">
+          <div className="mt-12 md:mt-24 border-t border-zinc-200/40 pt-8 md:pt-16">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-zinc-950 font-display">
                 Haion EV Scooter <span className="bg-gradient-to-r from-zinc-950 to-amber-500 bg-clip-text text-transparent">Gallery</span>

@@ -27,7 +27,7 @@ const whyChooseData = [
 
 export default function WhyChooseHaion() {
   return (
-    <section id="why-choose-haion" className="relative py-24 bg-[#f8f9fa] text-zinc-800 overflow-hidden border-t border-black/5">
+    <section id="why-choose-haion" className="relative py-12 md:py-24 bg-[#f8f9fa] text-zinc-800 overflow-hidden border-t border-black/5">
       {/* Cinematic background highlights */}
       <div className="absolute top-[10%] left-[-15%] w-[450px] h-[450px] bg-purple-500/5 rounded-full blur-[140px] pointer-events-none" />
       <div className="absolute bottom-[10%] right-[-15%] w-[450px] h-[450px] bg-purple-600/5 rounded-full blur-[140px] pointer-events-none" />
