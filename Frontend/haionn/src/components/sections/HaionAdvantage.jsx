@@ -1,0 +1,82 @@
+import React from 'react';
+import { ScrollReveal } from '../ui';
+import { FiArrowRight } from 'react-icons/fi';
+
+const advantageCards = [
+  {
+    title: 'Nationwide Charging Grids',
+    desc: 'Access over 5,900+ high-speed EV charging stations across the country, ensuring your ride is always powered.',
+    image: '/sc012.png',
+  },
+  {
+    title: '8-Year Battery Warranty',
+    desc: 'Ride with ultimate confidence knowing your battery is covered by our comprehensive long-term warranty shield.',
+    image: '/sc011.png',
+  },
+  {
+    title: 'Smart Buyback Options',
+    desc: 'Upgrade effortlessly to newer models with assured buyback value built directly into your ownership plan.',
+    image: '/sco8-removebg-preview.png',
+  }
+];
+
+export default function HaionAdvantage() {
+  return (
+    <section id="haion-advantage" className="relative py-24 bg-[#e9ded4] overflow-hidden select-none">
+      {/* Decorative top wave/glow to blend with previous sections */}
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-white" style={{ clipPath: 'ellipse(60% 80% at 50% 100%)' }} />
+
+      <div className="max-w-7xl mx-auto px-6 relative z-10 text-center pb-12">
+        
+        {/* Header Block */}
+        <ScrollReveal>
+          <div className="flex flex-col items-center mb-16">
+            <span className="inline-block text-xs font-semibold text-emerald-800 bg-emerald-50 border border-emerald-200/80 px-4 py-1.5 rounded-full mb-4">
+              Haion Advantage
+            </span>
+            <h2 className="text-4xl md:text-5xl font-black tracking-tight text-zinc-950 font-display leading-tight">
+              Effortless riding.<br />Worry-free ownership.
+            </h2>
+          </div>
+        </ScrollReveal>
+
+        {/* Advantage Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {advantageCards.map((card, idx) => (
+            <ScrollReveal key={idx} delay={idx * 0.1}>
+              <div className="bg-white/40 backdrop-blur-md border border-white/50 rounded-[36px] p-8 flex flex-col justify-between items-start text-left shadow-lg hover:shadow-xl hover:-translate-y-1.5 transition-all duration-500 h-[380px] group cursor-pointer">
+                
+                {/* Top: Illustrative Product Image */}
+                <div className="w-full h-32 flex items-center justify-center overflow-hidden rounded-2xl bg-white/20 p-2">
+                  <img 
+                    src={card.image} 
+                    alt={card.title} 
+                    className="max-h-full max-w-full object-contain transition-transform duration-500 group-hover:scale-105" 
+                  />
+                </div>
+
+                {/* Content */}
+                <div className="mt-6 flex-1 flex flex-col justify-start">
+                  <h3 className="text-zinc-900 font-extrabold text-xl leading-tight font-display mb-2">
+                    {card.title}
+                  </h3>
+                  <p className="text-zinc-700 text-xs font-light leading-relaxed">
+                    {card.desc}
+                  </p>
+                </div>
+
+                {/* Bottom: Learn More */}
+                <div className="mt-4 pt-4 border-t border-zinc-900/5 w-full flex items-center gap-1.5 text-xs font-bold text-zinc-800 group-hover:text-amber-600 transition-colors">
+                  Learn More
+                  <FiArrowRight size={14} className="group-hover:translate-x-0.5 transition-transform" />
+                </div>
+
+              </div>
+            </ScrollReveal>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+}
