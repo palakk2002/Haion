@@ -1,8 +1,7 @@
 import React from 'react';
 import { FiTwitter, FiInstagram, FiArrowUp, FiFacebook, FiYoutube, FiMapPin, FiPhone, FiMail } from 'react-icons/fi';
-import logoImg from '../../assets/Screenshot_2026-06-13_155308-removebg-preview.png';
 
-export default function Footer() {
+export default function Footer({ onCareersClick }) {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -20,7 +19,7 @@ export default function Footer() {
           <div className="lg:col-span-4 text-left">
             <a href="#" className="flex items-center gap-2 mb-6 group inline-block">
               <img 
-                src={logoImg} 
+                src="/haionlogo-removebg-preview.png" 
                 alt="Haion Logo" 
                 className="h-10 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />
@@ -35,7 +34,17 @@ export default function Footer() {
             <h4 className="font-display font-bold text-zinc-950 mb-6 text-sm uppercase tracking-wider font-semibold">Quick Links</h4>
             <ul className="space-y-4">
               <li><a href="#about-us" className="text-zinc-500 hover:text-amber-500 text-sm transition-colors font-medium">About us</a></li>
-              <li><a href="#" className="text-zinc-500 hover:text-amber-500 text-sm transition-colors font-medium">Updated News</a></li>
+              <li>
+                <button 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (onCareersClick) onCareersClick();
+                  }} 
+                  className="text-zinc-500 hover:text-amber-500 text-sm transition-colors font-medium cursor-pointer text-left bg-transparent border-none p-0 focus:outline-none"
+                >
+                  Careers
+                </button>
+              </li>
               <li><a href="#faq" className="text-zinc-500 hover:text-amber-500 text-sm transition-colors font-medium">FAQ</a></li>
               <li><a href="#" className="text-zinc-500 hover:text-amber-500 text-sm transition-colors font-medium">Blog</a></li>
               <li><a href="#contact" className="text-zinc-500 hover:text-amber-500 text-sm transition-colors font-medium">Contact us</a></li>

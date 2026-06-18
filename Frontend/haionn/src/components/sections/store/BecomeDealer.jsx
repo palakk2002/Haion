@@ -102,7 +102,7 @@ export default function BecomeDealer({ content }) {
                 <tr className="hover:bg-zinc-50/50">
                   <td className="p-4 font-bold text-zinc-900">District</td>
                   <td className="p-4">₹26 Lakhs</td>
-                  <td className="p-4">1500 sq.ft.</td>
+                  <td className="p-4">1000 sq.ft.</td>
                   <td className="p-4">Provided by Company</td>
                 </tr>
                 <tr className="hover:bg-zinc-50/50">

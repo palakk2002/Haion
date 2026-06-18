@@ -13,7 +13,6 @@ import AboutUs from './components/sections/AboutUs';
 import HomeAppliancesPage from './components/sections/HomeAppliancesPage';
 import ServiceDetailsPage from './components/sections/ServiceDetailsPage';
 import StorePage from './components/sections/StorePage';
-import Offers from './components/sections/Offers';
 import HowItWorks from './components/sections/HowItWorks';
 import Testimonials from './components/sections/Testimonials';
 import FAQ from './components/sections/FAQ';
@@ -21,6 +20,7 @@ import Contact from './components/sections/Contact';
 import WhoWeAre from './components/sections/WhoWeAre';
 import HaionAdvantage from './components/sections/HaionAdvantage';
 import LeadPopup from './components/ui/LeadPopup';
+import CareerFormModal from './components/sections/store/CareerFormModal';
 
 function App() {
   const [selectedProductId, setSelectedProductId] = useState(null);
@@ -29,6 +29,7 @@ function App() {
   const [showStore, setShowStore] = useState(false);
   const [selectedServiceId, setSelectedServiceId] = useState(null);
   const [showPopup, setShowPopup] = useState(false);
+  const [showCareersModal, setShowCareersModal] = useState(false);
 
   React.useEffect(() => {
     const timer = setTimeout(() => {
@@ -108,7 +109,7 @@ function App() {
             onClose={() => setShowHomeAppliances(false)}
           />
         ) : showAboutUs ? (
-          <AboutUs onClose={() => setShowAboutUs(false)} />
+          <AboutUs onClose={() => setShowAboutUs(false)} onCareersClick={() => setShowCareersModal(true)} />
         ) : showStore ? (
           <StorePage onClose={() => setShowStore(false)} />
         ) : selectedServiceId ? (
@@ -157,10 +158,6 @@ function App() {
 
             {/* 6c. WHY CHOOSE HAION ADVANTAGE */}
             <WhyChooseHaion />
-
-            {/* 7. PROMOTIONAL OFFERS SECTION */}
-            <Offers />
-
             {/* 8. HOW IT WORKS */}
             <HowItWorks />
 
@@ -180,10 +177,13 @@ function App() {
       </main>
 
       {/* 14. PREMIUM FOOTER */}
-      <Footer />
+      <Footer onCareersClick={() => setShowCareersModal(true)} />
 
       {/* Automated Lead Popup */}
       <LeadPopup isOpen={showPopup} onClose={() => setShowPopup(false)} />
+
+      {/* Career Application Form Modal */}
+      <CareerFormModal isOpen={showCareersModal} onClose={() => setShowCareersModal(false)} />
     </div>
   );
 }

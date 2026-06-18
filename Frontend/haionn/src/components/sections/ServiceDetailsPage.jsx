@@ -452,27 +452,15 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
 
             {/* Top Speed */}
             <div className="flex flex-col items-center text-center">
-              <div className="mb-3 w-full flex justify-center">
-                <svg viewBox="0 0 100 100" className="w-full max-w-[120px] h-20" xmlns="http://www.w3.org/2000/svg">
-                  <style>{`
-                    @keyframes sweepNeedle {
-                      0%, 100% { transform: rotate(-8deg); }
-                      50% { transform: rotate(12deg); }
-                    }
-                    .animate-needle {
-                      animation: sweepNeedle 2.5s ease-in-out infinite;
-                      transform-origin: 50px 70px;
-                    }
-                  `}</style>
-                  <path d="M20,75 A35,35 0 0,1 80,75" stroke="rgba(255,255,255,0.25)" strokeWidth="4" strokeLinecap="round" fill="none" />
-                  <path d="M20,75 A35,35 0 0,1 32,45" stroke="rgba(255,255,255,0.75)" strokeWidth="5" strokeLinecap="round" fill="none" />
-                  <path d="M32,45 A35,35 0 0,1 50,30" stroke="rgba(255,255,255,0.95)" strokeWidth="5" strokeLinecap="round" fill="none" />
-                  <path d="M50,30 A35,35 0 0,1 80,75" stroke="rgba(255,255,255,0.4)" strokeWidth="5" strokeLinecap="round" fill="none" />
-                  <g transform="translate(50, 70)" className="animate-needle">
-                    <line x1="0" y1="0" x2="0" y2="-34" stroke="#ffffff" strokeWidth="3" strokeLinecap="round" />
-                    <circle cx="0" cy="0" r="4" fill="#ffffff" />
-                  </g>
-                </svg>
+              <div className="mb-3 w-full flex justify-center items-center h-20">
+                <video
+                  src="/top_speed_video.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-16 h-16 object-cover rounded-xl border border-zinc-700 shadow-sm"
+                />
               </div>
               <div className="text-4xl font-extrabold font-display mb-1">
                 25<span className="text-sm font-normal ml-0.5 opacity-80">*</span>
@@ -675,73 +663,287 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
         </div>
       )}
 
-      {/* Boxed content wrapper for other sections */}
-      <div className="max-w-7xl mx-auto px-6 mt-12">
-        {/* Dynamic Safeguard Scroll-Driven Zooming Gallery */}
-        {content.id === 'safeguard' && (
-          <div className="w-full mt-24">
-            {/* Header outside sticky container to prevent overlapping */}
-            <div className="text-center mb-12 max-w-xl mx-auto px-4">
-              <span className="inline-block text-xs font-semibold text-amber-500 uppercase tracking-widest bg-amber-500/10 px-3 py-1.5 rounded-full border border-amber-500/20 mb-3 animate-pulse-slow">
-                The Family Album
-              </span>
-              <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-zinc-950 font-display">
-                Effortless riding. <span className="bg-gradient-to-r from-zinc-950 to-amber-500 bg-clip-text text-transparent">Worry-free ownership.</span>
+      {/* Technical Specifications Section (Only for Scooter service) */}
+      {content.id === 'scooter' && (
+        <div className="w-full py-8 md:py-16 bg-white border-b border-zinc-200/60 select-none">
+          <div className="max-w-6xl mx-auto px-6">
+            
+            {/* Header */}
+            <div className="flex flex-col items-center justify-center mb-12">
+              <h2 className="text-2xl md:text-3xl font-extrabold text-zinc-950 tracking-wide relative pb-2 text-center uppercase">
+                TECHNICAL SPECIFICATIONS
+                <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-48 h-1 bg-amber-500"></span>
               </h2>
-              <p className="text-zinc-500 text-xs mt-2">
-                Scroll down to explore moments captured with the Haion family scooter.
+              <p className="text-xs md:text-sm font-semibold text-amber-500 mt-3 italic tracking-wide text-center">
+                Ride to Live. Live to Ride
               </p>
             </div>
 
-            <div ref={containerRef} className="relative h-[280vh] w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
-              <div className="sticky top-0 h-screen w-screen overflow-hidden flex flex-col justify-center items-center bg-[#f8f9fa] z-20">
-                
-                {/* Panorama Gallery Container */}
-                <div className="relative w-full flex items-center justify-center h-[55vh]">
-                  <div className="flex gap-0 items-center justify-center relative w-full h-full">
-                    
-                    {/* Left Panel */}
-                    <motion.div 
-                      style={{ x: xLeft }}
-                      className="w-[30vw] md:w-[380px] h-full rounded-l-[32px] overflow-hidden shadow-lg border border-zinc-200/50 bg-white relative z-10 shrink-0"
-                    >
-                      <img src="/family_album_left.png" alt="Left Panel" className="w-full h-full object-cover" />
-                    </motion.div>
-
-                    {/* Center Panel (The one that zooms in) */}
-                    <motion.div 
-                      style={{ scale: scaleCenter, borderRadius: borderRadiusCenter }}
-                      className="w-[30vw] md:w-[380px] h-full overflow-hidden shadow-2xl bg-white relative z-20 shrink-0"
-                    >
-                      <img src="/family_album_center.png" alt="Center Panel" className="w-full h-full object-cover" />
-                      
-                      {/* Centered text overlay that fades out on zoom */}
-                      <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 bg-black/[0.03] text-white">
-                        <h3 className="text-2xl md:text-3xl font-black font-display tracking-tight leading-none drop-shadow-md">
-                          The family album
-                        </h3>
-                        <p className="text-[10px] md:text-xs font-light tracking-widest mt-2 uppercase opacity-85">
-                          Built for everyday memories
-                        </p>
-                      </div>
-                    </motion.div>
-
-                    {/* Right Panel */}
-                    <motion.div 
-                      style={{ x: xRight }}
-                      className="w-[30vw] md:w-[380px] h-full rounded-r-[32px] overflow-hidden shadow-lg border border-zinc-200/50 bg-white relative z-10 shrink-0"
-                    >
-                      <img src="/family_album_right.png" alt="Right Panel" className="w-full h-full object-cover" />
-                    </motion.div>
-
+            {/* Specifications Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-10 px-2">
+              
+              {/* Left Column */}
+              <div className="space-y-10">
+                {/* Engine and Transmission */}
+                <div>
+                  <div className="flex items-center justify-center mb-6">
+                    <div className="flex-grow border-t border-zinc-200/80"></div>
+                    <span className="px-4 text-lg font-bold text-purple-600 whitespace-nowrap tracking-wide">
+                      Engine and Transmission
+                    </span>
+                    <div className="flex-grow border-t border-zinc-200/80"></div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center py-2.5 border-b border-zinc-100 text-sm text-left">
+                      <span className="font-bold text-zinc-800">Motor Type</span>
+                      <span className="text-zinc-500 font-medium">BLDC Motor</span>
+                    </div>
+                    <div className="flex justify-between items-center py-2.5 border-b border-zinc-100 text-sm text-left">
+                      <span className="font-bold text-zinc-800">Motor Power</span>
+                      <span className="text-zinc-500 font-medium">250W/1000W</span>
+                    </div>
                   </div>
                 </div>
 
+                {/* Features & Safety */}
+                <div>
+                  <div className="flex items-center justify-center mb-6">
+                    <div className="flex-grow border-t border-zinc-200/80"></div>
+                    <span className="px-4 text-lg font-bold text-purple-600 whitespace-nowrap tracking-wide">
+                      Features & Safety
+                    </span>
+                    <div className="flex-grow border-t border-zinc-200/80"></div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center py-2.5 border-b border-zinc-100 text-sm text-left">
+                      <span className="font-bold text-zinc-800">Speedometer</span>
+                      <span className="text-zinc-500 font-medium">Digital</span>
+                    </div>
+                    <div className="flex justify-between items-center py-2.5 border-b border-zinc-100 text-sm text-left">
+                      <span className="font-bold text-zinc-800">Trip Meter</span>
+                      <span className="text-zinc-500 font-medium">Digital</span>
+                    </div>
+                    <div className="flex justify-between items-center py-2.5 border-b border-zinc-100 text-sm text-left">
+                      <span className="font-bold text-zinc-800">Console</span>
+                      <span className="text-zinc-500 font-medium">Yes</span>
+                    </div>
+                    <div className="flex justify-between items-center py-2.5 border-b border-zinc-100 text-sm text-left">
+                      <span className="font-bold text-zinc-800">Gradeability</span>
+                      <span className="text-zinc-500 font-medium">20 Degree</span>
+                    </div>
+                    <div className="flex justify-between items-center py-2.5 border-b border-zinc-100 text-sm text-left">
+                      <span className="font-bold text-zinc-800">Charging Point</span>
+                      <span className="text-zinc-500 font-medium">Yes</span>
+                    </div>
+                    <div className="flex justify-between items-center py-2.5 border-b border-zinc-100 text-sm text-left">
+                      <span className="font-bold text-zinc-800">Anti Theft Alarm</span>
+                      <span className="text-zinc-500 font-medium">Yes</span>
+                    </div>
+                    <div className="flex justify-between items-center py-2.5 border-b border-zinc-100 text-sm text-left">
+                      <span className="font-bold text-zinc-800">Remote Lock</span>
+                      <span className="text-zinc-500 font-medium">Yes</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Chassis & Suspension */}
+                <div>
+                  <div className="flex items-center justify-center mb-6">
+                    <div className="flex-grow border-t border-zinc-200/80"></div>
+                    <span className="px-4 text-lg font-bold text-purple-600 whitespace-nowrap tracking-wide">
+                      Chassis & Suspension
+                    </span>
+                    <div className="flex-grow border-t border-zinc-200/80"></div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center py-2.5 border-b border-zinc-100 text-sm text-left">
+                      <span className="font-bold text-zinc-800">Body Type</span>
+                      <span className="text-zinc-500 font-medium">Electric Bikes</span>
+                    </div>
+                    <div className="flex justify-between items-center py-2.5 border-b border-zinc-100 text-sm text-left">
+                      <span className="font-bold text-zinc-800">Front Suspension</span>
+                      <span className="text-zinc-500 font-medium">Hydraulic Shock Absorber</span>
+                    </div>
+                    <div className="flex justify-between items-center py-2.5 border-b border-zinc-100 text-sm text-left">
+                      <span className="font-bold text-zinc-800">Rear Suspension</span>
+                      <span className="text-zinc-500 font-medium">Hydraulic & Spring Pressure</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Dimensions & Capacity */}
+                <div>
+                  <div className="flex items-center justify-center mb-6">
+                    <div className="flex-grow border-t border-zinc-200/80"></div>
+                    <span className="px-4 text-lg font-bold text-purple-600 whitespace-nowrap tracking-wide">
+                      Dimensions & Capacity
+                    </span>
+                    <div className="flex-grow border-t border-zinc-200/80"></div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center py-2.5 border-b border-zinc-100 text-sm text-left">
+                      <span className="font-bold text-zinc-800">L x W x H</span>
+                      <span className="text-zinc-500 font-medium">1760 x 710 x 1500 MM</span>
+                    </div>
+                    <div className="flex justify-between items-center py-2.5 border-b border-zinc-100 text-sm text-left">
+                      <span className="font-bold text-zinc-800">Ground Clearance</span>
+                      <span className="text-zinc-500 font-medium">190 MM</span>
+                    </div>
+                    <div className="flex justify-between items-center py-2.5 border-b border-zinc-100 text-sm text-left">
+                      <span className="font-bold text-zinc-800">Curb Weight</span>
+                      <span className="text-zinc-500 font-medium">65 Kg</span>
+                    </div>
+                    <div className="flex justify-between items-center py-2.5 border-b border-zinc-100 text-sm text-left">
+                      <span className="font-bold text-zinc-800">Maximum Load Capacity</span>
+                      <span className="text-zinc-500 font-medium">180 Kg</span>
+                    </div>
+                  </div>
+                </div>
               </div>
+
+              {/* Right Column */}
+              <div className="space-y-10">
+                {/* Electricals */}
+                <div>
+                  <div className="flex items-center justify-center mb-6">
+                    <div className="flex-grow border-t border-zinc-200/80"></div>
+                    <span className="px-4 text-lg font-bold text-purple-600 whitespace-nowrap tracking-wide">
+                      Electricals
+                    </span>
+                    <div className="flex-grow border-t border-zinc-200/80"></div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center py-2.5 border-b border-zinc-100 text-sm text-left">
+                      <span className="font-bold text-zinc-800">Head Light</span>
+                      <span className="text-zinc-500 font-medium">LED</span>
+                    </div>
+                    <div className="flex justify-between items-center py-2.5 border-b border-zinc-100 text-sm text-left">
+                      <span className="font-bold text-zinc-800">Tall Light</span>
+                      <span className="text-zinc-500 font-medium">LED</span>
+                    </div>
+                    <div className="flex justify-between items-center py-2.5 border-b border-zinc-100 text-sm text-left">
+                      <span className="font-bold text-zinc-800">Turn Signal Lamp</span>
+                      <span className="text-zinc-500 font-medium">LED</span>
+                    </div>
+                    <div className="flex justify-between items-center py-2.5 border-b border-zinc-100 text-sm text-left">
+                      <span className="font-bold text-zinc-800">Battery Type</span>
+                      <span className="text-zinc-500 font-medium">Lead-Acid/Lithium-Ion</span>
+                    </div>
+                    <div className="flex justify-between items-center py-2.5 border-b border-zinc-100 text-sm text-left">
+                      <span className="font-bold text-zinc-800">Battery Capacity</span>
+                      <span className="text-zinc-500 font-medium text-right">60V - 26AH & 29AH, 63V - 34AH</span>
+                    </div>
+                    <div className="flex justify-between items-start py-2.5 border-b border-zinc-100 text-sm text-left">
+                      <span className="font-bold text-zinc-800 mt-0.5">Battery Charging Time</span>
+                      <div className="flex flex-col text-right">
+                        <span className="text-zinc-500 font-medium">Lead Acid 8-9 Hours</span>
+                        <span className="text-zinc-500 font-medium">Li-Ion 3-4 Hours</span>
+                      </div>
+                    </div>
+                    <div className="flex justify-between items-start py-2.5 border-b border-zinc-100 text-sm text-left">
+                      <span className="font-bold text-zinc-800 mt-0.5">Range Single Charge (KMPH)</span>
+                      <div className="flex flex-col text-right">
+                        <span className="text-zinc-500 font-medium">70-75/85-90</span>
+                        <span className="text-zinc-500 font-medium">100-110(Eco-Mode)</span>
+                      </div>
+                    </div>
+                    <div className="flex justify-between items-center py-2.5 border-b border-zinc-100 text-sm text-left">
+                      <span className="font-bold text-zinc-800">Speed</span>
+                      <span className="text-zinc-500 font-medium">25 KMPH *</span>
+                    </div>
+                    <div className="flex justify-between items-start py-2.5 border-b border-zinc-100 text-sm text-left">
+                      <span className="font-bold text-zinc-800 mt-0.5">Speed Mode</span>
+                      <span className="text-zinc-500 font-medium text-right max-w-[200px]">3 Level Speed Change with Reverse Gear</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Wheel Size & Type */}
+                <div>
+                  <div className="flex items-center justify-center mb-6">
+                    <div className="flex-grow border-t border-zinc-200/80"></div>
+                    <span className="px-4 text-lg font-bold text-purple-600 whitespace-nowrap tracking-wide">
+                      Wheel Size & Type
+                    </span>
+                    <div className="flex-grow border-t border-zinc-200/80"></div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center py-2.5 border-b border-zinc-100 text-sm text-left">
+                      <span className="font-bold text-zinc-800">Wheel Size</span>
+                      <span className="text-zinc-500 font-medium">Stylish Steel Rim 300-10</span>
+                    </div>
+                    <div className="flex justify-between items-center py-2.5 border-b border-zinc-100 text-sm text-left">
+                      <span className="font-bold text-zinc-800">Wheel Type</span>
+                      <span className="text-zinc-500 font-medium">Alloy</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Tyre Size & Type */}
+                <div>
+                  <div className="flex items-center justify-center mb-6">
+                    <div className="flex-grow border-t border-zinc-200/80"></div>
+                    <span className="px-4 text-lg font-bold text-purple-600 whitespace-nowrap tracking-wide">
+                      Tyre Size & Type
+                    </span>
+                    <div className="flex-grow border-t border-zinc-200/80"></div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-center py-2.5 border-b border-zinc-100 text-sm text-left">
+                      <span className="font-bold text-zinc-800">Tyre Size</span>
+                      <span className="text-zinc-500 font-medium">90/100-10, 3.00/10</span>
+                    </div>
+                    <div className="flex justify-between items-center py-2.5 border-b border-zinc-100 text-sm text-left">
+                      <span className="font-bold text-zinc-800">Tyre Type</span>
+                      <span className="text-zinc-500 font-medium">Tubeless</span>
+                    </div>
+                    <div className="flex justify-between items-center py-2.5 border-b border-zinc-100 text-sm text-left">
+                      <span className="font-bold text-zinc-800">Brake System</span>
+                      <span className="text-zinc-500 font-medium">Front - Disc 180 MM/Rear - Drum</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Warranty */}
+                <div>
+                  <div className="flex items-center justify-center mb-6">
+                    <div className="flex-grow border-t border-zinc-200/80"></div>
+                    <span className="px-4 text-lg font-bold text-purple-600 whitespace-nowrap tracking-wide">
+                      Warranty
+                    </span>
+                    <div className="flex-grow border-t border-zinc-200/80"></div>
+                  </div>
+                  <div className="space-y-3">
+                    <div className="flex justify-between items-start py-2.5 border-b border-zinc-100 text-sm text-left">
+                      <span className="font-bold text-zinc-800 mt-0.5">Battery</span>
+                      <div className="flex flex-col text-right">
+                        <span className="text-zinc-500 font-medium">1 Year/10000Km (Whichever is Earlier) Lead Acid,</span>
+                        <span className="text-zinc-500 font-medium">3 Year/30000Km (Whichever is Earlier) Li-Ion</span>
+                      </div>
+                    </div>
+                    <div className="flex justify-between items-center py-2.5 border-b border-zinc-100 text-sm text-left">
+                      <span className="font-bold text-zinc-800">Motor</span>
+                      <span className="text-zinc-500 font-medium">1 Year</span>
+                    </div>
+                    <div className="flex justify-between items-center py-2.5 border-b border-zinc-100 text-sm text-left">
+                      <span className="font-bold text-zinc-800">Charger</span>
+                      <span className="text-zinc-500 font-medium">1 Year</span>
+                    </div>
+                    <div className="flex justify-between items-center py-2.5 border-b border-zinc-100 text-sm text-left">
+                      <span className="font-bold text-zinc-800">Controller</span>
+                      <span className="text-zinc-500 font-medium">1 Year</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
           </div>
-        )}
+        </div>
+      )}
 
+      {/* Boxed content wrapper for other sections */}
+      <div className="max-w-7xl mx-auto px-6 mt-12">
         {/* Dynamic Safeguard Features Section */}
         {content.id === 'safeguard' && (
           <div className="mt-12 md:mt-24 border-t border-zinc-200/40 pt-8 md:pt-16">

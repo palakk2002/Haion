@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FiChevronDown, FiArrowRight } from 'react-icons/fi';
-import heroScooterImg from '../../assets/hero-scooter.png';
-import heroFamilyImg from '../../assets/hero-family.png';
-import heroCruiseImg from '../../assets/hero-cruise.png';
-import heroHelmetsImg from '../../assets/hero-helmets.png';
 
 // Slides data matching the product indicators
 const slidesData = [
@@ -15,7 +11,7 @@ const slidesData = [
     subtitle: "With Battery as a Service, buy Haion starting at ₹ 75,999*",
     accentColor: "from-zinc-950 to-amber-500",
     glowColor: "rgba(99, 102, 241, 0.15)",
-    bgImage: heroScooterImg,
+    bgImage: "/haban.jpg",
     details: [
       { label: "Rough roads", val: "Tackled smoothly" },
       { label: "Parked vehicle movement alerts", val: "Active notifications" },
@@ -33,7 +29,7 @@ const slidesData = [
     subtitle: "A spacious electric scooter custom built for comfortable family rides.",
     accentColor: "from-cyan-500 to-blue-600",
     glowColor: "rgba(6, 182, 212, 0.15)",
-    bgImage: heroFamilyImg,
+    bgImage: "/haban2.jpg",
     details: [
       { label: "Scooter of the year", val: "Award winning" },
       { label: "Now with touchscreen dashboard", val: "Interactive display" },
@@ -51,7 +47,7 @@ const slidesData = [
     subtitle: "Sleek and sporty performance with instant throttle response.",
     accentColor: "from-amber-500 to-orange-600",
     glowColor: "rgba(245, 158, 11, 0.15)",
-    bgImage: heroCruiseImg,
+    bgImage: "/haban3.jpg",
     details: [
       { label: "HaionStack 7 updates", val: "Smart software updates" },
       { label: "100 km/h top speed", val: "Hyperfast sport mode" },
@@ -69,7 +65,7 @@ const slidesData = [
     subtitle: "Keep your little ones completely safe with cute, animal-themed smart helmets.",
     accentColor: "from-emerald-500 to-teal-600",
     glowColor: "rgba(16, 185, 129, 0.15)",
-    bgImage: heroHelmetsImg,
+    bgImage: "/haban4.jpg",
     details: [
       { label: "Safety rated", val: "Certified protection" },
       { label: "Bluetooth enabled", val: "Voice calls available" },
@@ -133,11 +129,7 @@ export default function Hero() {
               <img 
                 src={item.bgImage} 
                 alt={`Cinematic slide backdrop ${idx}`} 
-                className={`w-full h-full object-cover brightness-100 contrast-100 transition-all ${
-                  item.tag === "Introducing Haion BaaS" 
-                    ? "scale-[1.35] origin-bottom md:scale-100" 
-                    : ""
-                }`} 
+                className="w-full h-full object-cover object-center brightness-100 contrast-100 transition-all" 
                 loading={idx === 0 ? "eager" : "lazy"}
               />
             </div>

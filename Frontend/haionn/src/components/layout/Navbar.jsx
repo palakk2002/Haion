@@ -24,7 +24,7 @@ export default function Navbar({ onAboutUsClick, onHomeAppliancesClick, onHomeCl
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white border-b border-black/5 py-4 shadow-sm">
+      <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white border-b border-black/5 py-2.5 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
           {/* Logo */}
           <a 
@@ -36,9 +36,9 @@ export default function Navbar({ onAboutUsClick, onHomeAppliancesClick, onHomeCl
             className="flex items-center gap-2 group"
           >
             <img 
-              src={logoImg} 
+              src="/haionlogo-removebg-preview.png" 
               alt="Haion Logo" 
-              className="h-10 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              className="h-8 md:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
           </a>
 

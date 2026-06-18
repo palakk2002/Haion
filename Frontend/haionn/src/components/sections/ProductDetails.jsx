@@ -504,26 +504,7 @@ export default function ProductDetails({ productId, onClose, onViewProduct }) {
         {isEv && <div className="absolute inset-0 bg-white/75 backdrop-blur-[2px] z-0" />}
 
         <div className="max-w-7xl mx-auto relative z-10">
-          {/* Breadcrumb Navigation & Back Link */}
-          <div className="flex items-center justify-between mb-8">
-            <nav className="flex text-sm font-semibold tracking-wide">
-              <button 
-                onClick={onClose} 
-                className="text-zinc-400 hover:text-purple-500 transition-colors cursor-pointer"
-              >
-                Home
-              </button>
-              <span className="mx-2 text-zinc-400 font-normal">/</span>
-              <span className="text-purple-500">Products Detail</span>
-            </nav>
-            <button
-              onClick={onClose}
-              className="inline-flex items-center gap-1.5 text-xs font-bold text-zinc-950 bg-white border border-zinc-200 px-4 py-2 rounded-xl hover:border-purple-500 hover:text-purple-500 transition-all duration-300 shadow-sm cursor-pointer"
-            >
-              <FiArrowLeft size={14} />
-              Back to Home
-            </button>
-          </div>
+
 
           {/* Main Product Frame */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
@@ -786,28 +767,15 @@ export default function ProductDetails({ productId, onClose, onViewProduct }) {
 
                 {/* Top Speed */}
                 <div className="flex flex-col items-center text-center">
-                  <div className="mb-4 w-full flex justify-center">
-                    <svg viewBox="0 0 100 100" className="w-full max-w-[140px] h-24 md:h-28" xmlns="http://www.w3.org/2000/svg">
-                      <style>{`
-                        @keyframes sweepNeedle {
-                          0%, 100% { transform: rotate(-8deg); }
-                          50% { transform: rotate(12deg); }
-                        }
-                        .animate-needle {
-                          animation: sweepNeedle 2.5s ease-in-out infinite;
-                          transform-origin: 50px 70px;
-                        }
-                      `}</style>
-                      <path d="M20,75 A35,35 0 0,1 80,75" stroke="#334155" strokeWidth="4" strokeLinecap="round" fill="none" />
-                      <path d="M20,75 A35,35 0 0,1 32,45" stroke="#0d9488" strokeWidth="5" strokeLinecap="round" fill="none" />
-                      <path d="M32,45 A35,35 0 0,1 50,30" stroke="#22c55e" strokeWidth="5" strokeLinecap="round" fill="none" />
-                      <path d="M50,30 A35,35 0 0,1 68,45" stroke="#eab308" strokeWidth="5" strokeLinecap="round" fill="none" />
-                      <path d="M68,45 A35,35 0 0,1 80,75" stroke="#f97316" strokeWidth="5" strokeLinecap="round" fill="none" />
-                      <g transform="translate(50, 70)" className="animate-needle">
-                        <line x1="0" y1="0" x2="0" y2="-34" stroke="#15803d" strokeWidth="3" strokeLinecap="round" />
-                        <circle cx="0" cy="0" r="4" fill="#0f172a" />
-                      </g>
-                    </svg>
+                  <div className="mb-4 w-full flex justify-center items-center h-32">
+                    <video
+                      src="/top_speed_video.mp4"
+                      autoPlay
+                      loop
+                      muted
+                      playsInline
+                      className="w-28 h-28 object-cover rounded-2xl border-2 border-zinc-700 shadow-md"
+                    />
                   </div>
                   <div className="text-3xl md:text-4xl font-extrabold text-white font-display mb-1 flex items-start justify-center">
                     25<span className="text-sm text-zinc-400 ml-0.5 mt-1">*</span>
@@ -923,7 +891,7 @@ export default function ProductDetails({ productId, onClose, onViewProduct }) {
                   </svg>
                 </div>
                 <div>
-                  <div className="text-lg font-bold text-zinc-900">20 Paisa*</div>
+                  <div className="text-lg font-bold text-zinc-900">10 Paisa*</div>
                   <div className="text-sm text-zinc-600 font-medium">per Km</div>
                 </div>
               </div>
@@ -966,7 +934,20 @@ export default function ProductDetails({ productId, onClose, onViewProduct }) {
                   <svg className="w-16 h-16" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect x="42" y="16" width="16" height="6" rx="2" fill="#0f172a" stroke="#0f172a" strokeWidth="2" />
                     <rect x="33" y="22" width="34" height="58" rx="6" fill="white" stroke="#0f172a" strokeWidth="4" />
-                    <rect x="38" y="28" width="24" height="46" rx="3" fill="#3efd0e" stroke="#0f172a" strokeWidth="2" />
+                    <rect x="38" y="74" width="24" height="0" rx="3" fill="#22c55e" stroke="#0f172a" strokeWidth="2">
+                      <animate 
+                        attributeName="height" 
+                        values="0;46;0" 
+                        dur="2.5s" 
+                        repeatCount="indefinite" 
+                      />
+                      <animate 
+                        attributeName="y" 
+                        values="74;28;74" 
+                        dur="2.5s" 
+                        repeatCount="indefinite" 
+                      />
+                    </rect>
                   </svg>
                 </div>
                 <div>
