@@ -347,6 +347,36 @@ export default function AboutUs({ onClose, onCareersClick }) {
 
         </div>
 
+        {/* LEADERSHIP TEAM SECTION */}
+        <div className="about-card max-w-5xl mx-auto mb-16 text-left relative md:rotate-1">
+          <TicketSticker className="-top-12 -left-8 scale-90 md:scale-100" />
+          <PopcornSticker className="-bottom-12 -right-8 scale-90 md:scale-100" />
+          
+          <div className="p-8 md:p-10">
+            <span className="text-xs font-bold text-[#a0825b] block mb-2">[ TEAM & LEADERSHIP ]</span>
+            <h3 className="text-2xl font-black mb-8 text-[#40321f] border-b-2 border-zinc-900 pb-2 inline-block">
+              Meet Our Leadership
+            </h3>
+            
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+              {[
+                { name: "Deepak Sharma", role: "Managing Director", initials: "DS" },
+                { name: "Dixit Kumar", role: "Finance Chief Executive", initials: "DK" },
+                { name: "Hitesh Sharma", role: "Founder", initials: "HS" },
+                { name: "Rakesh Ravat", role: "Founder", initials: "RR" },
+                { name: "Amit Sharma", role: "Founder", initials: "AS" }
+              ].map((member, index) => (
+                <div key={index} className="bg-[#faf9f6] border-2 border-zinc-900 rounded-2xl p-5 flex flex-col items-center text-center transition-transform hover:-translate-y-1 hover:shadow-[4px_4px_0px_rgba(24,24,27,0.9)] duration-300">
+                  <div className="w-14 h-14 rounded-full bg-[#a0825b]/10 border-2 border-[#a0825b]/30 flex items-center justify-center font-black text-base text-[#a0825b] mb-3 shadow-inner">
+                    {member.initials}
+                  </div>
+                  <h4 className="text-sm font-bold text-[#40321f] mb-1 leading-tight">{member.name}</h4>
+                  <span className="text-[10px] font-semibold text-zinc-500 uppercase tracking-wider">{member.role}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
         {/* FILM STRIP TRANSITION ACCENT */}
         <FilmStripSeparator />
 
@@ -357,41 +387,44 @@ export default function AboutUs({ onClose, onCareersClick }) {
           
           <div className="p-8 md:p-10">
             <h3 className="text-2xl font-black mb-6 text-[#40321f] border-b-2 border-zinc-900 pb-2 inline-block">
-              Our Journey: From Struggle to Purpose
+              The Journey of Amit Sharma – From Struggle to Innovation
             </h3>
-            <div className="text-sm leading-relaxed text-zinc-655 space-y-4 font-medium">
-              <p className="font-bold text-base text-[#40321f]">
-                Every successful journey begins with a challenge, and ours was no different.
+            <div className="text-sm leading-relaxed text-zinc-650 space-y-4 font-medium">
+              <p>
+                Every successful entrepreneur has a story of sacrifice, determination, and relentless hard work. The story of Amit Sharma is not just about building businesses—it's about turning challenges into opportunities.
               </p>
               <p>
-                Years ago, our founder was just another young individual searching for opportunities and trying to build a stable future. Despite having the determination to work hard, finding the right opportunity was not easy. Rejections became a part of daily life, and the uncertainty of what came next often felt overwhelming.
-              </p>
-              <div className="my-6">
-                <p className="italic bg-[#faf9f6] p-4 border-l-2 border-[#a0825b] rounded-r-sm text-[#40321f] font-semibold inline-block max-w-xl">
-                  But instead of giving up, a simple question changed everything:<br/>
-                  <span className="text-lg block mt-1">"What if I could create opportunities not only for myself, but for others as well?"</span>
-                </p>
-              </div>
-              <p>
-                With limited resources but unlimited determination, the idea of building a business was born. The goal was never just to sell products—it was to solve real problems and make modern technology accessible to more people.
+                In 2009, Amit Sharma started his entrepreneurial journey with a small audio cassette manufacturing business. Resources were limited, capital was scarce, and every day brought new challenges. While others saw obstacles, he saw possibilities. There were times when orders were uncertain, machines broke down, and financial pressure seemed overwhelming. Yet he refused to give up.
               </p>
               <p>
-                The journey started small. Every customer earned through trust, every challenge faced with persistence, and every lesson learned helped shape the company into what it is today.
+                Many nights were spent working late, planning the next step, and wondering how to keep the business moving forward. Success did not come overnight. Every small achievement was earned through hard work, patience, and unwavering belief.
               </p>
               <p>
-                As the world moved towards smarter homes and sustainable mobility, we focused on delivering reliable home appliances and EV charging solutions that people could depend on. Along the way, something even more meaningful happened—we began creating employment opportunities for talented individuals who, like our founder once did, were searching for a chance to prove themselves.
+                As technology changed and the cassette industry declined, Amit faced a critical choice: quit or evolve. He chose to evolve.
               </p>
               <p>
-                Today, what started as a dream has grown into a trusted business serving customers across multiple sectors. Yet our purpose remains unchanged:
-              </p>
-              <p className="font-bold text-center text-[#40321f] bg-[#faf9f6] py-3 rounded-xl max-w-lg">
-                To make quality technology accessible, create opportunities for people, and contribute to a future powered by innovation and sustainability.
+                In 2012, he entered the television manufacturing industry. Starting over in a new sector was not easy. Learning new technologies, building supplier networks, and gaining customer trust required immense effort. But he believed that growth comes from embracing change.
               </p>
               <p>
-                Our success is not measured only by the products we sell, but by the customers we serve, the jobs we create, and the lives we positively impact every day.
+                His determination led him into the home appliance manufacturing sector in 2016. Step by step, he built experience, confidence, and a reputation for quality. Each business taught him valuable lessons about resilience, leadership, and innovation.
               </p>
-              <p className="text-xs font-bold tracking-widest text-[#a0825b] uppercase pt-4 border-t border-zinc-150">
-                * This is more than a business story. It is a story of resilience, opportunity, and the belief that every challenge can become the foundation of something meaningful. *
+              <p className="font-bold text-base text-[#40321f] mt-6">
+                Then came a bigger dream.
+              </p>
+              <p>
+                In 2022, inspired by the future of clean transportation, Amit entered the electric vehicle industry and laid the foundation for HIAON EV. Many questioned the decision. The EV market was competitive and rapidly changing. But challenges had never stopped him before.
+              </p>
+              <p>
+                To strengthen the vision, he expanded into lithium battery manufacturing in 2024, understanding that energy technology would be the backbone of the electric future. This was not merely a business decision—it was a commitment to building products that could contribute to a greener and more sustainable world.
+              </p>
+              <p>
+                By 2026, the journey expanded further into online food delivery and digital taxi services, creating an ecosystem focused on convenience, innovation, and employment generation.
+              </p>
+              <p>
+                Looking back, the journey from a small cassette manufacturing setup to multiple industries was never easy. It was built through years of struggle, risk-taking, failures, learning, and persistence.
+              </p>
+              <p className="font-bold text-center text-[#40321f] bg-[#faf9f6] py-3 rounded-xl max-w-lg mx-auto">
+                Today, Amit Sharma's story stands as a reminder that success is not defined by where you start, but by your willingness to keep moving forward despite adversity.
               </p>
             </div>
           </div>
@@ -405,18 +438,21 @@ export default function AboutUs({ onClose, onCareersClick }) {
           <div className="p-8 md:p-10 flex flex-col md:flex-row gap-8 items-center">
             <div className="flex-1">
               <span className="text-xs font-bold text-[#a0825b] block mb-2">[ FOUNDER MESSAGE ]</span>
-              <h3 className="text-2xl font-bold mb-4 text-[#40321f]">Dreaming of a Cleaner Future</h3>
+              <h3 className="text-2xl font-bold mb-4 text-[#40321f]">Founder Message</h3>
               <span className="text-5xl text-[#a0825b]/20 block -mt-4">“</span>
               <p className="text-sm italic leading-relaxed text-zinc-650 mb-4">
-                "We founded HAION EV with a dream to build a cleaner and smarter future. Every vehicle and battery we manufacture reflects our commitment to quality, innovation, and customer trust. Our mission is not just to sell products but to create a positive impact on society and the environment through sustainable mobility solutions."
+                "There were days when I had very little, but I never stopped dreaming. Every setback taught me a lesson, every failure made me stronger, and every challenge pushed me closer to my vision. My journey proves that with faith, hard work, and determination, even the smallest beginning can lead to extraordinary achievements."
               </p>
             </div>
-            <div className="md:w-64 border-t md:border-t-0 md:border-l-2 border-dashed border-zinc-400 pt-6 md:pt-0 md:pl-6 flex flex-col justify-center">
+            <div className="md:w-72 border-t md:border-t-0 md:border-l-2 border-dashed border-zinc-400 pt-6 md:pt-0 md:pl-6 flex flex-col justify-center">
               <div className="flex items-center gap-3">
-                <div className="w-12 h-12 rounded-full bg-[#a0825b]/10 flex items-center justify-center font-bold text-sm text-[#a0825b]">AS</div>
+                <div className="w-12 h-12 rounded-full bg-[#a0825b]/10 flex items-center justify-center font-bold text-sm text-[#a0825b]">AM</div>
                 <div>
-                  <h5 className="text-sm font-bold text-[#40321f]">Mr. Amit Sharma</h5>
-                  <p className="text-[11px] text-zinc-400 font-semibold mt-0.5">Founders, HAION EV</p>
+                  <h5 className="text-sm font-bold text-[#40321f]">Amit Sharma</h5>
+                  <p className="text-[11px] text-[#a0825b] font-bold uppercase tracking-wider">Founder</p>
+                  <p className="text-[10px] text-zinc-400 font-semibold mt-0.5 leading-tight">
+                    HIAON EV | Lithium Battery Manufacturing | Digital Mobility & Technology Ventures ⚡🚀
+                  </p>
                 </div>
               </div>
             </div>

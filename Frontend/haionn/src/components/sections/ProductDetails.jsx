@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { GlassCard } from '../ui';
 import { FiArrowLeft, FiMaximize2, FiCheck } from 'react-icons/fi';
 
@@ -460,16 +460,77 @@ const productDetailsData = {
   }
 };
 
-export default function ProductDetails({ productId, onClose, onViewProduct }) {
-  const details = productDetailsData[productId] || productDetailsData.x1;
+export default function ProductDetails({ productId, onClose, onViewProduct, onAddToCart, onTrackOrder }) {
+  let details = productDetailsData[productId];
+  if (!details && typeof productId === 'string') {
+    const allTableRows = [
+      { id: 'LED-AH24', name: 'LED-AH24', price: '₹ 5,400', mrp: '₹ 9,999', desc: 'Speaker 20 W Connectivity (AV IN, HDMI, USB, VGA, Earphone)', image: tv2, category: 'appliances' },
+      { id: 'LED-AH40Normal', name: 'LED-AH40Normal', price: '₹ 10,000', mrp: '₹ 17,999', desc: '(AOSP), Normal, Speaker 20W, Connectivity (AV IN, HDMI, USB, Earphone, LAN(RJ45))', image: tv3, category: 'appliances' },
+      { id: 'LED-32PROSmart', name: 'LED-32PROSmart', price: '₹ 8,000', mrp: '₹ 15,000', desc: 'Android (AOSP), 1.25/4GB , Speaker 20W, Connectivity ( AV IN, HDMI, USB, Earphone, LAN(RJ45))', image: tv4, category: 'appliances' },
+      { id: 'LED-32SIRIS LED TV', name: 'LED-32SIRIS LED TV', price: '₹ 8,400', mrp: '₹ 9,999', desc: 'Android IRIS , Speaker 20W, Connectivity ( AV IN, HDMI, USB, Earphone, LAN(RJ45)) Voice Remote, In-built', image: tv5, category: 'appliances' },
+      { id: 'LED-AH32SOTIS LED TV', name: 'LED-AH32SOTIS LED TV', price: '₹ 9,999', mrp: '₹ 16,999', desc: 'Android (OTIS), 1+8 GB, Speaker 20W, Screen-Sharing, HDMI ARC, Command Tv through Mobile Connectivity (AV IN, HDMI, USB, Earphone, LAN(RJ45)) Voice Remote, In-built', image: tv2, category: 'appliances' },
+      { id: 'LED-AH32BLSmart', name: 'LED-AH32BLSmart', price: '₹ 10,999', mrp: '₹ 17,999', desc: 'Android (AOSP), Bezel Less, 1+8 GB, Speaker 20W, Screen-Sharing, HDMI ARC, Command Tv through Mobile Connectivity (AV IN, HDMI, USB, Earphone, LAN(RJ45)) Voice Remote, In-built', image: tv3, category: 'appliances' },
+      { id: 'LED-AH40Smart', name: 'LED-AH40Smart', price: '₹ 13,999', mrp: '₹ 21,000', desc: 'Android (AOSP), BT, 1+8 GB, Speaker 20W, Screen-Sharing, HDMI ARC, Connectivity (AV IN, HDMI, USB, Earphone, LAN(RJ45))', image: tv4, category: 'appliances' },
+      { id: 'LED-AH43SBSmart', name: 'LED-AH43SBSmart', price: '₹ 17,999', mrp: '₹ 27,000', desc: 'Android (AOSP), 1+8 GB, Speaker 20W, Screen-Sharing, HDMI ARC, Sound Bar In-built, Connectivity (AV IN, HDMI, USB, Earphone, LAN(RJ45))', image: tv5, category: 'appliances' },
+      { id: 'LED-AH43BLSmart', name: 'LED-AH43BLSmart', price: '₹ 19,999', mrp: '₹ 28,000', desc: 'Bezel less, Android (AOSP), 1+8 GB, Speaker 20W, Screen-Sharing, HDMI ARC, Voice Remote, BT In-built, Connectivity (AV IN, HDMI, USB, Earphone, LAN(RJ45))', image: tv2, category: 'appliances' },
+      { id: 'LED-AH43WEB', name: 'LED-AH43WEB', price: '₹ 24,999', mrp: '₹ 34,999', desc: 'HDR10 ,4K, Dolby Audio, Bezel less, WebOS, Magic Remotely ThinQ/Alexa, Screen-Sharing, HDMI ARC, BT In-built Connectivity (HDMI, USB, Optical, LAN(RJ45))', image: tv3, category: 'appliances' },
+      { id: 'LED-AH50Smart', name: 'LED-AH50Smart', price: '₹ 25,999', mrp: '₹ 42,000', desc: 'Android (AOSP), 1+8 GB, Speaker 20W, Screen-Sharing, HDMI ARC, In-built Connectivity (AV IN, HDMI, USB, Earphone, LAN(RJ45))', image: tv4, category: 'appliances' },
+      { id: 'LED-AH50WEB', name: 'LED-AH50WEB', price: '₹ 29,999', mrp: '₹ 49,000', desc: 'HDR10 ,4K, Dolby Audio, Bezel less, WebOS, Magic Remotely ThinQ/Alexa, Screen-Sharing, HDMI ARC, BT In-built Connectivity (HDMI, USB, Optical, LAN(RJ45))', image: tv5, category: 'appliances' },
+      { id: 'LED-AN55Smart', name: 'LED-AN55Smart', price: '₹ 31,999', mrp: '₹ 50,000', desc: 'Android (AOSP), 1+8 GB, Speaker 20W, Screen-Sharing, HDMI ARC, In-built Connectivity (AV IN, HDMI, USB, Earphone, LAN(RJ45))', image: tv2, category: 'appliances' },
+      { id: 'LED-AH55WEB', name: 'LED-AH55WEB', price: '₹ 38,999', mrp: '₹ 55,999', desc: 'HDR10 ,4K, Dolby Audio, Bezel less, WebOS, Magic Remotely ThinQ/Alexa, Screen-Sharing, HDMI ARC, BT In-built Connectivity (HDMI, USB, Optical, LAN(RJ45))', image: tv3, category: 'appliances' },
+      { id: 'LED-AN65Smart', name: 'LED-AN65Smart', price: '₹ 49,999', mrp: '₹ 75,000', desc: 'Android (AOSP), 1+8 GB, Speaker 20W, Screen-Sharing, HDMI ARC, In-built Connectivity (AV IN, HDMI, USB, Earphone, LAN(RJ45))', image: tv4, category: 'appliances' },
+      { id: 'AN Electric Chopper / 1311', name: 'AN Electric Chopper / 1311', price: '₹ 780', mrp: '₹ 1,999', desc: 'Chopper', image: mixer1, category: 'appliances' },
+      { id: 'AN Hand Blender / 502', name: 'AN Hand Blender / 502', price: '₹ 880', mrp: '₹ 2,499', desc: 'Stainless Steel Stem & 3 Multifunctional SS Blades', image: mixer2, category: 'appliances' },
+      { id: 'AN MINI POPULAR 450 (Copper)', name: 'AN MINI POPULAR 450 (Copper)', price: '₹ 1,150', mrp: '₹ 3,999', desc: '2 Poly JAR', image: mixer1, category: 'appliances' },
+      { id: 'AN MINI DIAMOND 450 (Copper)', name: 'AN MINI DIAMOND 450 (Copper)', price: '₹ 1,100', mrp: '₹ 4,299', desc: '2 JARS', image: mixer2, category: 'appliances' },
+      { id: 'AN Real JMG 450W (Copper)', name: 'AN Real JMG 450W (Copper)', price: '₹ 2,300', mrp: '₹ 4,999', desc: '1.5 Ltr Liquidizer & 200ml SS 3 Jar', image: mixer1, category: 'appliances' },
+      { id: 'AN Marvel JMG 550W (Copper)', name: 'AN Marvel JMG 550W (Copper)', price: '₹ 2,650', mrp: '₹ 5,999', desc: '1.5 Ltr Ploy-Carbonate Jar & 500ml SS 3 Jar', image: mixer2, category: 'appliances' },
+      { id: 'AN MINI DIAMOND 500 (Copper)', name: 'AN MINI DIAMOND 500 (Copper)', price: '₹ 1,500', mrp: '₹ 4,499', desc: '3 JARS', image: mixer1, category: 'appliances' },
+      { id: 'AN Vista 550W (Copper)', name: 'AN Vista 550W (Copper)', price: '₹ 1,800', mrp: '₹ 4,299', desc: '3 JARS', image: mixer2, category: 'appliances' },
+      { id: 'AN Gold Star 750W (Copper)', name: 'AN Gold Star 750W (Copper)', price: '₹ 2,400', mrp: '₹ 5,199', desc: '3 JARS', image: mixer1, category: 'appliances' },
+      { id: 'AN Mega Star 1HP (Copper)', name: 'AN Mega Star 1HP (Copper)', price: '₹ 2,650', mrp: '₹ 4,999', desc: '3 JARS', image: mixer2, category: 'appliances' },
+      { id: 'AN W671100', name: 'AN W671100', price: '₹ 2,100', mrp: '₹ 4,499', desc: 'Induction Cooker', image: mixer1, category: 'appliances' },
+      { id: 'Ac-ATSAC183101TV', name: 'Ac-ATSAC183101TV', price: '₹ 29,999', mrp: '₹ 45,000', desc: 'AC Split 3 Star 1.5 Ton (Inverter) / 3 STAR / 3.92*', image: ac, category: 'appliances' }
+    ];
+    const match = allTableRows.find(row => row.id === productId);
+    if (match) {
+      details = {
+        id: match.id,
+        name: match.name,
+        price: match.price,
+        subtitle: match.desc,
+        images: [match.image, match.image, match.image],
+        colors: ['Standard'],
+        specs: {
+          'MODEL': match.name,
+          'PRICE': match.price,
+          'MRP': match.mrp,
+          'DESCRIPTION': match.desc,
+          'WARRANTY': '1 YEAR STANDARD WARRANTY'
+        },
+        category: match.category
+      };
+    }
+  }
+  if (!details) {
+    details = productDetailsData.x1;
+  }
+
   const [activeImage, setActiveImage] = useState(details.images[0]);
   const [selectedColor, setSelectedColor] = useState(details.colors[0]);
-  const [querySent, setQuerySent] = useState(false);
+  // Cart and simulated Checkout states
+  const [toastMessage, setToastMessage] = useState('');
+  const [showCheckout, setShowCheckout] = useState(false);
+  const [checkoutForm, setCheckoutForm] = useState({ name: '', phone: '', address: '' });
+  const [orderComplete, setOrderComplete] = useState(false);
+  const [paymentMethod, setPaymentMethod] = useState('cod');
+  const [selectedApp, setSelectedApp] = useState('phonepe');
+  const [paymentProcessing, setPaymentProcessing] = useState(false);
+  const [generatedOrderId, setGeneratedOrderId] = useState('');
 
   useEffect(() => {
     setActiveImage(details.images[0]);
     setSelectedColor(details.colors[0]);
-    setQuerySent(false);
     // Scroll to top when loading a new product detail
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [productId, details]);
@@ -479,13 +540,6 @@ export default function ProductDetails({ productId, onClose, onViewProduct }) {
     (p) => p.category === details.category && p.id !== details.id
   );
 
-  const handleQuerySubmit = (e) => {
-    e.preventDefault();
-    setQuerySent(true);
-    setTimeout(() => {
-      setQuerySent(false);
-    }, 4000);
-  };
 
   const isEv = details.category === 'evs';
 
@@ -583,29 +637,35 @@ export default function ProductDetails({ productId, onClose, onViewProduct }) {
                 </div>
               </div>
 
-              {/* Quick Inquiry Query Button */}
-              <div>
-                <form onSubmit={handleQuerySubmit} className="space-y-4">
+              {/* Quick Inquiry Query & Add/Buy Buttons */}
+              <div className="space-y-4 pt-4 border-t border-zinc-200/60">
+                <div className="grid grid-cols-2 gap-4">
                   <button
-                    type="submit"
-                    disabled={querySent}
-                    className={`w-full py-4 text-sm font-bold text-center uppercase tracking-wider rounded-full transition-all duration-300 cursor-pointer flex items-center justify-center gap-2 shadow-sm font-display focus:outline-none text-white ${
-                      querySent 
-                        ? 'bg-gradient-to-r from-zinc-800 to-zinc-950' 
-                        : 'bg-gradient-to-r from-zinc-950 to-amber-500 hover:shadow-[0_0_20px_rgba(245,158,11,0.3)] hover:scale-[1.03]'
-                    }`}
+                    type="button"
+                    onClick={() => {
+                      if (onAddToCart) {
+                        onAddToCart(details, selectedColor);
+                      }
+                      setToastMessage(`"${details.name}" added to cart!`);
+                      setTimeout(() => setToastMessage(''), 3000);
+                    }}
+                    className="w-full py-3.5 text-xs font-bold text-center uppercase tracking-wider rounded-full border-2 border-zinc-900 hover:bg-zinc-50 text-zinc-900 transition-all duration-300 cursor-pointer flex items-center justify-center gap-2"
                   >
-                    {querySent ? (
-                      <>
-                        <FiCheck size={18} />
-                        Query Submitted
-                      </>
-                    ) : (
-                      'Get Query'
-                    )}
+                    Add To Cart
                   </button>
-                </form>
-                <p className="text-[10px] text-zinc-400 text-center mt-2.5">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setShowCheckout(true);
+                      setOrderComplete(false);
+                    }}
+                    className="w-full py-3.5 text-xs font-bold text-center uppercase tracking-wider rounded-full bg-gradient-to-r from-zinc-950 to-amber-500 text-white hover:shadow-[0_0_20px_rgba(245,158,11,0.3)] hover:scale-[1.03] transition-all duration-300 cursor-pointer flex items-center justify-center gap-2"
+                  >
+                    Buy Now
+                  </button>
+                </div>
+
+                <p className="text-[10px] text-zinc-400 text-center">
                   Our support team typically responds to inquiries within 15 minutes.
                 </p>
               </div>
@@ -1007,6 +1067,7 @@ export default function ProductDetails({ productId, onClose, onViewProduct }) {
                       <th className="py-4 px-6 text-right text-zinc-950">Price</th>
                       <th className="py-4 px-6 text-right text-zinc-950">MRP</th>
                       <th className="py-4 px-6 text-zinc-950">Description</th>
+                      <th className="py-4 px-6 text-zinc-950">Action</th>
                     </tr>
                   </thead>
                   <tbody className="divide-y divide-zinc-200/40 text-sm">
@@ -1032,6 +1093,14 @@ export default function ProductDetails({ productId, onClose, onViewProduct }) {
                         <td className="py-4 px-6 text-right font-bold text-zinc-950">{row.price}</td>
                         <td className="py-4 px-6 text-right font-medium text-zinc-400 line-through">{row.mrp}</td>
                         <td className="py-4 px-6 text-zinc-950 font-normal leading-relaxed">{row.desc}</td>
+                        <td className="py-4 px-6">
+                          <button
+                            onClick={() => onViewProduct(row.model)}
+                            className="inline-flex items-center justify-center bg-zinc-950 hover:bg-zinc-800 text-white font-semibold text-xs py-1.5 px-3.5 rounded-full cursor-pointer transition-all duration-300 shadow-sm"
+                          >
+                            View Details
+                          </button>
+                        </td>
                       </tr>
                     ))}
                   </tbody>
@@ -1082,6 +1151,273 @@ export default function ProductDetails({ productId, onClose, onViewProduct }) {
         </div>
 
       </div>
+
+      {/* Floating Add to Cart Toast Alert */}
+      <AnimatePresence>
+        {toastMessage && (
+          <motion.div
+            initial={{ opacity: 0, y: 50, scale: 0.9 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: 20, scale: 0.9 }}
+            className="fixed bottom-8 right-8 z-[110] bg-zinc-950 text-white px-6 py-3.5 rounded-2xl shadow-xl flex items-center gap-3 border border-zinc-800 text-sm font-semibold"
+          >
+            <div className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+            {toastMessage}
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      {/* Simulated Checkout Modal Overlay */}
+      <AnimatePresence>
+        {showCheckout && (
+          <div className="fixed inset-0 bg-black/75 backdrop-blur-sm z-[120] flex items-center justify-center p-4">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              className="bg-white rounded-3xl overflow-y-auto max-h-[90vh] max-w-md w-full shadow-2xl border border-zinc-200 flex flex-col"
+            >
+              <div className="bg-zinc-950 text-white p-6 relative flex-shrink-0">
+                <button
+                  onClick={() => {
+                    if (!paymentProcessing) {
+                      setShowCheckout(false);
+                    }
+                  }}
+                  className="absolute top-6 right-6 text-white hover:text-zinc-300 transition-colors cursor-pointer"
+                  disabled={paymentProcessing}
+                >
+                  ✕
+                </button>
+                <span className="text-[10px] font-bold text-amber-500 uppercase tracking-widest block mb-1">
+                  Secure Checkout
+                </span>
+                <h3 className="text-xl font-bold font-display">
+                  Buy {details.name}
+                </h3>
+              </div>
+
+              <div className="p-6 overflow-y-auto flex-1">
+                {paymentProcessing ? (
+                  <div className="text-center py-10 space-y-6 flex flex-col items-center justify-center">
+                    {/* Animated Mobile App Redirect Loading */}
+                    <div className="relative">
+                      <div className="w-20 h-20 rounded-full border-4 border-amber-500/20 border-t-amber-500 animate-spin" />
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <span className="text-xl">📱</span>
+                      </div>
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-bold text-zinc-900 capitalize">Opening {selectedApp}</h4>
+                      <p className="text-xs text-zinc-500 mt-2 max-w-xs mx-auto">
+                        Simulating redirect to the {selectedApp} app on your device to authorize the transaction of <span className="font-extrabold text-zinc-900">{details.price}</span>.
+                      </p>
+                    </div>
+                    <div className="bg-zinc-50 border border-zinc-150 p-4 rounded-2xl w-full text-left">
+                      <div className="flex justify-between items-center text-xs">
+                        <span className="text-zinc-500 font-semibold">Merchant</span>
+                        <span className="text-zinc-900 font-bold">HAION EV & Appliances</span>
+                      </div>
+                      <div className="flex justify-between items-center text-xs mt-2">
+                        <span className="text-zinc-500 font-semibold">Status</span>
+                        <span className="text-amber-600 font-bold animate-pulse">Awaiting authorization...</span>
+                      </div>
+                    </div>
+                  </div>
+                ) : orderComplete ? (
+                  <div className="text-center py-6 space-y-4">
+                    <div className="w-16 h-16 bg-emerald-50 text-emerald-600 rounded-full flex items-center justify-center mx-auto mb-2 border border-emerald-300 text-2xl font-bold">
+                      ✓
+                    </div>
+                    <div>
+                      <h4 className="text-lg font-bold text-zinc-900">
+                        {paymentMethod === 'online' ? 'Payment Verified & Order Placed!' : 'Order Placed Successfully!'}
+                      </h4>
+                      <p className="text-xs text-zinc-500 mt-1">
+                        Thank you for your purchase. {paymentMethod === 'online' && `Your payment via ${selectedApp.toUpperCase()} was authorized successfully.`}
+                      </p>
+                    </div>
+
+                    <div className="p-4 bg-zinc-50 border border-zinc-150 rounded-2xl">
+                      <span className="text-[10px] text-zinc-400 font-bold uppercase tracking-wider block">Your Tracking ID</span>
+                      <span className="text-lg font-black text-zinc-950 font-display block select-all mt-1">{generatedOrderId}</span>
+                      <button
+                        onClick={() => {
+                          setShowCheckout(false);
+                          if (onTrackOrder) {
+                            onTrackOrder(generatedOrderId);
+                          }
+                        }}
+                        className="mt-3 inline-flex items-center gap-1.5 text-xs font-bold text-amber-600 hover:text-amber-700 transition-colors uppercase tracking-wider cursor-pointer"
+                      >
+                        Track Shipment Status →
+                      </button>
+                    </div>
+
+                    <button
+                      onClick={() => setShowCheckout(false)}
+                      className="w-full py-3 bg-zinc-950 hover:bg-zinc-800 text-white text-xs font-bold uppercase tracking-wider rounded-full cursor-pointer"
+                    >
+                      Close Window
+                    </button>
+                  </div>
+                ) : (
+                  <form
+                    onSubmit={(e) => {
+                      e.preventDefault();
+                      const newOrderId = 'HAION-' + Math.floor(100000 + Math.random() * 900000);
+                      setGeneratedOrderId(newOrderId);
+                      
+                      const saveOrder = {
+                        id: newOrderId,
+                        date: new Date().toLocaleDateString('en-IN', { day: 'numeric', month: 'short', year: 'numeric' }),
+                        items: details.name,
+                        status: 'In Transit',
+                        address: checkoutForm.address || 'User Address'
+                      };
+                      const localOrders = JSON.parse(localStorage.getItem('haion_orders') || '[]');
+                      localOrders.push(saveOrder);
+                      localStorage.setItem('haion_orders', JSON.stringify(localOrders));
+
+                      if (paymentMethod === 'online') {
+                        setPaymentProcessing(true);
+                        setTimeout(() => {
+                          setPaymentProcessing(false);
+                          setOrderComplete(true);
+                        }, 2500);
+                      } else {
+                        setOrderComplete(true);
+                      }
+                    }}
+                    className="space-y-4 text-left"
+                  >
+                    <div>
+                      <label className="block text-[10px] font-bold text-zinc-650 uppercase mb-1">FullName *</label>
+                      <input
+                        type="text"
+                        required
+                        value={checkoutForm.name}
+                        onChange={(e) => setCheckoutForm({ ...checkoutForm, name: e.target.value })}
+                        placeholder="Enter your name"
+                        className="w-full bg-zinc-50 border border-zinc-300 rounded-xl px-4 py-2.5 text-zinc-800 text-sm focus:outline-none focus:border-zinc-950"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-[10px] font-bold text-zinc-650 uppercase mb-1">Mobile Number *</label>
+                      <input
+                        type="tel"
+                        required
+                        value={checkoutForm.phone}
+                        onChange={(e) => setCheckoutForm({ ...checkoutForm, phone: e.target.value })}
+                        placeholder="10-digit number"
+                        className="w-full bg-zinc-50 border border-zinc-300 rounded-xl px-4 py-2.5 text-zinc-800 text-sm focus:outline-none focus:border-zinc-950"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-[10px] font-bold text-zinc-650 uppercase mb-1">Shipping Address *</label>
+                      <textarea
+                        required
+                        rows="3"
+                        value={checkoutForm.address}
+                        onChange={(e) => setCheckoutForm({ ...checkoutForm, address: e.target.value })}
+                        placeholder="Enter full address"
+                        className="w-full bg-zinc-50 border border-zinc-300 rounded-xl px-4 py-2.5 text-zinc-800 text-sm focus:outline-none focus:border-zinc-950 resize-none"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-[10px] font-bold text-zinc-650 uppercase mb-2">Payment Method *</label>
+                      <div className="grid grid-cols-2 gap-3">
+                        <label className={`flex items-center justify-center gap-2 p-3 rounded-xl border text-xs font-semibold cursor-pointer transition-all duration-300 ${
+                          paymentMethod === 'cod' 
+                            ? 'border-zinc-950 bg-zinc-950 text-white' 
+                            : 'border-zinc-200 bg-white text-zinc-700 hover:bg-zinc-50'
+                        }`}>
+                          <input 
+                            type="radio" 
+                            name="paymentMethod" 
+                            value="cod" 
+                            checked={paymentMethod === 'cod'} 
+                            onChange={() => setPaymentMethod('cod')} 
+                            className="sr-only"
+                          />
+                          <span>Cash on Delivery</span>
+                        </label>
+                        <label className={`flex items-center justify-center gap-2 p-3 rounded-xl border text-xs font-semibold cursor-pointer transition-all duration-300 ${
+                          paymentMethod === 'online' 
+                            ? 'border-zinc-950 bg-zinc-950 text-white' 
+                            : 'border-zinc-200 bg-white text-zinc-700 hover:bg-zinc-50'
+                        }`}>
+                          <input 
+                            type="radio" 
+                            name="paymentMethod" 
+                            value="online" 
+                            checked={paymentMethod === 'online'} 
+                            onChange={() => setPaymentMethod('online')} 
+                            className="sr-only"
+                          />
+                          <span>Pay Online</span>
+                        </label>
+                      </div>
+                    </div>
+
+                    {paymentMethod === 'online' && (
+                      <div className="space-y-3">
+                        <label className="block text-[10px] font-bold text-zinc-650 uppercase mb-2">Select Payment App *</label>
+                        <div className="grid grid-cols-2 gap-2">
+                          {[
+                            { id: 'phonepe', label: 'PhonePe', icon: '🟣' },
+                            { id: 'gpay', label: 'Google Pay', icon: '🔵' },
+                            { id: 'paytm', label: 'Paytm', icon: '🌐' },
+                            { id: 'bhim', label: 'BHIM UPI', icon: '🇮🇳' }
+                          ].map((app) => (
+                            <label
+                              key={app.id}
+                              className={`flex items-center gap-2 p-2.5 rounded-lg border text-xs font-bold cursor-pointer transition-all duration-300 ${
+                                selectedApp === app.id
+                                  ? 'border-purple-550 bg-purple-50 text-purple-950'
+                                  : 'border-zinc-200 bg-white text-zinc-650 hover:bg-zinc-50'
+                              }`}
+                            >
+                              <input
+                                type="radio"
+                                name="onlineApp"
+                                value={app.id}
+                                checked={selectedApp === app.id}
+                                onChange={() => setSelectedApp(app.id)}
+                                className="sr-only"
+                              />
+                              <span>{app.icon}</span>
+                              <span className="truncate">{app.label}</span>
+                            </label>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+
+                    <div className="bg-zinc-50 border border-zinc-150 p-4 rounded-2xl flex items-center justify-between mt-4">
+                      <div>
+                        <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-wider block">Price details</span>
+                        <span className="text-base font-black text-zinc-900">{details.price}</span>
+                      </div>
+                      <span className="text-[10px] font-bold text-emerald-600 uppercase">
+                        {paymentMethod === 'cod' ? 'Cash on Delivery' : 'Online Payment'}
+                      </span>
+                    </div>
+
+                    <button
+                      type="submit"
+                      className="w-full py-4 text-xs font-bold text-center uppercase tracking-wider rounded-full bg-gradient-to-r from-zinc-950 to-amber-500 text-white hover:scale-[1.02] transition-all duration-300 mt-6 cursor-pointer"
+                    >
+                      {paymentMethod === 'online' ? `Make Payment with ${selectedApp.toUpperCase()}` : 'Confirm Order'}
+                    </button>
+                  </form>
+                )}
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }

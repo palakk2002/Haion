@@ -202,6 +202,7 @@ export default function HomeAppliancesPage({ onViewDetails, onClose }) {
                     <th className="py-4 px-6 text-right text-zinc-950">Price</th>
                     <th className="py-4 px-6 text-right text-zinc-950">MRP</th>
                     <th className="py-4 px-6 text-zinc-950">Description</th>
+                    <th className="py-4 px-6 text-zinc-950 text-center">Action</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-zinc-200/40 text-sm text-zinc-950">
@@ -227,6 +228,14 @@ export default function HomeAppliancesPage({ onViewDetails, onClose }) {
                       <td className="py-4 px-6 text-right font-bold text-zinc-950">{row.price}</td>
                       <td className="py-4 px-6 text-right font-medium text-zinc-400 line-through">{row.mrp}</td>
                       <td className="py-4 px-6 text-zinc-950 font-normal leading-relaxed">{row.desc}</td>
+                      <td className="py-4 px-6 text-center">
+                        <button
+                          onClick={() => onViewDetails(row.model)}
+                          className="inline-flex items-center justify-center bg-zinc-950 hover:bg-zinc-800 text-white font-semibold text-xs py-1.5 px-3.5 rounded-full cursor-pointer transition-all duration-300 shadow-sm"
+                        >
+                          View Details
+                        </button>
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -385,6 +394,7 @@ export default function HomeAppliancesPage({ onViewDetails, onClose }) {
                     <th className="py-4 px-6 text-right text-zinc-950">Price</th>
                     <th className="py-4 px-6 text-right text-zinc-950">MRP</th>
                     <th className="py-4 px-6 text-zinc-950">Description</th>
+                    <th className="py-4 px-6 text-zinc-950 text-center">Action</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-zinc-200/40 text-sm text-zinc-950">
@@ -406,6 +416,14 @@ export default function HomeAppliancesPage({ onViewDetails, onClose }) {
                       <td className="py-4 px-6 text-right font-bold text-zinc-950">{row.price}</td>
                       <td className="py-4 px-6 text-right font-medium text-zinc-400 line-through">{row.mrp}</td>
                       <td className="py-4 px-6 text-zinc-950 font-normal leading-relaxed">{row.desc}</td>
+                      <td className="py-4 px-6 text-center">
+                        <button
+                          onClick={() => onViewDetails(row.model)}
+                          className="inline-flex items-center justify-center bg-zinc-950 hover:bg-zinc-800 text-white font-semibold text-xs py-1.5 px-3.5 rounded-full cursor-pointer transition-all duration-300 shadow-sm"
+                        >
+                          View Details
+                        </button>
+                      </td>
                     </tr>
                   ))}
                 </tbody>
@@ -499,6 +517,7 @@ export default function HomeAppliancesPage({ onViewDetails, onClose }) {
                     <th className="py-4 px-6 text-right text-zinc-950">Price</th>
                     <th className="py-4 px-6 text-right text-zinc-950">MRP</th>
                     <th className="py-4 px-6 text-zinc-950">Description</th>
+                    <th className="py-4 px-6 text-zinc-950 text-center">Action</th>
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-zinc-200/40 text-sm text-zinc-950">
@@ -510,6 +529,14 @@ export default function HomeAppliancesPage({ onViewDetails, onClose }) {
                       <td className="py-4 px-6 text-right font-bold text-zinc-950">{row.price}</td>
                       <td className="py-4 px-6 text-right font-medium text-zinc-400 line-through">{row.mrp}</td>
                       <td className="py-4 px-6 text-zinc-950 font-normal leading-relaxed">{row.desc}</td>
+                      <td className="py-4 px-6 text-center">
+                        <button
+                          onClick={() => onViewDetails(row.model)}
+                          className="inline-flex items-center justify-center bg-zinc-950 hover:bg-zinc-800 text-white font-semibold text-xs py-1.5 px-3.5 rounded-full cursor-pointer transition-all duration-300 shadow-sm"
+                        >
+                          View Details
+                        </button>
+                      </td>
                     </tr>
                   ))}
                 </tbody>

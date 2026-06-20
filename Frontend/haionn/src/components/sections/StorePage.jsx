@@ -10,6 +10,7 @@ import WarrantySection from './store/WarrantySection';
 import ShowroomNetwork from './store/ShowroomNetwork';
 import BecomeDealer from './store/BecomeDealer';
 import StoreAdminPanel from './store/StoreAdminPanel';
+import StoreGallery from './store/StoreGallery';
 
 const storeImages = [
   {
@@ -146,7 +147,7 @@ export default function StorePage({ onClose }) {
                     <h3 className="text-xl font-bold text-zinc-900 mb-2 font-display">
                       {store.title}
                     </h3>
-                    <p className="text-zinc-500 text-sm leading-relaxed font-light">
+                    <p className="text-zinc-550 text-sm leading-relaxed font-light">
                       {store.desc}
                     </p>
                   </div>
@@ -155,6 +156,9 @@ export default function StorePage({ onClose }) {
             ))}
           </div>
         </div>
+
+        {/* NEW INTERACTIVE GALLERY SECTION */}
+        <StoreGallery />
 
         {/* SECTION 3 & 4 — Warranty Coverage & Terms Accordion */}
         <WarrantySection info={config.warrantyInfo} terms={config.warrantyTerms} />

@@ -1,11 +1,15 @@
 import React, { useEffect, useRef } from 'react';
 import { GlassCard } from '../ui';
-import { FiArrowRight, FiCpu, FiShield, FiZap, FiTruck, FiBattery } from 'react-icons/fi';
+import { FiArrowRight, FiCpu, FiShield, FiZap, FiTruck, FiBattery, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 import imgPreventShock from '../../assets/safeguard_prevent_shock.png';
 import imgFastSpeed from '../../assets/safeguard_fast_speed.png';
 import imgGroundMonitoring from '../../assets/safeguard_ground_monitoring.png';
+import imgFireRisk from '../../assets/safeguard_fire_risk.png';
+import imgStandards from '../../assets/safeguard_standards.png';
+import imgIndianConditions from '../../assets/safeguard_indian_conditions.png';
+import imgUsecases from '../../assets/safeguard_protection_usecases.png';
 
 const evX1 = '/sc05-removebg-preview.png';
 const evX1Plus = '/sc06-removebg-preview.png';
@@ -204,20 +208,31 @@ const scooterGalleryImages = [
   { img: '/scooter-removebg-preview.png', title: 'Classic Matte', desc: 'Traditional clean signature finish' }
 ];
 
+const scooter360Images = [
+  '/HRF00193.JPG-removebg-preview.png',
+  '/HRF00195.JPG-removebg-preview.png',
+  '/HRF00196.JPG-removebg-preview.png',
+  '/HRF00197.JPG-removebg-preview.png',
+  '/HRF00199.JPG-removebg-preview.png',
+  '/HRF00200.JPG-removebg-preview.png',
+  '/HRF00201.JPG-removebg-preview.png',
+  '/HRF00202.JPG-removebg-preview.png'
+];
+
 export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }) {
   const content = servicesContent[serviceId] || servicesContent.safeguard;
   const Icon = content.icon;
   const [activeScooterImg, setActiveScooterImg] = React.useState('/sc05-removebg-preview.png');
-  const [frameIndex, setFrameIndex] = React.useState(1);
+  const [imageIndex, setImageIndex] = React.useState(0);
 
   const isDragging = React.useRef(false);
   const startX = React.useRef(0);
-  const startFrame = React.useRef(1);
+  const startFrame = React.useRef(0);
 
   const handleDragStart = (e) => {
     isDragging.current = true;
     startX.current = e.clientX || (e.touches && e.touches[0].clientX) || 0;
-    startFrame.current = frameIndex;
+    startFrame.current = imageIndex;
   };
 
   const handleDragMove = (e) => {
@@ -225,14 +240,13 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
     const currentX = e.clientX || (e.touches && e.touches[0].clientX) || 0;
     const deltaX = currentX - startX.current;
     
-    // Adjust rotation sensitivity: 1 frame per 8 pixels of drag
-    const frameDiff = Math.round(deltaX / 8);
+    // Sensitivity: 1 index change per 40px of drag
+    const indexDiff = Math.round(deltaX / 40);
     
-    let newFrame = startFrame.current - frameDiff;
-    while (newFrame < 1) newFrame += 150;
-    while (newFrame > 150) newFrame -= 150;
+    let newIndex = (startFrame.current - indexDiff) % 8;
+    if (newIndex < 0) newIndex += 8;
     
-    setFrameIndex(newFrame);
+    setImageIndex(newIndex);
   };
 
   const handleDragEnd = () => {
@@ -253,7 +267,13 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
     setActiveScooterImg('/sc05-removebg-preview.png');
-    setFrameIndex(1);
+    setImageIndex(0);
+
+    // Preload the 8 images to prevent flicker
+    scooter360Images.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
   }, [serviceId]);
 
   return (
@@ -496,23 +516,16 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
               onTouchMove={handleDragMove}
               onTouchEnd={handleDragEnd}
             >
-              {/* Pseudo-3D Interactive Scooter Image */}
-              <div 
-                style={{
-                  perspective: '1000px',
-                  transformStyle: 'preserve-3d',
-                }}
-                className="w-full h-full flex items-center justify-center pointer-events-none"
-              >
+              {/* Interactive Scooter Image */}
+              <div className="w-full h-full flex items-center justify-center pointer-events-none">
                 <img 
-                  src="/scooter-removebg-preview.png" 
-                  alt="Haion Scooter 3D Showcase" 
+                  src={scooter360Images[imageIndex]} 
+                  alt={`Haion Scooter Angle ${imageIndex + 1}`} 
                   style={{
-                    transform: `rotateY(${((frameIndex - 75) / 75) * 45}deg) rotateX(${Math.abs((frameIndex - 75) / 75) * -6}deg) scale(1.15)`,
-                    filter: `drop-shadow(${((75 - frameIndex) / 75) * 12}px 18px 15px rgba(0,0,0,0.18))`,
-                    transition: 'transform 0.15s ease-out, filter 0.15s ease-out',
+                    filter: 'drop-shadow(0px 18px 20px rgba(0,0,0,0.15))',
+                    transition: 'transform 0.2s ease-out',
                   }}
-                  className="max-h-[90%] object-contain select-none pointer-events-none" 
+                  className="max-h-[90%] object-contain select-none pointer-events-none transform group-hover:scale-105" 
                 />
               </div>
 
@@ -522,19 +535,57 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
               </div>
             </div>
 
-            {/* Slider Scrub Controller */}
-            <div className="mt-8 flex flex-col items-center gap-2">
-              <input 
-                type="range" 
-                min="1" 
-                max="150" 
-                value={frameIndex} 
-                onChange={(e) => setFrameIndex(Number(e.target.value))}
-                className="w-full max-w-md accent-sky-500 h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer"
-              />
-              <span className="text-[10px] text-zinc-400 font-bold uppercase tracking-wider mt-1">
-                Angle: {Math.round(((frameIndex - 75) / 75) * 45)}°
-              </span>
+            {/* Controls Section */}
+            <div className="mt-8 flex flex-col items-center gap-6">
+              {/* Left / Right Control Icons & Indicators */}
+              <div className="flex items-center gap-6">
+                <button
+                  onClick={() => setImageIndex((prev) => (prev - 1 + 8) % 8)}
+                  className="p-3 bg-zinc-100 hover:bg-amber-500 text-zinc-800 hover:text-white rounded-full transition-all duration-300 shadow-sm border border-zinc-200 cursor-pointer active:scale-95 flex items-center justify-center"
+                  aria-label="Previous position"
+                >
+                  <FiChevronLeft size={24} />
+                </button>
+
+                {/* Dot indicators */}
+                <div className="flex gap-2.5">
+                  {scooter360Images.map((_, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => setImageIndex(idx)}
+                      className={`w-3.5 h-3.5 rounded-full transition-all duration-300 cursor-pointer border ${
+                        idx === imageIndex 
+                          ? 'bg-amber-500 border-amber-500 scale-125 shadow-md shadow-amber-500/30' 
+                          : 'bg-zinc-200 border-transparent hover:bg-zinc-300'
+                      }`}
+                      aria-label={`Go to position ${idx + 1}`}
+                    />
+                  ))}
+                </div>
+
+                <button
+                  onClick={() => setImageIndex((prev) => (prev + 1) % 8)}
+                  className="p-3 bg-zinc-100 hover:bg-amber-500 text-zinc-800 hover:text-white rounded-full transition-all duration-300 shadow-sm border border-zinc-200 cursor-pointer active:scale-95 flex items-center justify-center"
+                  aria-label="Next position"
+                >
+                  <FiChevronRight size={24} />
+                </button>
+              </div>
+
+              {/* Slider Scrub Controller */}
+              <div className="w-full max-w-md flex flex-col items-center gap-2">
+                <input 
+                  type="range" 
+                  min="0" 
+                  max="7" 
+                  value={imageIndex} 
+                  onChange={(e) => setImageIndex(Number(e.target.value))}
+                  className="w-full accent-amber-500 h-2 bg-zinc-200 rounded-lg appearance-none cursor-pointer"
+                />
+                <span className="text-[11px] text-zinc-500 font-bold uppercase tracking-wider mt-1">
+                  Angle Position: {imageIndex + 1} / 8
+                </span>
+              </div>
             </div>
 
           </div>
@@ -827,16 +878,15 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
                     </div>
                     <div className="flex justify-between items-center py-2.5 border-b border-zinc-100 text-sm text-left">
                       <span className="font-bold text-zinc-800">Battery Type</span>
-                      <span className="text-zinc-500 font-medium">Lead-Acid/Lithium-Ion</span>
+                      <span className="text-zinc-500 font-medium">Lithium-Ion</span>
                     </div>
                     <div className="flex justify-between items-center py-2.5 border-b border-zinc-100 text-sm text-left">
                       <span className="font-bold text-zinc-800">Battery Capacity</span>
-                      <span className="text-zinc-500 font-medium text-right">60V - 26AH & 29AH, 63V - 34AH</span>
+                      <span className="text-zinc-500 font-medium text-right">60V-30AH & 36AH / 45AH-55AH & 72AH</span>
                     </div>
                     <div className="flex justify-between items-start py-2.5 border-b border-zinc-100 text-sm text-left">
                       <span className="font-bold text-zinc-800 mt-0.5">Battery Charging Time</span>
                       <div className="flex flex-col text-right">
-                        <span className="text-zinc-500 font-medium">Lead Acid 8-9 Hours</span>
                         <span className="text-zinc-500 font-medium">Li-Ion 3-4 Hours</span>
                       </div>
                     </div>
@@ -844,7 +894,7 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
                       <span className="font-bold text-zinc-800 mt-0.5">Range Single Charge (KMPH)</span>
                       <div className="flex flex-col text-right">
                         <span className="text-zinc-500 font-medium">70-75/85-90</span>
-                        <span className="text-zinc-500 font-medium">100-110(Eco-Mode)</span>
+                        <span className="text-zinc-500 font-medium">100-110/200(Eco-Mode)</span>
                       </div>
                     </div>
                     <div className="flex justify-between items-center py-2.5 border-b border-zinc-100 text-sm text-left">
@@ -917,7 +967,6 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
                     <div className="flex justify-between items-start py-2.5 border-b border-zinc-100 text-sm text-left">
                       <span className="font-bold text-zinc-800 mt-0.5">Battery</span>
                       <div className="flex flex-col text-right">
-                        <span className="text-zinc-500 font-medium">1 Year/10000Km (Whichever is Earlier) Lead Acid,</span>
                         <span className="text-zinc-500 font-medium">3 Year/30000Km (Whichever is Earlier) Li-Ion</span>
                       </div>
                     </div>
@@ -927,10 +976,6 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
                     </div>
                     <div className="flex justify-between items-center py-2.5 border-b border-zinc-100 text-sm text-left">
                       <span className="font-bold text-zinc-800">Charger</span>
-                      <span className="text-zinc-500 font-medium">1 Year</span>
-                    </div>
-                    <div className="flex justify-between items-center py-2.5 border-b border-zinc-100 text-sm text-left">
-                      <span className="font-bold text-zinc-800">Controller</span>
                       <span className="text-zinc-500 font-medium">1 Year</span>
                     </div>
                   </div>
@@ -1013,6 +1058,66 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
               </GlassCard>
             </div>
 
+            {/* Additional Safety Benefits Grid */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+              {/* Fire Risk Reduction */}
+              <GlassCard className="overflow-hidden bg-white border border-zinc-200/50 hover:border-amber-500/35 hover:shadow-[0_15px_35px_rgba(245,158,11,0.08)] transition-all duration-500 rounded-3xl flex flex-col items-center text-center group">
+                <div className="w-full h-48 overflow-hidden bg-zinc-100">
+                  <img 
+                    src={imgFireRisk} 
+                    alt="Fire Risk Reduction" 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-8 flex flex-col items-center">
+                  <h3 className="text-xl font-bold text-zinc-900 mb-3 font-display">
+                    Fire Risk Reduction
+                  </h3>
+                  <p className="text-zinc-500 text-sm leading-relaxed">
+                    Stops leakage currents that could cause overheating and electrical fires.
+                  </p>
+                </div>
+              </GlassCard>
+
+              {/* Meets Global Safety Standards */}
+              <GlassCard className="overflow-hidden bg-white border border-zinc-200/50 hover:border-amber-500/35 hover:shadow-[0_15px_35px_rgba(245,158,11,0.08)] transition-all duration-500 rounded-3xl flex flex-col items-center text-center group">
+                <div className="w-full h-48 overflow-hidden bg-zinc-100">
+                  <img 
+                    src={imgStandards} 
+                    alt="Meets Global Safety Standards" 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-8 flex flex-col items-center">
+                  <h3 className="text-xl font-bold text-zinc-900 mb-3 font-display">
+                    Meets Global Safety Standards
+                  </h3>
+                  <p className="text-zinc-500 text-sm leading-relaxed">
+                    Built to UL943 specifications, ensuring compliance with international safety norms.
+                  </p>
+                </div>
+              </GlassCard>
+
+              {/* Essential for Indian Conditions */}
+              <GlassCard className="overflow-hidden bg-white border border-zinc-200/50 hover:border-amber-500/35 hover:shadow-[0_15px_35px_rgba(245,158,11,0.08)] transition-all duration-500 rounded-3xl flex flex-col items-center text-center group">
+                <div className="w-full h-48 overflow-hidden bg-zinc-100">
+                  <img 
+                    src={imgIndianConditions} 
+                    alt="Essential for Indian Conditions" 
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-8 flex flex-col items-center">
+                  <h3 className="text-xl font-bold text-zinc-900 mb-3 font-display">
+                    Essential for Indian Conditions
+                  </h3>
+                  <p className="text-zinc-500 text-sm leading-relaxed">
+                    Designed to handle fluctuating voltage and varied installation quality in India.
+                  </p>
+                </div>
+              </GlassCard>
+            </div>
+
             {/* Key Benefits for Users Section */}
             <div className="mt-20 bg-white border border-zinc-200/60 rounded-3xl p-8 md:p-12 shadow-sm relative overflow-hidden">
               {/* Subtle decorative background glow */}
@@ -1080,6 +1185,79 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
                     <p className="text-zinc-500 text-sm leading-relaxed font-light">
                       Ideal for residential, commercial, industrial, and public spaces.
                     </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* One Device. Total Protection Section */}
+            <div className="mt-20 bg-white border border-zinc-200/60 rounded-3xl p-8 md:p-12 shadow-sm relative overflow-hidden text-left">
+              {/* Subtle decorative background glow */}
+              <div className="absolute -left-20 -bottom-20 w-80 h-80 bg-amber-500/5 rounded-full blur-[80px] pointer-events-none" />
+
+              <div className="text-center mb-12">
+                <h3 className="text-2xl md:text-3xl font-extrabold font-display text-zinc-950">
+                  One Device. Total Protection — <span className="bg-gradient-to-r from-zinc-950 to-amber-500 bg-clip-text text-transparent">Everywhere You Need It.</span>
+                </h3>
+                <div className="w-24 h-[3px] bg-gradient-to-r from-zinc-950 to-amber-500 mx-auto mt-4 rounded-full"></div>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center max-w-5xl mx-auto">
+                {/* Left Column: List of Use Cases */}
+                <div className="lg:col-span-5 space-y-8">
+                  {/* Residential */}
+                  <div className="flex gap-4 items-start">
+                    <span className="w-2 h-2 rounded-xs bg-amber-500 shrink-0 mt-2.5" />
+                    <div>
+                      <h4 className="text-lg font-bold font-display text-zinc-900">Residential</h4>
+                      <p className="text-zinc-500 text-xs font-light mt-0.5">Safety You Can Trust — Right at Home</p>
+                    </div>
+                  </div>
+
+                  {/* Commercial */}
+                  <div className="flex gap-4 items-start">
+                    <span className="w-2 h-2 rounded-xs bg-amber-500 shrink-0 mt-2.5" />
+                    <div>
+                      <h4 className="text-lg font-bold font-display text-zinc-900">Commercial</h4>
+                      <p className="text-zinc-500 text-xs font-light mt-0.5">Protecting People, Preserving Business</p>
+                    </div>
+                  </div>
+
+                  {/* Industrial */}
+                  <div className="flex gap-4 items-start">
+                    <span className="w-2 h-2 rounded-xs bg-amber-500 shrink-0 mt-2.5" />
+                    <div>
+                      <h4 className="text-lg font-bold font-display text-zinc-900">Industrial</h4>
+                      <p className="text-zinc-500 text-xs font-light mt-0.5">Powering Productivity with Safety First</p>
+                    </div>
+                  </div>
+
+                  {/* Public Infrastructure */}
+                  <div className="flex gap-4 items-start">
+                    <span className="w-2 h-2 rounded-xs bg-amber-500 shrink-0 mt-2.5" />
+                    <div>
+                      <h4 className="text-lg font-bold font-display text-zinc-900">Public Infrastructure</h4>
+                      <p className="text-zinc-500 text-xs font-light mt-0.5">Guarding Communities, One Connection at a Time</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Right Column: Graphic Display Card */}
+                <div className="lg:col-span-7">
+                  <div className="relative rounded-3xl overflow-hidden border border-zinc-200 shadow-sm aspect-[4/3] group">
+                    <img 
+                      src={imgUsecases} 
+                      alt="Family Protection" 
+                      className="w-full h-full object-cover group-hover:scale-103 transition-transform duration-700" 
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/35 via-zinc-950/5 to-transparent flex flex-col justify-end p-6 md:p-8 text-left">
+                      <h4 className="text-white font-extrabold text-xl md:text-2xl font-display leading-tight max-w-sm">
+                        Because Tiny Hands Deserve Big Protection.
+                      </h4>
+                      <p className="text-amber-500 text-xs font-bold uppercase tracking-wider mt-1.5">
+                        HAION Smart Safeguard Protection
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>

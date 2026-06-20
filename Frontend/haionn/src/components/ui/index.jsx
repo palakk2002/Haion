@@ -157,3 +157,6 @@ export const PhoneMockup = ({ children, className = "" }) => {
     </div>
   );
 };
+
+export { default as CartDrawer } from './CartDrawer';
+

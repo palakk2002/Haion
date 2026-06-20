@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { FiMenu, FiX, FiDownload } from 'react-icons/fi';
+import { FiMenu, FiX, FiDownload, FiShoppingCart, FiUser } from 'react-icons/fi';
 import logoImg from '../../assets/Screenshot_2026-06-13_155308-removebg-preview.png';
 
-export default function Navbar({ onAboutUsClick, onHomeAppliancesClick, onHomeClick, onNavLinkClick, onStoreClick }) {
+export default function Navbar({ onAboutUsClick, onHomeAppliancesClick, onHomeClick, onNavLinkClick, onStoreClick, onCareersClick, cartCount = 0, onCartClick, onTrackClick, onProfileClick }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
   const [activeDropdown, setActiveDropdown] = useState(false);
+  const [hasOrders, setHasOrders] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,6 +15,23 @@ export default function Navbar({ onAboutUsClick, onHomeAppliancesClick, onHomeCl
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const checkOrders = () => {
+      const orders = JSON.parse(localStorage.getItem('haion_orders') || '[]');
+      setHasOrders(orders.length > 0);
+    };
+    checkOrders();
+    
+    // Check orders on interval/storage changes to keep in sync
+    const interval = setInterval(checkOrders, 2000);
+    window.addEventListener('storage', checkOrders);
+    
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('storage', checkOrders);
+    };
   }, []);
 
   const serviceOptions = [
@@ -142,8 +160,35 @@ export default function Navbar({ onAboutUsClick, onHomeAppliancesClick, onHomeCl
 
           </div>
 
-          {/* Download CTA Button */}
-          <div className="hidden md:block">
+          {/* Download & Careers CTA Buttons */}
+          <div className="hidden md:flex items-center gap-3">
+            {/* Profile Button */}
+            <button
+              onClick={onProfileClick}
+              className="relative p-2.5 rounded-full border border-zinc-200 text-zinc-800 hover:text-amber-500 hover:border-amber-500/50 hover:bg-zinc-50 transition-all duration-300 cursor-pointer flex items-center justify-center"
+              aria-label="User Profile"
+            >
+              <FiUser size={18} />
+            </button>
+
+            <button
+              onClick={onCartClick}
+              className="relative p-2.5 rounded-full border border-zinc-200 text-zinc-800 hover:text-amber-500 hover:border-amber-500/50 hover:bg-zinc-50 transition-all duration-300 cursor-pointer"
+              aria-label="Open Cart"
+            >
+              <FiShoppingCart size={18} />
+              {cartCount > 0 && (
+                <span className="absolute -top-1.5 -right-1.5 bg-amber-500 text-zinc-950 text-[10px] font-black w-4.5 h-4.5 rounded-full flex items-center justify-center border border-white">
+                  {cartCount}
+                </span>
+              )}
+            </button>
+            <button
+              onClick={onCareersClick}
+              className="inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase bg-zinc-950 hover:bg-zinc-900 text-white px-5 py-2.5 rounded-full hover:shadow-[0_0_15px_rgba(0,0,0,0.1)] transition-all duration-300 hover:scale-[1.03] cursor-pointer"
+            >
+              Work With Us
+            </button>
             <a
               href="#download"
               className="inline-flex items-center gap-2 text-xs font-semibold tracking-wider uppercase bg-gradient-to-r from-zinc-950 to-amber-500 text-white px-5 py-2.5 rounded-full hover:shadow-[0_0_20px_rgba(245,158,11,0.3)] transition-all duration-300 hover:scale-[1.03]"
@@ -153,14 +198,28 @@ export default function Navbar({ onAboutUsClick, onHomeAppliancesClick, onHomeCl
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden text-zinc-900 hover:text-amber-500 transition-colors p-1"
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
-          </button>
+          {/* Mobile Cart Button & Menu Button */}
+          <div className="flex items-center gap-3 md:hidden">
+            <button
+              onClick={onCartClick}
+              className="relative text-zinc-900 hover:text-amber-500 transition-colors p-1"
+              aria-label="Open Cart"
+            >
+              <FiShoppingCart size={22} />
+              {cartCount > 0 && (
+                <span className="absolute -top-1.5 -right-1.5 bg-amber-500 text-zinc-950 text-[10px] font-black w-4 h-4 rounded-full flex items-center justify-center border border-white">
+                  {cartCount}
+                </span>
+              )}
+            </button>
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-zinc-900 hover:text-amber-500 transition-colors p-1"
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <FiX size={24} /> : <FiMenu size={24} />}
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -232,14 +291,44 @@ export default function Navbar({ onAboutUsClick, onHomeAppliancesClick, onHomeCl
           Home Appliances
         </a>
 
-        <a
-          href="#download"
-          onClick={() => setIsOpen(false)}
-          className="inline-flex items-center gap-2 text-sm font-semibold tracking-wider uppercase bg-gradient-to-r from-zinc-950 to-amber-500 text-white px-6 py-3 rounded-full hover:shadow-[0_0_25px_rgba(245,158,11,0.3)] transition-all duration-300 mt-4"
+        {/* Profile / Track Order Section for Mobile */}
+        <div 
+          onClick={() => {
+            setIsOpen(false);
+            onProfileClick();
+          }}
+          className="w-11/12 max-w-sm bg-zinc-50 border border-zinc-150 rounded-2xl p-4 flex flex-col gap-3 mt-2 cursor-pointer hover:bg-zinc-100 transition-colors"
         >
-          <FiDownload />
-          Download App
-        </a>
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-amber-500 to-zinc-950 flex items-center justify-center text-white text-xs font-bold">
+              GU
+            </div>
+            <div className="flex-1 text-left">
+              <p className="text-xs font-bold text-zinc-800">Guest Customer</p>
+              <p className="text-[10px] text-zinc-400 font-medium">View Profile & Orders →</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col sm:flex-row items-center gap-4 mt-2">
+          <button
+            onClick={() => {
+              setIsOpen(false);
+              onCareersClick();
+            }}
+            className="inline-flex items-center gap-2 text-sm font-semibold tracking-wider uppercase bg-zinc-950 hover:bg-zinc-900 text-white px-6 py-3 rounded-full hover:shadow-[0_0_20px_rgba(0,0,0,0.15)] transition-all duration-300 cursor-pointer"
+          >
+            Work With Us
+          </button>
+          <a
+            href="#download"
+            onClick={() => setIsOpen(false)}
+            className="inline-flex items-center gap-2 text-sm font-semibold tracking-wider uppercase bg-gradient-to-r from-zinc-950 to-amber-500 text-white px-6 py-3 rounded-full hover:shadow-[0_0_25px_rgba(245,158,11,0.3)] transition-all duration-300"
+          >
+            <FiDownload />
+            Download App
+          </a>
+        </div>
       </div>
     </>
   );
