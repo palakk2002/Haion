@@ -9,7 +9,7 @@ const advantageCards = [
     image: '/sc012.png',
   },
   {
-    title: '8-Year Battery Warranty',
+    title: '3-Year Battery Warranty',
     desc: 'Ride with ultimate confidence knowing your battery is covered by our comprehensive long-term warranty shield.',
     image: '/sc011.png',
   },

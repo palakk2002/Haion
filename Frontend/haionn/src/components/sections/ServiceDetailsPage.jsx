@@ -267,7 +267,7 @@ const AnimatedSpeedometer = () => {
     const interval = setInterval(() => {
       setSpeed((prev) => {
         if (accelerating) {
-          if (prev >= 85) {
+          if (prev >= 25) {
             setAccelerating(false);
             return prev - 1;
           }
@@ -284,7 +284,7 @@ const AnimatedSpeedometer = () => {
     return () => clearInterval(interval);
   }, [accelerating]);
 
-  const angle = (speed / 85) * 240 - 120;
+  const angle = (speed / 25) * 240 - 120;
 
   return (
     <div className="relative w-28 h-28 flex items-center justify-center select-none bg-zinc-900/50 rounded-2xl border-2 border-zinc-700/80 p-2 shadow-inner">
@@ -313,7 +313,7 @@ const AnimatedSpeedometer = () => {
           strokeWidth="6"
           strokeLinecap="round"
           strokeDasharray="188"
-          strokeDashoffset={188 - (speed / 85) * 188}
+          strokeDashoffset={188 - (speed / 25) * 188}
           filter="url(#glow)"
         />
         <line
@@ -632,7 +632,7 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
                 <AnimatedSpeedometer />
               </div>
               <div className="text-3xl md:text-4xl font-extrabold text-white font-display mb-1 flex items-start justify-center">
-                85<span className="text-sm text-zinc-400 ml-0.5 mt-1">*</span>
+                25<span className="text-sm text-zinc-400 ml-0.5 mt-1">*</span>
               </div>
               <div className="text-xs md:text-sm text-zinc-450 font-medium tracking-wide">KMPH Top Speed</div>
             </div>

@@ -59,7 +59,7 @@ export default function Contact() {
                       </div>
                       <div>
                         <div className="text-[10px] text-zinc-400 uppercase font-semibold">Email Us</div>
-                        <a href="mailto:hello@haion.com" className="text-sm font-semibold text-zinc-800 hover:text-purple-600 transition-colors">hello@haion.com</a>
+                        <a href="mailto:ev@haion.co.in" className="text-sm font-semibold text-zinc-800 hover:text-purple-600 transition-colors">ev@haion.co.in</a>
                       </div>
                     </div>
 
@@ -69,7 +69,7 @@ export default function Contact() {
                       </div>
                       <div>
                         <div className="text-[10px] text-zinc-400 uppercase font-semibold">Call Support</div>
-                        <a href="tel:+18005550199" className="text-sm font-semibold text-zinc-800 hover:text-purple-600 transition-colors">+1 (800) 555-0199</a>
+                        <a href="tel:02269622645" className="text-sm font-semibold text-zinc-800 hover:text-purple-600 transition-colors">02269622645</a>
                       </div>
                     </div>
 
@@ -79,7 +79,7 @@ export default function Contact() {
                       </div>
                       <div>
                         <div className="text-[10px] text-zinc-400 uppercase font-semibold">Headquarters</div>
-                        <span className="text-sm font-semibold text-zinc-800">One Infinite Loop, Cupertino, CA</span>
+                        <span className="text-sm font-semibold text-zinc-800">D-46, SECTOR-10, Noida, Sector 10 Pin code 201301 Uttar Pradesh</span>
                       </div>
                     </div>
                   </div>

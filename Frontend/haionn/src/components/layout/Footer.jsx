@@ -85,7 +85,7 @@ export default function Footer({ onCareersClick }) {
         {/* Bottom bar */}
         <div className="border-t border-black/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-zinc-500 text-xs font-semibold">
-            Copyright © 2016 - 2025 Haion. All Rights Reserved.
+            Copyright © 2009 - 2025 Haion. All Rights Reserved.
           </p>
 
           <div className="flex items-center gap-6">

@@ -412,7 +412,7 @@ export default function AboutUs({ onClose, onCareersClick }) {
                 Then came a bigger dream.
               </p>
               <p>
-                In 2022, inspired by the future of clean transportation, Amit entered the electric vehicle industry and laid the foundation for HIAON EV. Many questioned the decision. The EV market was competitive and rapidly changing. But challenges had never stopped him before.
+                In 2022, inspired by the future of clean transportation, Amit entered the electric vehicle industry and laid the foundation for HAION EV. Many questioned the decision. The EV market was competitive and rapidly changing. But challenges had never stopped him before.
               </p>
               <p>
                 To strengthen the vision, he expanded into lithium battery manufacturing in 2024, understanding that energy technology would be the backbone of the electric future. This was not merely a business decision—it was a commitment to building products that could contribute to a greener and more sustainable world.
@@ -451,7 +451,7 @@ export default function AboutUs({ onClose, onCareersClick }) {
                   <h5 className="text-sm font-bold text-[#40321f]">Amit Sharma</h5>
                   <p className="text-[11px] text-[#a0825b] font-bold uppercase tracking-wider">Founder</p>
                   <p className="text-[10px] text-zinc-400 font-semibold mt-0.5 leading-tight">
-                    HIAON EV | Lithium Battery Manufacturing | Digital Mobility & Technology Ventures ⚡🚀
+                    HAION EV | Lithium Battery Manufacturing | Digital Mobility & Technology Ventures ⚡🚀
                   </p>
                 </div>
               </div>

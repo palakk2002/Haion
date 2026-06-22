@@ -23,7 +23,7 @@ export default function WhoWeAre() {
             <ScrollReveal delay={0.1}>
               <div className="space-y-6 text-zinc-800 text-base md:text-lg leading-relaxed font-light">
                 <p>
-                  Established in <strong className="font-semibold text-purple-600">2016</strong>, <strong className="font-semibold text-zinc-950">Haion Group of India</strong> has gained an admirable position in OEM Manufacturing and Exporting of <strong className="font-medium text-purple-600">Electric Scooter, Safeguard, Inverter, Lithium-Ion Batteries, EV Charger, Semi Washing Machine, AD Air Conditioner, Digital Receiver Radio, LED TV, Android TV, Home Theatre System</strong> etc.
+                  Established in <strong className="font-semibold text-purple-600">2009</strong>, <strong className="font-semibold text-zinc-950">Haion Group of India</strong> has gained an admirable position in OEM Manufacturing and Exporting of <strong className="font-medium text-purple-600">Electric Scooter, Safeguard, Inverter, Lithium-Ion Batteries, EV Charger, Semi Washing Machine, AD Air Conditioner, Digital Receiver Radio, LED TV, Android TV, Home Theatre System</strong> etc.
                 </p>
                 <p>
                   These products are enormously well-liked due to their effortless operations, low maintenance, nominal prices, longer operational life and top performance. Our offered products are developed employing the advanced technology. In addition, in order to provide the top performance of products, these are tested on varied industry parameters employing advanced testing methodologies under expert supervision.
