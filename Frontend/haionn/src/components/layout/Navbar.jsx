@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FiMenu, FiX, FiDownload, FiShoppingCart, FiUser } from 'react-icons/fi';
 import logoImg from '../../assets/Screenshot_2026-06-13_155308-removebg-preview.png';
 
-export default function Navbar({ onAboutUsClick, onHomeAppliancesClick, onHomeClick, onNavLinkClick, onStoreClick, onCareersClick, cartCount = 0, onCartClick, onTrackClick, onProfileClick }) {
+export default function Navbar({ onAboutUsClick, onHomeAppliancesClick, onHomeClick, onNavLinkClick, onStoreClick, onCareersClick, cartCount = 0, onCartClick, onTrackClick, onProfileClick, onInverterClick }) {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -43,7 +43,7 @@ export default function Navbar({ onAboutUsClick, onHomeAppliancesClick, onHomeCl
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-white border-b border-black/5 py-2.5 shadow-sm">
-        <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        <div className="max-w-[95%] mx-auto px-4 flex justify-between items-center">
           {/* Logo */}
           <a 
             href="#" 
@@ -61,7 +61,7 @@ export default function Navbar({ onAboutUsClick, onHomeAppliancesClick, onHomeCl
           </a>
 
           {/* Desktop Navigation Links */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="hidden md:flex items-center gap-5 lg:gap-6 xl:gap-8">
             {/* Home Link */}
             <a
               href="#"
@@ -69,7 +69,7 @@ export default function Navbar({ onAboutUsClick, onHomeAppliancesClick, onHomeCl
                 e.preventDefault();
                 onHomeClick();
               }}
-              className="text-sm font-semibold text-zinc-600 hover:text-amber-500 transition-colors duration-300 py-1"
+              className="text-[13px] font-semibold text-zinc-650 hover:text-amber-500 transition-colors duration-300 py-1"
             >
               Home
             </a>
@@ -81,7 +81,7 @@ export default function Navbar({ onAboutUsClick, onHomeAppliancesClick, onHomeCl
                 e.preventDefault();
                 onStoreClick();
               }}
-              className="text-sm font-semibold text-zinc-600 hover:text-amber-500 transition-colors duration-300 py-1"
+              className="text-[13px] font-semibold text-zinc-650 hover:text-amber-500 transition-colors duration-300 py-1"
             >
               Store
             </a>
@@ -93,7 +93,7 @@ export default function Navbar({ onAboutUsClick, onHomeAppliancesClick, onHomeCl
                 e.preventDefault();
                 onAboutUsClick();
               }}
-              className="text-sm font-semibold text-zinc-600 hover:text-amber-500 transition-colors duration-300 py-1"
+              className="text-[13px] font-semibold text-zinc-650 hover:text-amber-500 transition-colors duration-300 py-1"
             >
               About Us
             </a>
@@ -104,7 +104,7 @@ export default function Navbar({ onAboutUsClick, onHomeAppliancesClick, onHomeCl
               onMouseEnter={() => setActiveDropdown(true)}
               onMouseLeave={() => setActiveDropdown(false)}
             >
-              <div className="flex items-center gap-1 text-sm font-semibold text-zinc-600 hover:text-amber-500 transition-colors duration-300">
+              <div className="flex items-center gap-1 text-[13px] font-semibold text-zinc-650 hover:text-amber-500 transition-colors duration-300">
                 EV
                 <svg className={`w-3.5 h-3.5 transition-transform duration-200 ${activeDropdown ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
@@ -139,7 +139,7 @@ export default function Navbar({ onAboutUsClick, onHomeAppliancesClick, onHomeCl
                 e.preventDefault();
                 onNavLinkClick('#service-safeguard');
               }}
-              className="text-sm font-semibold text-zinc-600 hover:text-amber-500 transition-colors duration-300 py-1"
+              className="text-[13px] font-semibold text-zinc-650 hover:text-amber-500 transition-colors duration-300 py-1"
             >
               Safeguard (New Innovation)
             </a>
@@ -151,12 +151,22 @@ export default function Navbar({ onAboutUsClick, onHomeAppliancesClick, onHomeCl
                 e.preventDefault();
                 onHomeAppliancesClick();
               }}
-              className="text-sm font-semibold text-zinc-600 hover:text-amber-500 transition-colors duration-300 py-1"
+              className="text-[13px] font-semibold text-zinc-650 hover:text-amber-500 transition-colors duration-300 py-1"
             >
               Home Appliances
             </a>
 
-
+            {/* Inverter Link */}
+            <a
+              href="#inverter-view"
+              onClick={(e) => {
+                e.preventDefault();
+                onInverterClick();
+              }}
+              className="text-[13px] font-semibold text-zinc-650 hover:text-amber-500 transition-colors duration-300 py-1"
+            >
+              Inverter
+            </a>
 
           </div>
 
@@ -289,6 +299,17 @@ export default function Navbar({ onAboutUsClick, onHomeAppliancesClick, onHomeCl
           className="font-display text-xl font-semibold text-zinc-800 hover:text-amber-500 transition-colors duration-300"
         >
           Home Appliances
+        </a>
+        <a
+          href="#inverter-view"
+          onClick={(e) => {
+            e.preventDefault();
+            setIsOpen(false);
+            onInverterClick();
+          }}
+          className="font-display text-xl font-semibold text-zinc-800 hover:text-amber-500 transition-colors duration-300"
+        >
+          Inverter
         </a>
 
         {/* Profile / Track Order Section for Mobile */}

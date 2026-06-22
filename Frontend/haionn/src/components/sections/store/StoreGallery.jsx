@@ -6,44 +6,44 @@ const GALLERY_DATA = [
   {
     id: 1,
     category: 'Showroom',
-    src: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=800&q=80',
+    src: '/storeban.jpg',
     title: 'Flagship Entrance',
     desc: 'Grand entrance of our New Delhi flagship store featuring modern lighting.'
   },
   {
     id: 2,
     category: 'EV Scooters',
-    src: 'https://images.unsplash.com/photo-1558981806-ec527fa84c39?auto=format&fit=crop&w=800&q=80',
-    title: 'Cruiser Series',
-    desc: 'Our latest high-speed electric scooters lined up for inspection.'
-  },
-  {
-    id: 3,
-    category: 'Smart Tech',
-    src: 'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80',
-    title: 'Diagnostic Lab',
-    desc: 'Certified BMS diagnostic tools displaying live telemetry.'
+    src: '/sc05-removebg-preview.png',
+    title: 'X1',
+    desc: 'Smart, Eco-Friendly EV Scooter for Urban Commuting.'
   },
   {
     id: 4,
-    category: 'Showroom',
-    src: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=800&q=80',
-    title: 'Customer Experience Zone',
-    desc: 'Comfortable waiting lounges with smart tech integrations.'
+    category: 'EV Scooters',
+    src: '/xplusf3.png',
+    title: 'X1Plus',
+    desc: 'Your Everyday Green Ride – EV Scooter.'
   },
   {
     id: 5,
     category: 'EV Scooters',
-    src: 'https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=800&q=80',
-    title: 'Lithium Battery Packs',
-    desc: 'High-density smart battery modules on display.'
+    src: '/x2f.png',
+    title: 'X2',
+    desc: 'Reimagine Urban Travel with Our EV Scooter.'
   },
   {
-    id: 6,
-    category: 'Smart Tech',
-    src: 'https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=800&q=80',
-    title: 'Home Automation Setup',
-    desc: 'Connecting smart displays, lighting systems, and cleaning robots.'
+    id: 7,
+    category: 'Showroom',
+    src: '/haionban2.jpg',
+    title: 'Bengaluru Experience Zone',
+    desc: 'Experience our high-tech electric vehicles and interactive zones.'
+  },
+  {
+    id: 8,
+    category: 'Showroom',
+    src: '/store1.png',
+    title: 'Experience Lounge',
+    desc: 'Premium customer lounge featuring our complete smart appliance ecosystem.'
   }
 ];
 
@@ -79,7 +79,7 @@ export default function StoreGallery() {
 
         {/* Filter Buttons */}
         <div className="flex flex-wrap gap-2 mt-4 md:mt-0 bg-zinc-100 p-1.5 rounded-2xl border border-zinc-200">
-          {['All', 'Showroom', 'EV Scooters', 'Smart Tech'].map((filter) => (
+          {['All', 'Showroom', 'EV Scooters'].map((filter) => (
             <button
               key={filter}
               onClick={() => setActiveFilter(filter)}

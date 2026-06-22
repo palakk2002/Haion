@@ -4,6 +4,7 @@ import { FiChevronDown, FiArrowRight } from 'react-icons/fi';
 
 // Slides data matching the product indicators
 const slidesData = [
+  // 1. Scooter (BaaS)
   {
     tag: "Introducing Haion BaaS",
     title: "It's easy on a Haion.",
@@ -22,6 +23,23 @@ const slidesData = [
       { label: "Stay connected with smart helmets", val: "Bluetooth intercom" }
     ]
   },
+  // 2. AC
+  {
+    tag: "Haion Smart AC",
+    title: "Haion Smart AC. Silent cooling, maximum comfort.",
+    price: "Starting at ₹ 27,999*",
+    subtitle: "Experience 5-star energy efficient cooling with voice control and smart AI mode.",
+    accentColor: "from-blue-500 to-indigo-600",
+    glowColor: "rgba(59, 130, 246, 0.15)",
+    bgImage: "/haion_ac_banner.png",
+    details: [
+      { label: "5-Star Energy Rating", val: "High savings" },
+      { label: "Smart WiFi & Voice Control", val: "Alexa & Google Assistant" },
+      { label: "Dual Inverter Compressor", val: "Silent operation" },
+      { label: "PM 2.5 Air Filter", val: "Pure air" }
+    ]
+  },
+  // 3. Meet Haion Scooter
   {
     tag: "Meet Haion",
     title: "Meet Haion.",
@@ -40,6 +58,23 @@ const slidesData = [
       { label: "Now with touchscreen dashboard", val: "Dynamic control" }
     ]
   },
+  // 4. Refrigerator
+  {
+    tag: "Haion NeoFrost Fridge",
+    title: "Haion NeoFrost. Freshness that lasts.",
+    price: "Starting at ₹ 34,999*",
+    subtitle: "Convertible multi-zone cooling with smart sensor technology and premium glass finish.",
+    accentColor: "from-teal-500 to-emerald-600",
+    glowColor: "rgba(20, 184, 166, 0.15)",
+    bgImage: "/haion_fridge_banner.png",
+    details: [
+      { label: "Convertible Triple Zone", val: "Adjustable spacing" },
+      { label: "AI Intelli-Sense cooling", val: "Smart adaptation" },
+      { label: "Premium glass-door finish", val: "Elegant look" },
+      { label: "10-Year compressor warranty", val: "Durable performance" }
+    ]
+  },
+  // 5. Infinite Cruise Scooter
   {
     tag: "Infinite Cruise",
     title: "Infinite Cruise. Infinitely better 450X",
@@ -58,6 +93,23 @@ const slidesData = [
       { label: "100 km/h top speed", val: "Highway ready" }
     ]
   },
+  // 6. LED TV
+  {
+    tag: "Haion Cinematic LED TV",
+    title: "Haion Cinematic LED. Colors come alive.",
+    price: "Starting at ₹ 42,999*",
+    subtitle: "4K Ultra HD QLED display with Dolby Vision, Atmos, and hands-free Google Assistant.",
+    accentColor: "from-rose-500 to-red-600",
+    glowColor: "rgba(244, 63, 94, 0.15)",
+    bgImage: "/haion_led_banner.png",
+    details: [
+      { label: "4K QLED Dolby Vision", val: "True colors" },
+      { label: "120Hz Refresh Rate", val: "Ultra smooth action" },
+      { label: "Dolby Atmos sound system", val: "Theater experience" },
+      { label: "Google TV platform", val: "All smart apps" }
+    ]
+  },
+  // 7. Junior Helmets
   {
     tag: "Haion Junior Helmets",
     title: "Haion Junior Helmets",
@@ -74,6 +126,54 @@ const slidesData = [
       { label: "Intercom communication", val: "Pillion link active" },
       { label: "Reflective elements", val: "High night visibility" },
       { label: "Stay connected with smart helmets", val: "Haion link" }
+    ]
+  },
+  // 8. HyperCharge Charger
+  {
+    tag: "Haion HyperCharge",
+    title: "Haion HyperCharge. Charge in minutes.",
+    price: "Included with every vehicle",
+    subtitle: "Smart home charging with auto-cut-off, surge protection, and mobile app sync.",
+    accentColor: "from-amber-400 to-yellow-500",
+    glowColor: "rgba(234, 179, 8, 0.15)",
+    bgImage: "/haion_charger_banner.png",
+    details: [
+      { label: "Smart App integration", val: "Remote monitor" },
+      { label: "Overvoltage protection", val: "Secure charging" },
+      { label: "Compact weather-proof design", val: "IP66 rated" },
+      { label: "Fast charging technology", val: "Rapid charge" }
+    ]
+  },
+  // 9. Mixer Grinder
+  {
+    tag: "Haion SmartGrind",
+    title: "Haion SmartGrind. Effortless blending.",
+    price: "Starting at ₹ 4,999*",
+    subtitle: "High-torque copper motor with hands-free grinding and smart speed control.",
+    accentColor: "from-orange-500 to-amber-600",
+    glowColor: "rgba(249, 115, 22, 0.15)",
+    bgImage: "/haion_mixer_grinder_banner.png",
+    details: [
+      { label: "1000W High Torque Motor", val: "Powerful grinding" },
+      { label: "Stainless Steel Jars", val: "Durable design" },
+      { label: "Hands-free lid lock", val: "Extra safety" },
+      { label: "Variable speed control", val: "Perfect textures" }
+    ]
+  },
+  // 10. Washing Machine
+  {
+    tag: "Haion AquaDrive",
+    title: "Haion AquaDrive. Gentle on clothes.",
+    price: "Starting at ₹ 24,999*",
+    subtitle: "Direct drive motor with steam wash hygiene and smart smartphone diagnostics.",
+    accentColor: "from-sky-500 to-blue-600",
+    glowColor: "rgba(14, 165, 233, 0.15)",
+    bgImage: "/haion_washing_machine_banner.png",
+    details: [
+      { label: "Direct Drive Technology", val: "Super quiet" },
+      { label: "99.9% Hygienic Steam Clean", val: "Bacteria removal" },
+      { label: "Smart diagnosis via app", val: "Instant support" },
+      { label: "10-Year motor warranty", val: "Reliable build" }
     ]
   }
 ];

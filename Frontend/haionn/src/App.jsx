@@ -25,6 +25,7 @@ import CareerFormModal from './components/sections/store/CareerFormModal';
 import { CartDrawer } from './components/ui';
 import TrackOrderModal from './components/sections/store/TrackOrderModal';
 import ProfilePage from './components/sections/ProfilePage';
+import InverterPage from './components/sections/InverterPage';
 
 function App() {
   const [selectedProductId, setSelectedProductId] = useState(null);
@@ -35,6 +36,7 @@ function App() {
   const [showPopup, setShowPopup] = useState(false);
   const [showCareersModal, setShowCareersModal] = useState(false);
   const [showProfile, setShowProfile] = useState(false);
+  const [showInverter, setShowInverter] = useState(false);
 
   // Global Cart state
   const [cartItems, setCartItems] = useState([]);
@@ -120,6 +122,7 @@ function App() {
     setShowAboutUs(false);
     setShowHomeAppliances(false);
     setShowStore(false);
+    setShowInverter(false);
     setSelectedProductId(null);
     setSelectedServiceId(null);
     setTimeout(() => {
@@ -140,6 +143,7 @@ function App() {
           setSelectedServiceId(null);
           setShowStore(false);
           setShowProfile(false);
+          setShowInverter(false);
           setShowAboutUs(true);
         }}
         onHomeAppliancesClick={() => {
@@ -148,6 +152,7 @@ function App() {
           setSelectedServiceId(null);
           setShowStore(false);
           setShowProfile(false);
+          setShowInverter(false);
           setShowHomeAppliances(true);
         }}
         onHomeClick={() => {
@@ -157,6 +162,7 @@ function App() {
           setSelectedServiceId(null);
           setShowStore(false);
           setShowProfile(false);
+          setShowInverter(false);
           window.scrollTo({ top: 0, behavior: 'smooth' });
         }}
         onStoreClick={() => {
@@ -165,6 +171,7 @@ function App() {
           setSelectedServiceId(null);
           setShowHomeAppliances(false);
           setShowProfile(false);
+          setShowInverter(false);
           setShowStore(true);
         }}
         onNavLinkClick={navigateToHomeSection}
@@ -178,7 +185,17 @@ function App() {
           setSelectedServiceId(null);
           setShowStore(false);
           setShowHomeAppliances(false);
+          setShowInverter(false);
           setShowProfile(true);
+        }}
+        onInverterClick={() => {
+          setSelectedProductId(null);
+          setShowAboutUs(false);
+          setSelectedServiceId(null);
+          setShowStore(false);
+          setShowHomeAppliances(false);
+          setShowProfile(false);
+          setShowInverter(true);
         }}
       />
 
@@ -193,6 +210,14 @@ function App() {
               setShowHomeAppliances(false);
             }}
             onClose={() => setShowHomeAppliances(false)}
+          />
+        ) : showInverter ? (
+          <InverterPage
+            onViewDetails={(id) => {
+              setSelectedProductId(id);
+              setShowInverter(false);
+            }}
+            onClose={() => setShowInverter(false)}
           />
         ) : showAboutUs ? (
           <AboutUs onClose={() => setShowAboutUs(false)} onCareersClick={() => setShowCareersModal(true)} />

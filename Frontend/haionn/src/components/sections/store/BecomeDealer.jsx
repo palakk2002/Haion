@@ -30,15 +30,15 @@ export default function BecomeDealer({ content }) {
             transition={{ duration: 0.5, delay: idx * 0.1 }}
           >
             <GlassCard className="h-full flex flex-col justify-between p-6 bg-white border border-zinc-200/50 shadow-sm rounded-2xl group transition-all duration-300">
-              <div>
-                <h3 className="font-extrabold text-zinc-900 text-xl mb-4 font-display flex items-center gap-2">
+              <div className="w-full flex flex-col items-center md:items-start text-center md:text-left">
+                <h3 className="font-extrabold text-zinc-900 text-xl mb-4 font-display flex items-center justify-center md:justify-start gap-2 w-full">
                   <FiBriefcase className="text-purple-600" />
-                  {plan.level}
+                  <span>{plan.level}</span>
                 </h3>
-                <div className="text-zinc-900 font-black text-2xl mb-2 font-display">
+                <div className="text-zinc-900 font-black text-2xl mb-2 font-display w-full">
                   {plan.investment}
                 </div>
-                <p className="text-zinc-550 text-sm font-semibold">
+                <p className="text-zinc-550 text-sm font-semibold w-full">
                   {plan.requirement}
                 </p>
               </div>
