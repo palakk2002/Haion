@@ -51,7 +51,7 @@ const productDetailsData = {
     name: 'X1Plus',
     price: '₹84,999',
     subtitle: 'Your Everyday Green Ride – EV Scooter',
-    images: [evX1Plus, evX1, evX2],
+    images: ['/x1plusf.png', '/x1plusf1.png'],
     colors: ['Crystal White', 'Glossy Blue', 'Matt Grey'],
     specs: {
       'MOTOR': '1200W BLDC HUB MOTOR',
@@ -73,7 +73,7 @@ const productDetailsData = {
     name: 'X2',
     price: '₹94,999',
     subtitle: 'Reimagine Urban Travel with Our EV Scooter',
-    images: [evX2, evX1, evX1Plus],
+    images: ['/x2f.png', '/x2f1.png', '/x2f2.png', '/x2f3.png'],
     colors: ['Matt Grey', 'Glossy Blue', 'Crystal White'],
     specs: {
       'MOTOR': '1500W HIGH-TORQUE BLDC MOTOR',
@@ -87,6 +87,116 @@ const productDetailsData = {
       'SPEEDOMETER': 'SMART DIGITAL TACTILE',
       'TYRE': '90/90-12 TUBELESS TYRE',
       'BATTERY': 'LITHIUM ION (72V 35Ah)'
+    },
+    category: 'evs'
+  },
+  x2plus: {
+    id: 'x2plus',
+    name: 'X2Plus',
+    price: '₹99,999',
+    subtitle: 'High-Performance Smart EV Scooter',
+    images: ['/x2plusf.png', '/x2plusf1.png', '/x2plusf2.png', '/x2plusf3.png', '/xplusf3.png'],
+    colors: ['Carbon Black', 'Neon Green', 'Crimson Red'],
+    specs: {
+      'MOTOR': '1800W PEAK PERFORMANCE MOTOR',
+      'CONTROLLER': '18 TUBE SINUSOIDAL CONTROLLER',
+      'SPEED': 'MAX 70 KM/H',
+      'RANGE/CHARGE': '160 KM',
+      'WARRANTY': '3 YEARS WARRANTY ON BATTERY & MOTOR',
+      'BREAK SYSTEM': 'COMBINED BRAKING SYSTEM (CBS) DUAL DISC',
+      'KEY FEATURE': 'GPS TRACKING, KEYLESS ENTRY, CRUISE CONTROL',
+      'LOADING CAPACITY': '180 K.G.',
+      'SPEEDOMETER': 'COLOR TFT DISPLAY WITH NAVIGATION',
+      'TYRE': '12-INCH tubeless TYRES',
+      'BATTERY': 'LITHIUM ION (72V 40Ah)'
+    },
+    category: 'evs'
+  },
+  x3: {
+    id: 'x3',
+    name: 'X3',
+    price: '₹1,09,999',
+    subtitle: 'Adventure Ready Premium EV Scooter',
+    images: ['/x3f1.png', '/x3f2.png'],
+    colors: ['Desert Gold', 'Military Green', 'Carbon Fibre'],
+    specs: {
+      'MOTOR': '2000W HIGH-POWER BLDC HUB MOTOR',
+      'CONTROLLER': 'SMART VECTOR CONTROLLER',
+      'SPEED': 'MAX 75 KM/H',
+      'RANGE/CHARGE': '180 KM PER CHARGE',
+      'WARRANTY': '3 YEARS HASSLE-FREE WARRANTY',
+      'BREAK SYSTEM': 'VENTILATED DUAL DISC BRAKES',
+      'KEY FEATURE': 'ALL-TERRAIN SUSPENSION, APP INFOTAINMENT, USB CHARGER',
+      'LOADING CAPACITY': '200 K.G.',
+      'SPEEDOMETER': 'FULL HD TACTILE TOUCHSCREEN',
+      'TYRE': 'OFF-ROAD TUBELESS TYRES',
+      'BATTERY': 'LITHIUM ION (72V 42Ah)'
+    },
+    category: 'evs'
+  },
+  x4plus: {
+    id: 'x4plus',
+    name: 'X4Plus',
+    price: '₹1,19,999',
+    subtitle: 'Ultra Range Smart EV Scooter',
+    images: ['/x4 plus f.png', '/X 4 plus f.png', '/x4plusf1.png', '/x4plusf2.png'],
+    colors: ['Stellar Blue', 'Titanium Grey', 'Frost White'],
+    specs: {
+      'MOTOR': '2200W SUPER-TORQUE MOTOR',
+      'CONTROLLER': 'INTELLIGENT FOC VECTOR CONTROLLER',
+      'SPEED': 'MAX 80 KM/H',
+      'RANGE/CHARGE': '220 KM EXTRA RANGE',
+      'WARRANTY': '3 YEARS COMPREHENSIVE WARRANTY',
+      'BREAK SYSTEM': 'E-ABS WITH DUAL VENTILATED DISC',
+      'KEY FEATURE': 'REVERSE ASSIST, MOBILE app telemetry, SIDE-STAND SENSOR',
+      'LOADING CAPACITY': '200 K.G.',
+      'SPEEDOMETER': 'SMART LCD CONSOLE WITH OVER-THE-AIR UPDATES',
+      'TYRE': '90/90-12 ALL-WEATHER TUBELESS',
+      'BATTERY': 'DUAL LITHIUM ION DOCKS (72V 50Ah TOTAL)'
+    },
+    category: 'evs'
+  },
+  spro: {
+    id: 'spro',
+    name: 'S Pro',
+    price: '₹1,29,999',
+    subtitle: 'Elegant High-Speed Smart EV Scooter',
+    images: ['/Sprof.png', '/S_PRO-removebg-preview.png', '/S_PRO_front-removebg-preview.png', '/S_PRO_BACK-removebg-preview.png'],
+    colors: ['Classic White', 'Sleek Black', 'Metallic Rose'],
+    specs: {
+      'MOTOR': '2500W HIGH-EFFICIENCY MID-DRIVE MOTOR',
+      'CONTROLLER': 'ADVANCED MID-DRIVE VECTOR CONTROLLER',
+      'SPEED': 'MAX 85 KM/H',
+      'RANGE/CHARGE': '150 KM - HIGH SPEED RANGE',
+      'WARRANTY': '5 YEARS LIMITED WARRANTY',
+      'BREAK SYSTEM': 'REGENERATIVE EBS DUAL DISC BRAKES',
+      'KEY FEATURE': 'CHROME FINISH BODY WORK, ADVANCED THEFT PROTECTION, SMART DIAGNOSTICS',
+      'LOADING CAPACITY': '180 K.G.',
+      'SPEEDOMETER': 'RETINA AMOLED DASHBOARD',
+      'TYRE': '12-INCH ALLOY WHEEL TUBELESS TYRES',
+      'BATTERY': 'LITHIUM ION (64V 40Ah)'
+    },
+    category: 'evs'
+  },
+  oxplus: {
+    id: 'oxplus',
+    name: 'OX Plus',
+    price: '₹1,39,999',
+    subtitle: 'Ultimate Power & Intelligent EV Scooter',
+    images: ['/OXplusf.png', '/oxplusf1.png', '/OXplusf2.png', '/oxplusf3.png'],
+    colors: ['Midnight Blue', 'Stealth Black', 'Carbon Red'],
+    specs: {
+      'MOTOR': '3000W ULTRA-TORQUE BLDC MOTOR',
+      'CONTROLLER': 'INTELLIGENT DUAL-CORE CONTROLLER',
+      'SPEED': 'MAX 95 KM/H',
+      'RANGE/CHARGE': '200 KM TO 250 KM',
+      'WARRANTY': '5 YEARS EXTENDED WARRANTY',
+      'BREAK SYSTEM': 'CBS + HYDRAULIC DOUBLE DISC BRAKE',
+      'KEY FEATURE': 'INTELLIGENT GPS TRACKING, CRUISE CONTROL, BLUETOOTH SOUND SYSTEM',
+      'LOADING CAPACITY': '220 K.G.',
+      'SPEEDOMETER': '7-INCH SMART TOUCHSCREEN WITH GOOGLE MAPS',
+      'TYRE': '130/70-12 tubeless SPORT TYRES',
+      'BATTERY': 'LITHIUM ION (72V 45Ah)'
     },
     category: 'evs'
   },
@@ -460,6 +570,104 @@ const productDetailsData = {
   }
 };
 
+const AnimatedSpeedometer = () => {
+  const [speed, setSpeed] = React.useState(0);
+  const [accelerating, setAccelerating] = React.useState(true);
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setSpeed((prev) => {
+        if (accelerating) {
+          if (prev >= 85) {
+            setAccelerating(false);
+            return prev - 1;
+          }
+          return prev + 1;
+        } else {
+          if (prev <= 0) {
+            setAccelerating(true);
+            return prev + 1;
+          }
+          return prev - 1;
+        }
+      });
+    }, 30);
+    return () => clearInterval(interval);
+  }, [accelerating]);
+
+  const angle = (speed / 85) * 240 - 120;
+
+  return (
+    <div className="relative w-28 h-28 flex items-center justify-center select-none bg-zinc-900/50 rounded-2xl border-2 border-zinc-700/80 p-2 shadow-inner">
+      <svg className="w-full h-full" viewBox="0 0 100 100">
+        <defs>
+          <linearGradient id="speedGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#3b82f6" />
+            <stop offset="100%" stopColor="#f59e0b" />
+          </linearGradient>
+          <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="3" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+          </filter>
+        </defs>
+        <path
+          d="M 20 80 A 40 40 0 1 1 80 80"
+          fill="none"
+          stroke="#374151"
+          strokeWidth="6"
+          strokeLinecap="round"
+        />
+        <path
+          d="M 20 80 A 40 40 0 1 1 80 80"
+          fill="none"
+          stroke="url(#speedGrad)"
+          strokeWidth="6"
+          strokeLinecap="round"
+          strokeDasharray="188"
+          strokeDashoffset={188 - (speed / 85) * 188}
+          filter="url(#glow)"
+        />
+        <line
+          x1="50"
+          y1="50"
+          x2="50"
+          y2="15"
+          stroke="#ef4444"
+          strokeWidth="3"
+          strokeLinecap="round"
+          style={{
+            transform: `rotate(${angle}deg)`,
+            transformOrigin: '50px 50px',
+            transition: 'transform 0.05s linear',
+          }}
+        />
+        <circle cx="50" cy="50" r="5" fill="#ef4444" />
+        <text
+          x="50"
+          y="72"
+          textAnchor="middle"
+          fill="#ffffff"
+          fontSize="14"
+          fontWeight="900"
+          fontFamily="monospace"
+        >
+          {speed}
+        </text>
+        <text
+          x="50"
+          y="82"
+          textAnchor="middle"
+          fill="#a1a1aa"
+          fontSize="6"
+          fontWeight="bold"
+        >
+          KM/H
+        </text>
+      </svg>
+    </div>
+  );
+};
+
 export default function ProductDetails({ productId, onClose, onViewProduct, onAddToCart, onTrackOrder }) {
   let details = productDetailsData[productId];
   if (!details && typeof productId === 'string') {
@@ -828,17 +1036,10 @@ export default function ProductDetails({ productId, onClose, onViewProduct, onAd
                 {/* Top Speed */}
                 <div className="flex flex-col items-center text-center">
                   <div className="mb-4 w-full flex justify-center items-center h-32">
-                    <video
-                      src="/top_speed_video.mp4"
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="w-28 h-28 object-cover rounded-2xl border-2 border-zinc-700 shadow-md"
-                    />
+                    <AnimatedSpeedometer />
                   </div>
                   <div className="text-3xl md:text-4xl font-extrabold text-white font-display mb-1 flex items-start justify-center">
-                    25<span className="text-sm text-zinc-400 ml-0.5 mt-1">*</span>
+                    85<span className="text-sm text-zinc-400 ml-0.5 mt-1">*</span>
                   </div>
                   <div className="text-xs md:text-sm text-zinc-450 font-medium tracking-wide">KMPH Top Speed</div>
                 </div>

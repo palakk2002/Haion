@@ -100,7 +100,7 @@ const serviceProducts = {
       id: 'x1plus',
       name: 'X1Plus',
       subtitle: 'Your Everyday Green Ride – EV Scooter',
-      image: evX1Plus,
+      image: '/xplusf3.png',
       tag: 'Sale',
       price: '₹84,999'
     },
@@ -108,9 +108,49 @@ const serviceProducts = {
       id: 'x2',
       name: 'X2',
       subtitle: 'Reimagine Urban Travel with Our EV Scooter',
-      image: evX2,
+      image: '/x2f.png',
       tag: 'Sale',
       price: '₹94,999'
+    },
+    {
+      id: 'x2plus',
+      name: 'X2Plus',
+      subtitle: 'High-Performance Smart EV Scooter',
+      image: '/x2plusf2.png',
+      tag: 'New',
+      price: '₹99,999'
+    },
+    {
+      id: 'x3',
+      name: 'X3',
+      subtitle: 'Adventure Ready Premium EV Scooter',
+      image: '/x3f1.png',
+      tag: 'New',
+      price: '₹1,09,999'
+    },
+    {
+      id: 'x4plus',
+      name: 'X4Plus',
+      subtitle: 'Ultra Range Smart EV Scooter',
+      image: '/x4plusf1.png',
+      tag: 'New',
+      price: '₹1,19,999'
+    },
+    {
+      id: 'spro',
+      name: 'S Pro',
+      subtitle: 'Elegant High-Speed Smart EV Scooter',
+      image: '/Sprof.png',
+      tag: 'Premium',
+      price: '₹1,29,999'
+    },
+    {
+      id: 'oxplus',
+      name: 'OX Plus',
+      subtitle: 'Ultimate Power & Intelligent EV Scooter',
+      image: '/OXplusf2.png',
+      tag: 'Elite',
+      price: '₹1,39,999'
     }
   ],
   battery: [
@@ -201,11 +241,11 @@ const serviceSectionTitles = {
 };
 
 const scooterGalleryImages = [
-  { img: '/sc05-removebg-preview.png', title: 'Aero Pink', desc: 'Front-facing aerodynamic view' },
-  { img: '/sc06-removebg-preview.png', title: 'Pearl White', desc: 'Sleek premium commuter look' },
-  { img: '/sco2-removebg-preview.png', title: 'Carbon Grey', desc: 'Urban street design profile' },
-  { img: '/sco8-removebg-preview.png', title: 'Sport Edition', desc: 'Stylish side profile' },
-  { img: '/scooter-removebg-preview.png', title: 'Classic Matte', desc: 'Traditional clean signature finish' }
+  { img: '/sc05-removebg-preview.png', title: 'X1 (Matte Black)', desc: 'Front-facing aerodynamic view' },
+  { img: '/sc06-removebg-preview.png', title: 'X1Plus (Aero Pink)', desc: 'Sleek premium commuter look' },
+  { img: '/sco2-removebg-preview.png', title: 'X2 (Carbon Grey)', desc: 'Urban street design profile' },
+  { img: '/sco8-removebg-preview.png', title: 'X2 (Sport Pink)', desc: 'Stylish side profile' },
+  { img: '/scooter-removebg-preview.png', title: 'X1 (Classic Blue)', desc: 'Traditional clean signature finish' }
 ];
 
 const scooter360Images = [
@@ -218,6 +258,104 @@ const scooter360Images = [
   '/HRF00201.JPG-removebg-preview.png',
   '/HRF00202.JPG-removebg-preview.png'
 ];
+
+const AnimatedSpeedometer = () => {
+  const [speed, setSpeed] = React.useState(0);
+  const [accelerating, setAccelerating] = React.useState(true);
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setSpeed((prev) => {
+        if (accelerating) {
+          if (prev >= 85) {
+            setAccelerating(false);
+            return prev - 1;
+          }
+          return prev + 1;
+        } else {
+          if (prev <= 0) {
+            setAccelerating(true);
+            return prev + 1;
+          }
+          return prev - 1;
+        }
+      });
+    }, 30);
+    return () => clearInterval(interval);
+  }, [accelerating]);
+
+  const angle = (speed / 85) * 240 - 120;
+
+  return (
+    <div className="relative w-28 h-28 flex items-center justify-center select-none bg-zinc-900/50 rounded-2xl border-2 border-zinc-700/80 p-2 shadow-inner">
+      <svg className="w-full h-full" viewBox="0 0 100 100">
+        <defs>
+          <linearGradient id="speedGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#3b82f6" />
+            <stop offset="100%" stopColor="#f59e0b" />
+          </linearGradient>
+          <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+            <feGaussianBlur stdDeviation="3" result="blur" />
+            <feComposite in="SourceGraphic" in2="blur" operator="over" />
+          </filter>
+        </defs>
+        <path
+          d="M 20 80 A 40 40 0 1 1 80 80"
+          fill="none"
+          stroke="#374151"
+          strokeWidth="6"
+          strokeLinecap="round"
+        />
+        <path
+          d="M 20 80 A 40 40 0 1 1 80 80"
+          fill="none"
+          stroke="url(#speedGrad)"
+          strokeWidth="6"
+          strokeLinecap="round"
+          strokeDasharray="188"
+          strokeDashoffset={188 - (speed / 85) * 188}
+          filter="url(#glow)"
+        />
+        <line
+          x1="50"
+          y1="50"
+          x2="50"
+          y2="15"
+          stroke="#ef4444"
+          strokeWidth="3"
+          strokeLinecap="round"
+          style={{
+            transform: `rotate(${angle}deg)`,
+            transformOrigin: '50px 50px',
+            transition: 'transform 0.05s linear',
+          }}
+        />
+        <circle cx="50" cy="50" r="5" fill="#ef4444" />
+        <text
+          x="50"
+          y="72"
+          textAnchor="middle"
+          fill="#ffffff"
+          fontSize="14"
+          fontWeight="900"
+          fontFamily="monospace"
+        >
+          {speed}
+        </text>
+        <text
+          x="50"
+          y="82"
+          textAnchor="middle"
+          fill="#a1a1aa"
+          fontSize="6"
+          fontWeight="bold"
+        >
+          KM/H
+        </text>
+      </svg>
+    </div>
+  );
+};
 
 export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }) {
   const content = servicesContent[serviceId] || servicesContent.safeguard;
@@ -359,8 +497,8 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
           <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Km Range */}
             <div className="flex flex-col items-center text-center">
-              <div className="mb-3 w-full flex justify-center">
-                <svg viewBox="0 0 160 100" className="w-full max-w-[120px] h-20" xmlns="http://www.w3.org/2000/svg">
+              <div className="mb-4 w-full flex justify-center">
+                <svg viewBox="0 0 160 100" className="w-full max-w-[140px] h-24 md:h-28" xmlns="http://www.w3.org/2000/svg">
                   <style>{`
                     @keyframes moveRoad {
                       to { stroke-dashoffset: -28; }
@@ -369,55 +507,61 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
                       animation: moveRoad 1.2s linear infinite;
                     }
                   `}</style>
-                  <rect width="160" height="100" rx="8" fill="rgba(255, 255, 255, 0.15)" />
-                  <polygon points="-10,65 30,30 70,65" fill="rgba(255, 255, 255, 0.25)" />
-                  <polygon points="20,38 30,30 40,38" fill="rgba(255, 255, 255, 0.45)" />
-                  <polygon points="50,65 95,20 140,65" fill="rgba(255, 255, 255, 0.3)" />
-                  <polygon points="82,33 95,20 108,33" fill="rgba(255, 255, 255, 0.45)" />
-                  <polygon points="100,65 130,35 165,65" fill="rgba(255, 255, 255, 0.25)" />
-                  <polygon points="120,45 130,35 140,45" fill="rgba(255, 255, 255, 0.45)" />
-                  <path d="M-10,30 Q20,15 50,30 Q80,15 110,30 Q140,15 170,30 L170,65 L-10,65 Z" fill="rgba(255, 255, 255, 0.15)" opacity="0.4" />
-                  <path d="M-10,38 Q15,25 40,38 Q65,25 90,38 Q115,25 140,38 L140,65 L-10,65 Z" fill="rgba(255, 255, 255, 0.25)" opacity="0.6" />
-                  <rect y="65" width="160" height="35" fill="rgba(255, 255, 255, 0.35)" />
-                  <polygon points="10,100 75,65 85,65 150,100" fill="rgba(0, 0, 0, 0.2)" />
+                  <rect width="160" height="100" rx="8" fill="#edf2ee" />
+                  <polygon points="-10,65 30,30 70,65" fill="#4b5563" />
+                  <polygon points="20,38 30,30 40,38" fill="#e5e7eb" />
+                  
+                  <polygon points="50,65 95,20 140,65" fill="#374151" />
+                  <polygon points="82,33 95,20 108,33" fill="#e5e7eb" />
+
+                  <polygon points="100,65 130,35 165,65" fill="#4b5563" />
+                  <polygon points="120,45 130,35 140,45" fill="#e5e7eb" />
+
+                  <path d="M-10,30 Q20,15 50,30 Q80,15 110,30 Q140,15 170,30 L170,65 L-10,65 Z" fill="#9ca3af" opacity="0.4" />
+                  <path d="M-10,38 Q15,25 40,38 Q65,25 90,38 Q115,25 140,38 L140,65 L-10,65 Z" fill="#d1d5db" opacity="0.6" />
+
+                  <rect y="65" width="160" height="35" fill="#65a30d" />
+
+                  <polygon points="10,100 75,65 85,65 150,100" fill="#1f2937" />
                   <line x1="80" y1="65" x2="80" y2="100" stroke="#ffffff" strokeWidth="3" strokeDasharray="8,6" className="animate-road-line" />
-                  <rect x="12" y="60" width="3" height="12" fill="#78350f" opacity="0.6" />
+
+                  <rect x="12" y="60" width="3" height="12" fill="#78350f" />
                   <circle cx="13.5" cy="54" r="7" fill="#22c55e" />
                 </svg>
               </div>
-              <div className="text-4xl font-extrabold font-display mb-1">
-                200<span className="text-sm font-normal ml-0.5 opacity-80">*</span>
+              <div className="text-3xl md:text-4xl font-extrabold text-white font-display mb-1 flex items-start justify-center">
+                200<span className="text-sm text-zinc-400 ml-0.5 mt-1">*</span>
               </div>
-              <div className="text-xs uppercase tracking-widest font-semibold opacity-90">Km Range Per Charge</div>
+              <div className="text-xs md:text-sm text-zinc-450 font-medium tracking-wide">Km Range Per Charge</div>
             </div>
 
             {/* Watt Peak Power */}
             <div className="flex flex-col items-center text-center">
-              <div className="mb-3 w-full flex justify-center">
-                <svg viewBox="0 0 100 100" className="w-full max-w-[120px] h-20" xmlns="http://www.w3.org/2000/svg">
+              <div className="mb-4 w-full flex justify-center">
+                <svg viewBox="0 0 100 100" className="w-full max-w-[140px] h-24 md:h-28" xmlns="http://www.w3.org/2000/svg">
                   <style>{`
                     @keyframes pulseLightning {
-                      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.4)); }
-                      50% { transform: scale(1.08); filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.9)); }
+                      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 2px rgba(56, 189, 248, 0.4)); }
+                      50% { transform: scale(1.08); filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.9)); }
                     }
                     .animate-lightning {
                       animation: pulseLightning 1.8s ease-in-out infinite;
                       transform-origin: center;
                     }
                   `}</style>
-                  <path d="M58,5 L32,54 H50 L42,95 L68,46 H50 Z" fill="#ffffff" className="animate-lightning" />
+                  <path d="M58,5 L32,54 H50 L42,95 L68,46 H50 Z" fill="#38bdf8" className="animate-lightning" />
                 </svg>
               </div>
-              <div className="text-4xl font-extrabold font-display mb-1">
+              <div className="text-3xl md:text-4xl font-extrabold text-white font-display mb-1">
                 1200
               </div>
-              <div className="text-xs uppercase tracking-widest font-semibold opacity-90">Watt Peak Power</div>
+              <div className="text-xs md:text-sm text-zinc-450 font-medium tracking-wide">Watt Peak Power</div>
             </div>
 
             {/* Modes & Reverse */}
             <div className="flex flex-col items-center text-center">
-              <div className="mb-3 w-full flex justify-center">
-                <svg viewBox="0 0 100 100" className="w-full max-w-[120px] h-20" xmlns="http://www.w3.org/2000/svg">
+              <div className="mb-4 w-full flex justify-center">
+                <svg viewBox="0 0 100 100" className="w-full max-w-[140px] h-24 md:h-28" xmlns="http://www.w3.org/2000/svg">
                   <style>{`
                     @keyframes spinClockwise {
                       to { transform: rotate(360deg); }
@@ -438,54 +582,59 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
                       transform-origin: 48px 66px;
                     }
                   `}</style>
-                  <g transform="translate(38, 38)" fill="rgba(255,255,255,0.85)" className="gear-blue">
+                  <g transform="translate(38, 38)" fill="#3b82f6" className="gear-blue">
                     <circle cx="0" cy="0" r="14" />
                     <rect x="-3" y="-18" width="6" height="8" rx="1" transform="rotate(0)" />
                     <rect x="-3" y="-18" width="6" height="8" rx="1" transform="rotate(45)" />
                     <rect x="-3" y="-18" width="6" height="8" rx="1" transform="rotate(90)" />
                     <rect x="-3" y="-18" width="6" height="8" rx="1" transform="rotate(135)" />
-                    <circle cx="0" cy="0" r="6" fill="none" />
+                    <rect x="-3" y="-18" width="6" height="8" rx="1" transform="rotate(180)" />
+                    <rect x="-3" y="-18" width="6" height="8" rx="1" transform="rotate(225)" />
+                    <rect x="-3" y="-18" width="6" height="8" rx="1" transform="rotate(270)" />
+                    <rect x="-3" y="-18" width="6" height="8" rx="1" transform="rotate(315)" />
+                    <circle cx="0" cy="0" r="6" fill="#1a1a1a" />
                   </g>
-                  <g transform="translate(64, 44)" fill="rgba(255,255,255,0.55)" className="gear-slate">
+                  <g transform="translate(64, 44)" fill="#64748b" className="gear-slate">
                     <circle cx="0" cy="0" r="11" />
                     <rect x="-2.5" y="-14" width="5" height="6" rx="1" transform="rotate(22.5)" />
                     <rect x="-2.5" y="-14" width="5" height="6" rx="1" transform="rotate(67.5)" />
                     <rect x="-2.5" y="-14" width="5" height="6" rx="1" transform="rotate(112.5)" />
                     <rect x="-2.5" y="-14" width="5" height="6" rx="1" transform="rotate(157.5)" />
-                    <circle cx="0" cy="0" r="5" fill="none" />
+                    <rect x="-2.5" y="-14" width="5" height="6" rx="1" transform="rotate(202.5)" />
+                    <rect x="-2.5" y="-14" width="5" height="6" rx="1" transform="rotate(247.5)" />
+                    <rect x="-2.5" y="-14" width="5" height="6" rx="1" transform="rotate(292.5)" />
+                    <rect x="-2.5" y="-14" width="5" height="6" rx="1" transform="rotate(337.5)" />
+                    <circle cx="0" cy="0" r="5" fill="#1a1a1a" />
                   </g>
-                  <g transform="translate(48, 66)" fill="rgba(255,255,255,0.7)" className="gear-orange">
+                  <g transform="translate(48, 66)" fill="#f97316" className="gear-orange">
                     <circle cx="0" cy="0" r="14" />
                     <rect x="-3" y="-18" width="6" height="8" rx="1" transform="rotate(15)" />
                     <rect x="-3" y="-18" width="6" height="8" rx="1" transform="rotate(60)" />
                     <rect x="-3" y="-18" width="6" height="8" rx="1" transform="rotate(105)" />
                     <rect x="-3" y="-18" width="6" height="8" rx="1" transform="rotate(150)" />
-                    <circle cx="0" cy="0" r="6" fill="none" />
+                    <rect x="-3" y="-18" width="6" height="8" rx="1" transform="rotate(195)" />
+                    <rect x="-3" y="-18" width="6" height="8" rx="1" transform="rotate(240)" />
+                    <rect x="-3" y="-18" width="6" height="8" rx="1" transform="rotate(285)" />
+                    <rect x="-3" y="-18" width="6" height="8" rx="1" transform="rotate(330)" />
+                    <circle cx="0" cy="0" r="6" fill="#1a1a1a" />
                   </g>
                 </svg>
               </div>
-              <div className="text-4xl font-extrabold font-display mb-1">
+              <div className="text-3xl md:text-4xl font-extrabold text-white font-display mb-1">
                 4
               </div>
-              <div className="text-xs uppercase tracking-widest font-semibold opacity-90">I 2 3 4 Modes & Reverse</div>
+              <div className="text-xs md:text-sm text-zinc-450 font-medium tracking-wide">I 2 3 4 Modes & Reverse</div>
             </div>
 
             {/* Top Speed */}
             <div className="flex flex-col items-center text-center">
-              <div className="mb-3 w-full flex justify-center items-center h-20">
-                <video
-                  src="/top_speed_video.mp4"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className="w-16 h-16 object-cover rounded-xl border border-zinc-700 shadow-sm"
-                />
+              <div className="mb-4 w-full flex justify-center items-center h-32">
+                <AnimatedSpeedometer />
               </div>
-              <div className="text-4xl font-extrabold font-display mb-1">
-                25<span className="text-sm font-normal ml-0.5 opacity-80">*</span>
+              <div className="text-3xl md:text-4xl font-extrabold text-white font-display mb-1 flex items-start justify-center">
+                85<span className="text-sm text-zinc-400 ml-0.5 mt-1">*</span>
               </div>
-              <div className="text-xs uppercase tracking-widest font-semibold opacity-90">KMPH Top Speed</div>
+              <div className="text-xs md:text-sm text-zinc-450 font-medium tracking-wide">KMPH Top Speed</div>
             </div>
           </div>
         </div>

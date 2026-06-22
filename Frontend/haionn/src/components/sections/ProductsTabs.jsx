@@ -34,7 +34,7 @@ export const productsData = {
       id: 'x1plus',
       name: 'X1Plus',
       subtitle: 'Your Everyday Green Ride – EV Scooter',
-      image: evX1Plus,
+      image: '/xplusf3.png',
       tag: 'Sale',
       price: '₹84,999',
       link: '#product-detail-x1plus'
@@ -43,10 +43,55 @@ export const productsData = {
       id: 'x2',
       name: 'X2',
       subtitle: 'Reimagine Urban Travel with Our EV Scooter',
-      image: evX2,
+      image: '/x2f.png',
       tag: 'Sale',
       price: '₹94,999',
       link: '#product-detail-x2'
+    },
+    {
+      id: 'x2plus',
+      name: 'X2Plus',
+      subtitle: 'High-Performance Smart EV Scooter',
+      image: '/x2plusf2.png',
+      tag: 'New',
+      price: '₹99,999',
+      link: '#product-detail-x2plus'
+    },
+    {
+      id: 'x3',
+      name: 'X3',
+      subtitle: 'Adventure Ready Premium EV Scooter',
+      image: '/x3f1.png',
+      tag: 'New',
+      price: '₹1,09,999',
+      link: '#product-detail-x3'
+    },
+    {
+      id: 'x4plus',
+      name: 'X4Plus',
+      subtitle: 'Ultra Range Smart EV Scooter',
+      image: '/x4plusf1.png',
+      tag: 'New',
+      price: '₹1,19,999',
+      link: '#product-detail-x4plus'
+    },
+    {
+      id: 'spro',
+      name: 'S Pro',
+      subtitle: 'Elegant High-Speed Smart EV Scooter',
+      image: '/Sprof.png',
+      tag: 'Premium',
+      price: '₹1,29,999',
+      link: '#product-detail-spro'
+    },
+    {
+      id: 'oxplus',
+      name: 'OX Plus',
+      subtitle: 'Ultimate Power & Intelligent EV Scooter',
+      image: '/OXplusf2.png',
+      tag: 'Elite',
+      price: '₹1,39,999',
+      link: '#product-detail-oxplus'
     }
   ],
   appliances: [
