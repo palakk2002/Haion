@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ScrollReveal, GlassCard } from '../ui';
 import { FiArrowRight } from 'react-icons/fi';
 
-const evX1 = '/sc05-removebg-preview.png';
+const evX1 = '/x1bg2.png';
 const evX1Plus = '/sc06-removebg-preview.png';
 const evX2 = '/sco2-removebg-preview.png';
 import applianceVacuum from '../../assets/appliance-vacuum.png';
@@ -34,7 +34,7 @@ export const productsData = {
       id: 'x1plus',
       name: 'X1Plus',
       subtitle: 'Your Everyday Green Ride – EV Scooter',
-      image: '/xplusf3.png',
+      image: '/x1plusbg.png',
       tag: 'Sale',
       price: '₹84,999',
       link: '#product-detail-x1plus'
@@ -43,7 +43,7 @@ export const productsData = {
       id: 'x2',
       name: 'X2',
       subtitle: 'Reimagine Urban Travel with Our EV Scooter',
-      image: '/x2f.png',
+      image: '/x2f1.png',
       tag: 'Sale',
       price: '₹94,999',
       link: '#product-detail-x2'
@@ -52,7 +52,7 @@ export const productsData = {
       id: 'x2plus',
       name: 'X2Plus',
       subtitle: 'High-Performance Smart EV Scooter',
-      image: '/x2plusf2.png',
+      image: '/x2plusbg.png',
       tag: 'New',
       price: '₹99,999',
       link: '#product-detail-x2plus'
@@ -61,7 +61,7 @@ export const productsData = {
       id: 'x3',
       name: 'X3',
       subtitle: 'Adventure Ready Premium EV Scooter',
-      image: '/x3f1.png',
+      image: '/x3bg1.png',
       tag: 'New',
       price: '₹1,09,999',
       link: '#product-detail-x3'
@@ -70,7 +70,7 @@ export const productsData = {
       id: 'x4plus',
       name: 'X4Plus',
       subtitle: 'Ultra Range Smart EV Scooter',
-      image: '/x4plusf1.png',
+      image: '/x4plusbg.png',
       tag: 'New',
       price: '₹1,19,999',
       link: '#product-detail-x4plus'
@@ -79,7 +79,7 @@ export const productsData = {
       id: 'spro',
       name: 'S Pro',
       subtitle: 'Elegant High-Speed Smart EV Scooter',
-      image: '/Sprof.png',
+      image: '/sprobg.png',
       tag: 'Premium',
       price: '₹1,29,999',
       link: '#product-detail-spro'
@@ -88,7 +88,7 @@ export const productsData = {
       id: 'oxplus',
       name: 'OX Plus',
       subtitle: 'Ultimate Power & Intelligent EV Scooter',
-      image: '/OXplusf2.png',
+      image: '/oxplus2.png',
       tag: 'Elite',
       price: '₹1,39,999',
       link: '#product-detail-oxplus'

@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { GlassCard } from '../ui';
 import { FiArrowLeft, FiMaximize2, FiCheck } from 'react-icons/fi';
 
-const evX1 = '/sc05-removebg-preview.png';
+const evX1 = '/x1bg2.png';
 const evX1Plus = '/sc06-removebg-preview.png';
 const evX2 = '/sco2-removebg-preview.png';
 import applianceVacuum from '../../assets/appliance-vacuum.png';
@@ -29,7 +29,7 @@ const productDetailsData = {
     name: 'X1',
     price: '₹74,999',
     subtitle: 'Smart, Eco-Friendly EV Scooter for Urban Commuting',
-    images: [evX1, evX1Plus, evX2], // Mocking multiple views of the same vehicle
+    images: ['/x1bg2.png', '/x1bg.png', '/x1bg1.png'],
     colors: ['Glossy Blue', 'Crystal White', 'Matt Grey'],
     specs: {
       'MOTOR': 'BLDC HUB MOTOR',
@@ -51,7 +51,7 @@ const productDetailsData = {
     name: 'X1Plus',
     price: '₹84,999',
     subtitle: 'Your Everyday Green Ride – EV Scooter',
-    images: ['/x1plusf.png', '/x1plusf1.png'],
+    images: ['/x1plusbg.png', '/x1plus2-removebg-preview.png', '/x1plusbg3.png'],
     colors: ['Crystal White', 'Glossy Blue', 'Matt Grey'],
     specs: {
       'MOTOR': '1200W BLDC HUB MOTOR',
@@ -73,7 +73,7 @@ const productDetailsData = {
     name: 'X2',
     price: '₹94,999',
     subtitle: 'Reimagine Urban Travel with Our EV Scooter',
-    images: ['/x2f.png', '/x2f1.png', '/x2f2.png', '/x2f3.png'],
+    images: ['/x2f1.png', '/x2f.png', '/x2f2.png', '/x2f3.png'],
     colors: ['Matt Grey', 'Glossy Blue', 'Crystal White'],
     specs: {
       'MOTOR': '1500W HIGH-TORQUE BLDC MOTOR',
@@ -95,7 +95,7 @@ const productDetailsData = {
     name: 'X2Plus',
     price: '₹99,999',
     subtitle: 'High-Performance Smart EV Scooter',
-    images: ['/x2plusf.png', '/x2plusf1.png', '/x2plusf2.png', '/x2plusf3.png', '/xplusf3.png'],
+    images: ['/x2plusbg.png', '/x2plus3-removebg-preview.png', '/x2plusbg1.png'],
     colors: ['Carbon Black', 'Neon Green', 'Crimson Red'],
     specs: {
       'MOTOR': '1800W PEAK PERFORMANCE MOTOR',
@@ -117,7 +117,7 @@ const productDetailsData = {
     name: 'X3',
     price: '₹1,09,999',
     subtitle: 'Adventure Ready Premium EV Scooter',
-    images: ['/x3f1.png', '/x3f2.png'],
+    images: ['/x3bg1.png', '/x3bg.png', '/x34-removebg-preview.png'],
     colors: ['Desert Gold', 'Military Green', 'Carbon Fibre'],
     specs: {
       'MOTOR': '2000W HIGH-POWER BLDC HUB MOTOR',
@@ -139,7 +139,7 @@ const productDetailsData = {
     name: 'X4Plus',
     price: '₹1,19,999',
     subtitle: 'Ultra Range Smart EV Scooter',
-    images: ['/x4 plus f.png', '/X 4 plus f.png', '/x4plusf1.png', '/x4plusf2.png'],
+    images: ['/x4plusbg.png', '/x4plus4-removebg-preview.png', '/x4plus5.png'],
     colors: ['Stellar Blue', 'Titanium Grey', 'Frost White'],
     specs: {
       'MOTOR': '2200W SUPER-TORQUE MOTOR',
@@ -161,7 +161,7 @@ const productDetailsData = {
     name: 'S Pro',
     price: '₹1,29,999',
     subtitle: 'Elegant High-Speed Smart EV Scooter',
-    images: ['/Sprof.png', '/S_PRO-removebg-preview.png', '/S_PRO_front-removebg-preview.png', '/S_PRO_BACK-removebg-preview.png'],
+    images: ['/sprobg.png', '/sprobg1.png', '/sprobg2.png'],
     colors: ['Classic White', 'Sleek Black', 'Metallic Rose'],
     specs: {
       'MOTOR': '2500W HIGH-EFFICIENCY MID-DRIVE MOTOR',
@@ -183,7 +183,7 @@ const productDetailsData = {
     name: 'OX Plus',
     price: '₹1,39,999',
     subtitle: 'Ultimate Power & Intelligent EV Scooter',
-    images: ['/OXplusf.png', '/oxplusf1.png', '/OXplusf2.png', '/oxplusf3.png'],
+    images: ['/oxplus2.png', '/oxplus1.png', '/oxplus3.png'],
     colors: ['Midnight Blue', 'Stealth Black', 'Carbon Red'],
     specs: {
       'MOTOR': '3000W ULTRA-TORQUE BLDC MOTOR',

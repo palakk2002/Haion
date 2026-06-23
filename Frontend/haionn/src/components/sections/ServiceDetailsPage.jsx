@@ -11,7 +11,7 @@ import imgStandards from '../../assets/safeguard_standards.png';
 import imgIndianConditions from '../../assets/safeguard_indian_conditions.png';
 import imgUsecases from '../../assets/safeguard_protection_usecases.png';
 
-const evX1 = '/sc05-removebg-preview.png';
+const evX1 = '/x1bg2.png';
 const evX1Plus = '/sc06-removebg-preview.png';
 const evX2 = '/sco2-removebg-preview.png';
 import imgBattery from '../../assets/haion-battery.png';
@@ -100,7 +100,7 @@ const serviceProducts = {
       id: 'x1plus',
       name: 'X1Plus',
       subtitle: 'Your Everyday Green Ride – EV Scooter',
-      image: '/xplusf3.png',
+      image: '/x1plusbg.png',
       tag: 'Sale',
       price: '₹84,999'
     },
@@ -108,7 +108,7 @@ const serviceProducts = {
       id: 'x2',
       name: 'X2',
       subtitle: 'Reimagine Urban Travel with Our EV Scooter',
-      image: '/x2f.png',
+      image: '/x2f1.png',
       tag: 'Sale',
       price: '₹94,999'
     },
@@ -116,7 +116,7 @@ const serviceProducts = {
       id: 'x2plus',
       name: 'X2Plus',
       subtitle: 'High-Performance Smart EV Scooter',
-      image: '/x2plusf2.png',
+      image: '/x2plusbg.png',
       tag: 'New',
       price: '₹99,999'
     },
@@ -124,7 +124,7 @@ const serviceProducts = {
       id: 'x3',
       name: 'X3',
       subtitle: 'Adventure Ready Premium EV Scooter',
-      image: '/x3f1.png',
+      image: '/x3bg1.png',
       tag: 'New',
       price: '₹1,09,999'
     },
@@ -132,7 +132,7 @@ const serviceProducts = {
       id: 'x4plus',
       name: 'X4Plus',
       subtitle: 'Ultra Range Smart EV Scooter',
-      image: '/x4plusf1.png',
+      image: '/x4plusbg.png',
       tag: 'New',
       price: '₹1,19,999'
     },
@@ -140,7 +140,7 @@ const serviceProducts = {
       id: 'spro',
       name: 'S Pro',
       subtitle: 'Elegant High-Speed Smart EV Scooter',
-      image: '/Sprof.png',
+      image: '/sprobg.png',
       tag: 'Premium',
       price: '₹1,29,999'
     },
@@ -148,7 +148,7 @@ const serviceProducts = {
       id: 'oxplus',
       name: 'OX Plus',
       subtitle: 'Ultimate Power & Intelligent EV Scooter',
-      image: '/OXplusf2.png',
+      image: '/oxplus2.png',
       tag: 'Elite',
       price: '₹1,39,999'
     }
@@ -360,7 +360,7 @@ const AnimatedSpeedometer = () => {
 export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }) {
   const content = servicesContent[serviceId] || servicesContent.safeguard;
   const Icon = content.icon;
-  const [activeScooterImg, setActiveScooterImg] = React.useState('/sc05-removebg-preview.png');
+  const [activeScooterImg, setActiveScooterImg] = React.useState('/x1bg2.png');
   const [imageIndex, setImageIndex] = React.useState(0);
 
   const isDragging = React.useRef(false);
@@ -404,7 +404,7 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    setActiveScooterImg('/sc05-removebg-preview.png');
+    setActiveScooterImg('/x1bg2.png');
     setImageIndex(0);
 
     // Preload the 8 images to prevent flicker

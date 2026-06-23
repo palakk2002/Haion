@@ -13,21 +13,21 @@ const GALLERY_DATA = [
   {
     id: 2,
     category: 'EV Scooters',
-    src: '/sc05-removebg-preview.png',
+    src: '/x1bg2.png',
     title: 'X1',
     desc: 'Smart, Eco-Friendly EV Scooter for Urban Commuting.'
   },
   {
     id: 4,
     category: 'EV Scooters',
-    src: '/xplusf3.png',
+    src: '/x1plusbg.png',
     title: 'X1Plus',
     desc: 'Your Everyday Green Ride – EV Scooter.'
   },
   {
     id: 5,
     category: 'EV Scooters',
-    src: '/x2f.png',
+    src: '/x2f1.png',
     title: 'X2',
     desc: 'Reimagine Urban Travel with Our EV Scooter.'
   },
