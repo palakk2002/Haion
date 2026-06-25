@@ -29,6 +29,41 @@ import InverterPage from './components/sections/InverterPage';
 
 function App() {
   const [selectedProductId, setSelectedProductId] = useState(null);
+  const scrollRef = React.useRef(0);
+  const previousServiceIdRef = React.useRef(null);
+  const [previousPage, setPreviousPage] = useState(null); // 'home' | 'appliances' | 'inverter' | 'service'
+
+  const handleOpenProductDetails = (id, fromPage = 'home') => {
+    scrollRef.current = window.scrollY;
+    setPreviousPage(fromPage);
+    if (fromPage === 'service') {
+      previousServiceIdRef.current = selectedServiceId;
+      setSelectedServiceId(null);
+    }
+    if (fromPage === 'appliances') {
+      setShowHomeAppliances(false);
+    }
+    if (fromPage === 'inverter') {
+      setShowInverter(false);
+    }
+    setSelectedProductId(id);
+  };
+
+  const handleCloseProductDetails = () => {
+    setSelectedProductId(null);
+    if (previousPage === 'appliances') {
+      setShowHomeAppliances(true);
+    } else if (previousPage === 'inverter') {
+      setShowInverter(true);
+    } else if (previousPage === 'service') {
+      setSelectedServiceId(previousServiceIdRef.current);
+    }
+    // Restore scroll position
+    setTimeout(() => {
+      window.scrollTo({ top: scrollRef.current, behavior: 'smooth' });
+    }, 100);
+  };
+
   const [showAboutUs, setShowAboutUs] = useState(false);
   const [showHomeAppliances, setShowHomeAppliances] = useState(false);
   const [showStore, setShowStore] = useState(false);
@@ -205,18 +240,12 @@ function App() {
           <ProfilePage onClose={() => setShowProfile(false)} />
         ) : showHomeAppliances ? (
           <HomeAppliancesPage
-            onViewDetails={(id) => {
-              setSelectedProductId(id);
-              setShowHomeAppliances(false);
-            }}
+            onViewDetails={(id) => handleOpenProductDetails(id, 'appliances')}
             onClose={() => setShowHomeAppliances(false)}
           />
         ) : showInverter ? (
           <InverterPage
-            onViewDetails={(id) => {
-              setSelectedProductId(id);
-              setShowInverter(false);
-            }}
+            onViewDetails={(id) => handleOpenProductDetails(id, 'inverter')}
             onClose={() => setShowInverter(false)}
           />
         ) : showAboutUs ? (
@@ -226,17 +255,14 @@ function App() {
         ) : selectedServiceId ? (
           <ServiceDetailsPage
             serviceId={selectedServiceId}
-            onViewProduct={(id) => {
-              setSelectedProductId(id);
-              setSelectedServiceId(null);
-            }}
+            onViewProduct={(id) => handleOpenProductDetails(id, 'service')}
             onClose={() => setSelectedServiceId(null)}
           />
         ) : selectedProductId ? (
           <ProductDetails
             productId={selectedProductId}
-            onClose={() => setSelectedProductId(null)}
-            onViewProduct={(id) => setSelectedProductId(id)}
+            onClose={handleCloseProductDetails}
+            onViewProduct={(id) => handleOpenProductDetails(id, previousPage)}
             onAddToCart={handleAddToCart}
             onTrackOrder={handleOpenTracking}
           />
@@ -250,6 +276,7 @@ function App() {
 
             {/* 3. WHY USERS LOVE OUR APP */}
             <Features />
+
 
             {/* 3b. SCROLL-DRIVEN PRODUCT ANIMATION */}
 
@@ -267,7 +294,7 @@ function App() {
             <HaionAdvantage />
 
             {/* 6b. TABBED PRODUCT SHOWCASE (EVs & Appliances) */}
-            <ProductsTabs onViewDetails={(id) => setSelectedProductId(id)} />
+            <ProductsTabs onViewDetails={(id) => handleOpenProductDetails(id, 'home')} />
 
             {/* 6c. WHY CHOOSE HAION ADVANTAGE */}
             <WhyChooseHaion />

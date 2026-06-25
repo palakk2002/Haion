@@ -117,12 +117,53 @@ export default function LeadPopup({ isOpen, onClose }) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95, y: 15 }}
             transition={{ duration: 0.3 }}
-            className="relative bg-white rounded-[32px] w-full max-w-[420px] p-8 md:p-10 shadow-2xl text-left z-10 overflow-hidden font-sans text-zinc-900 border border-zinc-100"
+            className="relative bg-gradient-to-br from-purple-50/60 via-white to-amber-50/40 rounded-[32px] w-full max-w-[420px] p-8 md:p-10 shadow-2xl text-left z-10 overflow-hidden font-sans text-zinc-900 border border-purple-100/50"
           >
+            {/* Background pattern matching reference image */}
+            <div className="absolute inset-0 opacity-[0.015] pointer-events-none bg-[radial-gradient(#000000_1px,transparent_1px)] [background-size:16px_16px] select-none" />
+            
+            {/* Left side triangle watermark pattern */}
+            <div className="absolute inset-y-0 left-0 w-8 opacity-[0.06] pointer-events-none select-none overflow-hidden flex flex-col justify-around py-8">
+              {[...Array(6)].map((_, i) => (
+                <svg key={i} className="w-5 h-5 text-zinc-800" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2L2 22h20L12 2zm0 4l6.5 13h-13L12 6z" />
+                </svg>
+              ))}
+            </div>
+
+            {/* Right side triangle watermark pattern */}
+            <div className="absolute inset-y-0 right-0 w-8 opacity-[0.06] pointer-events-none select-none overflow-hidden flex flex-col justify-around py-8">
+              {[...Array(6)].map((_, i) => (
+                <svg key={i} className="w-5 h-5 text-zinc-800" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2L2 22h20L12 2zm0 4l6.5 13h-13L12 6z" />
+                </svg>
+              ))}
+            </div>
+
+            {/* Top Right Tech Corner SVG (Reference style, App themed) */}
+            <svg className="absolute top-0 right-0 w-36 h-14 pointer-events-none select-none" viewBox="0 0 160 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M160 0H80L66 14H134L122 26H160V0Z" fill="url(#techCornerGrad)" />
+              <path d="M57 4L65 12L61 16L53 8L57 4Z" fill="url(#techCornerGrad)" opacity="0.8" />
+              <path d="M44 4L49 9L46 12L41 7L44 4Z" fill="url(#techCornerGrad)" opacity="0.6" />
+              <defs>
+                <linearGradient id="techCornerGrad" x1="0" y1="0" x2="160" y2="64" gradientUnits="userSpaceOnUse">
+                  <stop stopColor="#a855f7" />
+                  <stop offset="1" stopColor="#f59e0b" />
+                </linearGradient>
+              </defs>
+            </svg>
+
+            {/* Bottom Left Tech Corner SVG (Reference style, App themed) */}
+            <svg className="absolute bottom-0 left-0 w-36 h-14 pointer-events-none select-none" viewBox="0 0 160 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M0 64H80L94 50H26L38 38H0V64Z" fill="url(#techCornerGrad)" />
+              <path d="M103 60L95 52L99 48L107 56L103 60Z" fill="url(#techCornerGrad)" opacity="0.8" />
+              <path d="M116 60L111 55L114 52L119 57L116 60Z" fill="url(#techCornerGrad)" opacity="0.6" />
+            </svg>
+
             {/* Close Icon */}
             <button
               onClick={resetModal}
-              className="absolute top-6 right-6 text-zinc-400 hover:text-zinc-950 transition-colors p-1"
+              className="absolute top-6 right-6 text-zinc-400 hover:text-zinc-800 transition-colors p-1 z-25"
               aria-label="Close"
             >
               <FiX size={22} />
@@ -130,12 +171,12 @@ export default function LeadPopup({ isOpen, onClose }) {
 
             {/* STEP 1: Details Entry */}
             {step === 'details' && (
-              <form onSubmit={handleDetailsSubmit} className="space-y-6">
+              <form onSubmit={handleDetailsSubmit} className="space-y-6 relative z-10">
                 <div>
                   <h2 className="text-[28px] font-extrabold tracking-tight font-display mb-1 text-zinc-950 leading-tight">
                     Talk to us, directly.
                   </h2>
-                  <p className="text-[#0052cc] text-sm font-semibold">
+                  <p className="text-purple-650 text-sm font-semibold">
                     Drop your details & we'll reach out to you.
                   </p>
                 </div>
@@ -147,10 +188,10 @@ export default function LeadPopup({ isOpen, onClose }) {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="Name*"
-                    className="w-full bg-zinc-50 border border-zinc-100 focus:border-zinc-300 focus:bg-white rounded-2xl px-5 py-4 text-sm text-zinc-800 focus:outline-none transition-all placeholder:text-zinc-450"
+                    className="w-full bg-zinc-50 border border-zinc-200 focus:border-purple-500/50 focus:bg-white rounded-2xl px-5 py-4 text-sm text-zinc-800 focus:outline-none transition-all placeholder:text-zinc-400"
                   />
 
-                  <div className="flex bg-zinc-50 border border-zinc-100 focus-within:border-zinc-300 focus-within:bg-white rounded-2xl overflow-hidden transition-all">
+                  <div className="flex bg-zinc-50 border border-zinc-200 focus-within:border-purple-500/50 focus-within:bg-white rounded-2xl overflow-hidden transition-all">
                     <div className="flex items-center justify-center px-5 border-r border-zinc-200 text-sm font-medium text-zinc-500 bg-zinc-50 select-none">
                       +91
                     </div>
@@ -161,50 +202,41 @@ export default function LeadPopup({ isOpen, onClose }) {
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value.replace(/\D/g, '').slice(0, 10) })}
                       placeholder="Phone number*"
-                      className="w-full bg-transparent px-5 py-4 text-sm text-zinc-850 focus:outline-none placeholder:text-zinc-450"
+                      className="w-full bg-transparent px-5 py-4 text-sm text-zinc-800 focus:outline-none placeholder:text-zinc-400"
                     />
                   </div>
 
-                  <div className="relative flex items-center bg-zinc-50 border border-zinc-100 focus-within:border-zinc-300 focus-within:bg-white rounded-2xl overflow-hidden transition-all">
+                  <div className="relative flex items-center bg-zinc-50 border border-zinc-200 focus-within:border-purple-500/50 focus-within:bg-white rounded-2xl overflow-hidden transition-all">
                     <input
                       type="text"
                       required
                       value={formData.pinCode}
                       onChange={(e) => setFormData({ ...formData, pinCode: e.target.value })}
                       placeholder="Enter Pin Code or Area*"
-                      className="w-full bg-transparent px-5 py-4 text-sm text-zinc-850 focus:outline-none placeholder:text-zinc-450"
+                      className="w-full bg-transparent px-5 py-4 text-sm text-zinc-800 focus:outline-none placeholder:text-zinc-400"
                     />
                     <div className="absolute right-5 text-zinc-400">
-                      <FiTarget size={18} className="cursor-pointer hover:text-zinc-650 transition-colors" />
+                      <FiTarget size={18} className="cursor-pointer hover:text-purple-605 transition-colors" />
                     </div>
                   </div>
                 </div>
 
-                <div className="flex flex-wrap items-center gap-4 text-sm font-semibold">
-                  <span className="text-zinc-700">Pick your model*</span>
-                  <div className="flex items-center gap-4">
-                    <label className="flex items-center gap-2 cursor-pointer select-none">
-                      <input
-                        type="radio"
-                        name="model"
-                        value="X1"
-                        checked={formData.model === 'X1'}
-                        onChange={(e) => setFormData({ ...formData, model: e.target.value })}
-                        className="w-4 h-4 text-zinc-950 focus:ring-0 focus:ring-offset-0 border-zinc-300"
-                      />
-                      <span className="font-medium text-zinc-800">X1</span>
-                    </label>
-                    <label className="flex items-center gap-2 cursor-pointer select-none">
-                      <input
-                        type="radio"
-                        name="model"
-                        value="X2"
-                        checked={formData.model === 'X2'}
-                        onChange={(e) => setFormData({ ...formData, model: e.target.value })}
-                        className="w-4 h-4 text-zinc-950 focus:ring-0 focus:ring-offset-0 border-zinc-300"
-                      />
-                      <span className="font-medium text-zinc-800">X2</span>
-                    </label>
+                <div className="flex flex-col gap-2 text-sm font-semibold">
+                  <span className="text-zinc-600">Pick your model*</span>
+                  <div className="grid grid-cols-3 gap-x-3 gap-y-3 mt-1">
+                    {['X1', 'X1Plus', 'X2', 'X2Plus', 'X3', 'X4Plus', 'S Pro', 'OX Plus', 'H pro', 'I pro', 'X4', 'X3 plus'].map((model) => (
+                      <label key={model} className="flex items-center gap-2 cursor-pointer select-none">
+                        <input
+                          type="radio"
+                          name="model"
+                          value={model}
+                          checked={formData.model === model}
+                          onChange={(e) => setFormData({ ...formData, model: e.target.value })}
+                          className="w-4 h-4 text-purple-650 focus:ring-0 focus:ring-offset-0 border-zinc-300 bg-white"
+                        />
+                        <span className="font-medium text-zinc-800 text-xs">{model}</span>
+                      </label>
+                    ))}
                   </div>
                 </div>
 
@@ -213,8 +245,8 @@ export default function LeadPopup({ isOpen, onClose }) {
                   disabled={!(formData.name && formData.phone.length === 10 && formData.pinCode && formData.model)}
                   className={`w-full py-4 rounded-full text-sm font-bold transition-all duration-300 ${
                     formData.name && formData.phone.length === 10 && formData.pinCode && formData.model
-                      ? 'bg-zinc-950 hover:bg-black text-white cursor-pointer'
-                      : 'bg-zinc-200 text-zinc-400 cursor-not-allowed'
+                      ? 'bg-gradient-to-r from-purple-600 to-amber-500 hover:from-purple-500 hover:to-amber-400 text-white cursor-pointer hover:shadow-[0_0_20px_rgba(168,85,247,0.3)]'
+                      : 'bg-zinc-150 text-zinc-400 cursor-not-allowed'
                   }`}
                 >
                   Submit
@@ -228,7 +260,7 @@ export default function LeadPopup({ isOpen, onClose }) {
 
             {/* STEP 2: OTP Entry */}
             {step === 'otp' && (
-              <form onSubmit={handleOtpSubmit} className="space-y-6">
+              <form onSubmit={handleOtpSubmit} className="space-y-6 relative z-10">
                 <div>
                   <h2 className="text-2xl font-extrabold tracking-tight font-display mb-1 text-zinc-950">
                     Verify your number
@@ -249,7 +281,7 @@ export default function LeadPopup({ isOpen, onClose }) {
                       value={digit}
                       onChange={(e) => handleOtpChange(idx, e.target.value)}
                       onKeyDown={(e) => handleOtpKeyDown(idx, e)}
-                      className="w-14 h-14 bg-zinc-50 border border-zinc-200 rounded-xl text-center text-xl font-bold focus:bg-white focus:border-zinc-900 focus:outline-none transition-all"
+                      className="w-14 h-14 bg-zinc-50 border border-zinc-200 rounded-xl text-center text-xl font-bold focus:bg-white focus:border-purple-500 focus:outline-none text-zinc-800 transition-all"
                     />
                   ))}
                 </div>
@@ -260,8 +292,8 @@ export default function LeadPopup({ isOpen, onClose }) {
                     disabled={otp.join('').length < 4}
                     className={`w-full py-4 rounded-full text-sm font-bold transition-all duration-300 ${
                       otp.join('').length === 4
-                        ? 'bg-zinc-950 hover:bg-black text-white cursor-pointer'
-                        : 'bg-zinc-200 text-zinc-400 cursor-not-allowed'
+                        ? 'bg-gradient-to-r from-purple-600 to-amber-500 hover:from-purple-500 hover:to-amber-400 text-white cursor-pointer hover:shadow-[0_0_20px_rgba(168,85,247,0.3)]'
+                        : 'bg-zinc-150 text-zinc-400 cursor-not-allowed'
                     }`}
                   >
                     Verify & Continue
@@ -280,7 +312,7 @@ export default function LeadPopup({ isOpen, onClose }) {
 
             {/* STEP 3: Intent Survey */}
             {step === 'survey' && (
-              <div className="space-y-6">
+              <div className="space-y-6 relative z-10">
                 {/* Section 1 */}
                 <div className="space-y-3">
                   <h3 className="text-lg font-bold text-zinc-900 font-display">
@@ -294,8 +326,8 @@ export default function LeadPopup({ isOpen, onClose }) {
                         onClick={() => setTimeline(item)}
                         className={`px-5 py-2.5 rounded-full text-xs font-semibold border transition-all cursor-pointer ${
                           timeline === item
-                            ? 'bg-zinc-900 border-zinc-900 text-white shadow-sm'
-                            : 'bg-zinc-50 border-zinc-100 text-zinc-700 hover:bg-zinc-100 hover:border-zinc-200'
+                            ? 'bg-purple-600 border-purple-600 text-white shadow-sm'
+                            : 'bg-zinc-50 border-zinc-150 text-zinc-700 hover:bg-zinc-100 hover:border-zinc-200'
                         }`}
                       >
                         {item}
@@ -317,8 +349,8 @@ export default function LeadPopup({ isOpen, onClose }) {
                         onClick={() => setHelpTopic(item)}
                         className={`px-5 py-2.5 rounded-full text-xs font-semibold border transition-all cursor-pointer ${
                           helpTopic === item
-                            ? 'bg-zinc-900 border-zinc-900 text-white shadow-sm'
-                            : 'bg-zinc-50 border-zinc-100 text-zinc-700 hover:bg-zinc-100 hover:border-zinc-200'
+                            ? 'bg-purple-600 border-purple-600 text-white shadow-sm'
+                            : 'bg-zinc-50 border-zinc-150 text-zinc-700 hover:bg-zinc-100 hover:border-zinc-200'
                         }`}
                       >
                         {item}
@@ -334,8 +366,8 @@ export default function LeadPopup({ isOpen, onClose }) {
                   disabled={!timeline || !helpTopic}
                   className={`w-full py-4 rounded-full text-sm font-bold transition-all duration-300 ${
                     timeline && helpTopic
-                      ? 'bg-zinc-900 hover:bg-zinc-950 text-white cursor-pointer'
-                      : 'bg-zinc-200 text-zinc-400 cursor-not-allowed'
+                      ? 'bg-gradient-to-r from-purple-600 to-amber-500 hover:from-purple-500 hover:to-amber-400 text-white cursor-pointer hover:shadow-[0_0_20px_rgba(168,85,247,0.35)]'
+                      : 'bg-zinc-150 text-zinc-400 cursor-not-allowed'
                   }`}
                 >
                   Continue
@@ -345,7 +377,7 @@ export default function LeadPopup({ isOpen, onClose }) {
 
             {/* STEP 4: Schedule a Visit */}
             {step === 'schedule' && (
-              <div className="space-y-6">
+              <div className="space-y-6 relative z-10">
                 {/* Success Alert Banner */}
                 <div className="flex items-center gap-3 bg-emerald-50 border border-emerald-100/50 p-3.5 rounded-2xl text-left">
                   <div className="w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center shrink-0">
@@ -372,8 +404,8 @@ export default function LeadPopup({ isOpen, onClose }) {
                         onClick={() => setSelectedDateIdx(idx)}
                         className={`relative p-3.5 rounded-2xl border text-center transition-all cursor-pointer flex flex-col justify-center min-h-[90px] ${
                           selectedDateIdx === idx
-                            ? 'bg-white border-purple-500 ring-1 ring-purple-500/20 shadow-md'
-                            : 'bg-zinc-50 border-zinc-100 hover:bg-zinc-100/50'
+                            ? 'bg-white border-purple-500 ring-1 ring-purple-500/20 shadow-md text-zinc-900'
+                            : 'bg-zinc-50 border-zinc-100 hover:bg-zinc-100/50 text-zinc-550'
                         }`}
                       >
                         {item.isPopular && (
@@ -381,10 +413,10 @@ export default function LeadPopup({ isOpen, onClose }) {
                             <FiStar size={11} className="fill-emerald-500" />
                           </span>
                         )}
-                        <span className="text-sm font-extrabold text-zinc-900 leading-tight">
+                        <span className="text-sm font-extrabold leading-tight">
                           {item.dayNum} {item.month}
                         </span>
-                        <span className="text-[10px] text-zinc-500 font-medium mt-1 uppercase tracking-wide">
+                        <span className="text-[10px] text-zinc-450 font-medium mt-1 uppercase tracking-wide">
                           {item.label}
                         </span>
                       </button>
@@ -403,7 +435,7 @@ export default function LeadPopup({ isOpen, onClose }) {
                 <button
                   type="button"
                   onClick={() => setStep('confirmation')}
-                  className="w-full bg-zinc-950 hover:bg-black text-white py-4 rounded-full text-sm font-bold transition-all duration-300 cursor-pointer"
+                  className="w-full bg-gradient-to-r from-purple-600 to-amber-500 hover:from-purple-500 hover:to-amber-400 text-white py-4 rounded-full text-sm font-bold transition-all duration-300 cursor-pointer hover:shadow-[0_0_20px_rgba(168,85,247,0.3)]"
                 >
                   Schedule a visit
                 </button>
@@ -412,7 +444,7 @@ export default function LeadPopup({ isOpen, onClose }) {
 
             {/* STEP 5: Booking Confirmation */}
             {step === 'confirmation' && (
-              <div className="space-y-8 py-4 text-center">
+              <div className="space-y-8 py-4 text-center relative z-10">
                 {/* Large Green Check Circle */}
                 <div className="w-14 h-14 bg-emerald-500 text-white rounded-full flex items-center justify-center mx-auto shadow-md shadow-emerald-500/10">
                   <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -443,7 +475,7 @@ export default function LeadPopup({ isOpen, onClose }) {
                   </div>
                   <div className="flex justify-between items-baseline">
                     <span className="text-zinc-500 font-medium">Test ride at</span>
-                    <span className="font-extrabold text-zinc-900 underline decoration-zinc-300 cursor-pointer">
+                    <span className="font-extrabold text-purple-650 underline decoration-zinc-300 hover:text-purple-800 cursor-pointer">
                       Haion Experience Center
                     </span>
                   </div>
@@ -452,7 +484,7 @@ export default function LeadPopup({ isOpen, onClose }) {
                 <button
                   type="button"
                   onClick={resetModal}
-                  className="w-full bg-zinc-950 hover:bg-black text-white py-4 rounded-full text-sm font-bold transition-all duration-300 cursor-pointer"
+                  className="w-full bg-gradient-to-r from-purple-600 to-amber-500 hover:from-purple-500 hover:to-amber-400 text-white py-4 rounded-full text-sm font-bold transition-all duration-300 cursor-pointer hover:shadow-[0_0_20px_rgba(168,85,247,0.3)]"
                 >
                   Okay
                 </button>

@@ -18,6 +18,12 @@ import imgBattery from '../../assets/haion-battery.png';
 import imgCharger from '../../assets/haion-charger.png';
 import imgRickshaw from '../../assets/haion-rickshaw.png';
 
+import bgRemovebgPreview from '../../assets/bg-removebg-preview.png';
+import Hprobg from '../../assets/Hprobg.jpg';
+import iprobg from '../../assets/iprobg.jpg';
+import x3plusbg from '../../assets/x3plusbg.jpg';
+import x4bg from '../../assets/x4bg.jpg';
+
 const servicesContent = {
   safeguard: {
     id: 'safeguard',
@@ -94,7 +100,7 @@ const serviceProducts = {
       subtitle: 'Smart, Eco-Friendly EV Scooter for Urban Commuting',
       image: evX1,
       tag: 'Sale',
-      price: '₹74,999'
+      price: '₹70,000'
     },
     {
       id: 'x1plus',
@@ -102,7 +108,7 @@ const serviceProducts = {
       subtitle: 'Your Everyday Green Ride – EV Scooter',
       image: '/x1plusbg.png',
       tag: 'Sale',
-      price: '₹84,999'
+      price: '₹78,000'
     },
     {
       id: 'x2',
@@ -110,7 +116,7 @@ const serviceProducts = {
       subtitle: 'Reimagine Urban Travel with Our EV Scooter',
       image: '/x2f1.png',
       tag: 'Sale',
-      price: '₹94,999'
+      price: '₹72,000'
     },
     {
       id: 'x2plus',
@@ -118,7 +124,7 @@ const serviceProducts = {
       subtitle: 'High-Performance Smart EV Scooter',
       image: '/x2plusbg.png',
       tag: 'New',
-      price: '₹99,999'
+      price: '₹80,000'
     },
     {
       id: 'x3',
@@ -126,7 +132,7 @@ const serviceProducts = {
       subtitle: 'Adventure Ready Premium EV Scooter',
       image: '/x3bg1.png',
       tag: 'New',
-      price: '₹1,09,999'
+      price: '₹85,000'
     },
     {
       id: 'x4plus',
@@ -134,7 +140,7 @@ const serviceProducts = {
       subtitle: 'Ultra Range Smart EV Scooter',
       image: '/x4plusbg.png',
       tag: 'New',
-      price: '₹1,19,999'
+      price: '₹90,000'
     },
     {
       id: 'spro',
@@ -142,7 +148,7 @@ const serviceProducts = {
       subtitle: 'Elegant High-Speed Smart EV Scooter',
       image: '/sprobg.png',
       tag: 'Premium',
-      price: '₹1,29,999'
+      price: '₹1,15,000'
     },
     {
       id: 'oxplus',
@@ -150,7 +156,39 @@ const serviceProducts = {
       subtitle: 'Ultimate Power & Intelligent EV Scooter',
       image: '/oxplus2.png',
       tag: 'Elite',
-      price: '₹1,39,999'
+      price: '₹90,000'
+    },
+    {
+      id: 'hpro',
+      name: 'H pro',
+      subtitle: 'Premium Smart Commuter Scooter',
+      image: Hprobg,
+      tag: 'New',
+      price: '₹1,24,999'
+    },
+    {
+      id: 'ipro',
+      name: 'I pro',
+      subtitle: 'Intelligent Green Mobility Scooter',
+      image: iprobg,
+      tag: 'New',
+      price: '₹1,29,999'
+    },
+    {
+      id: 'x4',
+      name: 'X4',
+      subtitle: 'Next-Generation High-Speed Scooter',
+      image: x4bg,
+      tag: 'New',
+      price: '₹1,14,999'
+    },
+    {
+      id: 'x3plus',
+      name: 'X3 plus',
+      subtitle: 'Adventure Ready Plus Smart Scooter',
+      image: bgRemovebgPreview,
+      tag: 'New',
+      price: '₹1,09,999'
     }
   ],
   battery: [

@@ -22,12 +22,18 @@ import imgBattery from '../../assets/haion-battery.png';
 import imgCharger from '../../assets/haion-charger.png';
 import imgRickshaw from '../../assets/haion-rickshaw.png';
 
+import bgRemovebgPreview from '../../assets/bg-removebg-preview.png';
+import Hprobg from '../../assets/Hprobg.jpg';
+import iprobg from '../../assets/iprobg.jpg';
+import x3plusbg from '../../assets/x3plusbg.jpg';
+import x4bg from '../../assets/x4bg.jpg';
+
 // Full specifications for all products
 const productDetailsData = {
   x1: {
     id: 'x1',
     name: 'X1',
-    price: '₹74,999',
+    price: '₹70,000',
     subtitle: 'Smart, Eco-Friendly EV Scooter for Urban Commuting',
     images: ['/x1bg2.png', '/x1bg.png', '/x1bg1.png'],
     colors: ['Glossy Blue', 'Crystal White', 'Matt Grey'],
@@ -49,7 +55,7 @@ const productDetailsData = {
   x1plus: {
     id: 'x1plus',
     name: 'X1Plus',
-    price: '₹84,999',
+    price: '₹78,000',
     subtitle: 'Your Everyday Green Ride – EV Scooter',
     images: ['/x1plusbg.png', '/x1plus2-removebg-preview.png', '/x1plusbg3.png'],
     colors: ['Crystal White', 'Glossy Blue', 'Matt Grey'],
@@ -71,7 +77,7 @@ const productDetailsData = {
   x2: {
     id: 'x2',
     name: 'X2',
-    price: '₹94,999',
+    price: '₹72,000',
     subtitle: 'Reimagine Urban Travel with Our EV Scooter',
     images: ['/x2f1.png', '/x2f.png', '/x2f2.png', '/x2f3.png'],
     colors: ['Matt Grey', 'Glossy Blue', 'Crystal White'],
@@ -93,7 +99,7 @@ const productDetailsData = {
   x2plus: {
     id: 'x2plus',
     name: 'X2Plus',
-    price: '₹99,999',
+    price: '₹80,000',
     subtitle: 'High-Performance Smart EV Scooter',
     images: ['/x2plusbg.png', '/x2plus3-removebg-preview.png', '/x2plusbg1.png'],
     colors: ['Carbon Black', 'Neon Green', 'Crimson Red'],
@@ -115,7 +121,7 @@ const productDetailsData = {
   x3: {
     id: 'x3',
     name: 'X3',
-    price: '₹1,09,999',
+    price: '₹85,000',
     subtitle: 'Adventure Ready Premium EV Scooter',
     images: ['/x3bg1.png', '/x3bg.png', '/x34-removebg-preview.png'],
     colors: ['Desert Gold', 'Military Green', 'Carbon Fibre'],
@@ -137,7 +143,7 @@ const productDetailsData = {
   x4plus: {
     id: 'x4plus',
     name: 'X4Plus',
-    price: '₹1,19,999',
+    price: '₹90,000',
     subtitle: 'Ultra Range Smart EV Scooter',
     images: ['/x4plusbg.png', '/x4plus4-removebg-preview.png', '/x4plus5.png'],
     colors: ['Stellar Blue', 'Titanium Grey', 'Frost White'],
@@ -159,7 +165,7 @@ const productDetailsData = {
   spro: {
     id: 'spro',
     name: 'S Pro',
-    price: '₹1,29,999',
+    price: '₹1,15,000',
     subtitle: 'Elegant High-Speed Smart EV Scooter',
     images: ['/sprobg.png', '/sprobg1.png', '/sprobg2.png'],
     colors: ['Classic White', 'Sleek Black', 'Metallic Rose'],
@@ -181,7 +187,7 @@ const productDetailsData = {
   oxplus: {
     id: 'oxplus',
     name: 'OX Plus',
-    price: '₹1,39,999',
+    price: '₹90,000',
     subtitle: 'Ultimate Power & Intelligent EV Scooter',
     images: ['/oxplus2.png', '/oxplus1.png', '/oxplus3.png'],
     colors: ['Midnight Blue', 'Stealth Black', 'Carbon Red'],
@@ -197,6 +203,94 @@ const productDetailsData = {
       'SPEEDOMETER': '7-INCH SMART TOUCHSCREEN WITH GOOGLE MAPS',
       'TYRE': '130/70-12 tubeless SPORT TYRES',
       'BATTERY': 'LITHIUM ION (72V 45Ah)'
+    },
+    category: 'evs'
+  },
+  hpro: {
+    id: 'hpro',
+    name: 'H pro',
+    price: '₹1,24,999',
+    subtitle: 'Premium Smart Commuter Scooter',
+    images: [Hprobg, Hprobg, Hprobg],
+    colors: ['Classic White', 'Sleek Black'],
+    specs: {
+      'MOTOR': '2500W HIGH-EFFICIENCY BLDC HUB MOTOR',
+      'CONTROLLER': 'SMART WAVE CONTROLLER',
+      'SPEED': 'MAX 70 KM/H',
+      'RANGE/CHARGE': '120 KM PER CHARGE',
+      'WARRANTY': '3 YEARS COMPREHENSIVE WARRANTY',
+      'BREAK SYSTEM': 'FRONT & REAR DISC BRAKES',
+      'KEY FEATURE': 'SMART KEYLESS, MOBILE APP SYNC, REVERSE ASSIST',
+      'LOADING CAPACITY': '180 K.G.',
+      'SPEEDOMETER': 'FULL DIGITAL COLOR DISPLAY',
+      'TYRE': '90/90-12 TUBELESS TYRES',
+      'BATTERY': 'LITHIUM ION (60V 35Ah)'
+    },
+    category: 'evs'
+  },
+  ipro: {
+    id: 'ipro',
+    name: 'I pro',
+    price: '₹1,29,999',
+    subtitle: 'Intelligent Green Mobility Scooter',
+    images: [iprobg, iprobg, iprobg],
+    colors: ['Classic White', 'Sleek Black'],
+    specs: {
+      'MOTOR': '2800W PEAK TORQUE BLDC MOTOR',
+      'CONTROLLER': 'ADVANCED FOC VECTOR CONTROLLER',
+      'SPEED': 'MAX 75 KM/H',
+      'RANGE/CHARGE': '130 KM PER CHARGE',
+      'WARRANTY': '3 YEARS EXTENDED WARRANTY',
+      'BREAK SYSTEM': 'COMBINED DISC BRAKING SYSTEM (CBS)',
+      'KEY FEATURE': 'GPS GEOCAPPING, REGEN BRAKING, SMART SECURITY',
+      'LOADING CAPACITY': '180 K.G.',
+      'SPEEDOMETER': 'SMART RETINA AMOLED TOUCHSCREEN',
+      'TYRE': '12-INCH ALLOY TUBELESS TYRES',
+      'BATTERY': 'LITHIUM ION (72V 36Ah)'
+    },
+    category: 'evs'
+  },
+  x4: {
+    id: 'x4',
+    name: 'X4',
+    price: '₹1,14,999',
+    subtitle: 'Next-Generation High-Speed Scooter',
+    images: [x4bg, x4bg, x4bg],
+    colors: ['Classic White', 'Sleek Black'],
+    specs: {
+      'MOTOR': '2200W MID-DRIVE PERFORMANCE MOTOR',
+      'CONTROLLER': '18 TUBE SMART VECTOR',
+      'SPEED': 'MAX 80 KM/H',
+      'RANGE/CHARGE': '140 KM PER CHARGE',
+      'WARRANTY': '3 YEARS HASSLE-FREE WARRANTY',
+      'BREAK SYSTEM': 'DOUBLE VENTILATED DISC BRAKES',
+      'KEY FEATURE': 'CRUISE CONTROL, REVERSE MODE, USB CHARGING',
+      'LOADING CAPACITY': '180 K.G.',
+      'SPEEDOMETER': 'HD SMART LCD CONSOLE',
+      'TYRE': '90/90-12 ALL-WEATHER TUBELESS',
+      'BATTERY': 'LITHIUM ION (72V 38Ah)'
+    },
+    category: 'evs'
+  },
+  x3plus: {
+    id: 'x3plus',
+    name: 'X3 plus',
+    price: '₹1,09,999',
+    subtitle: 'Adventure Ready Plus Smart Scooter',
+    images: [bgRemovebgPreview, x3plusbg, bgRemovebgPreview],
+    colors: ['Classic White', 'Sleek Black'],
+    specs: {
+      'MOTOR': '2000W BLDC HUB MOTOR',
+      'CONTROLLER': 'SMART VECTOR CONTROLLER',
+      'SPEED': 'MAX 65 KM/H',
+      'RANGE/CHARGE': '110 KM PER CHARGE',
+      'WARRANTY': '3 YEARS COMPREHENSIVE WARRANTY',
+      'BREAK SYSTEM': 'VENTILATED DUAL DISC BRAKES',
+      'KEY FEATURE': 'ALL-TERRAIN SUSPENSION, KEYLESS ENTRY, ANTI-THEFT',
+      'LOADING CAPACITY': '170 K.G.',
+      'SPEEDOMETER': 'DIGITAL CONSOLE WITH MOBILE PARING',
+      'TYRE': 'OFF-ROAD TUBELESS TYRES',
+      'BATTERY': 'LITHIUM ION (60V 30Ah)'
     },
     category: 'evs'
   },
@@ -767,6 +861,16 @@ export default function ProductDetails({ productId, onClose, onViewProduct, onAd
 
         <div className="max-w-7xl mx-auto relative z-10">
 
+          {/* Go Back Button */}
+          <div className="mb-8 flex justify-start">
+            <button
+              onClick={onClose}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/80 hover:bg-white border border-zinc-200 hover:border-zinc-950 text-zinc-800 hover:text-zinc-950 text-sm font-bold shadow-sm transition-all duration-300 hover:scale-[1.02] cursor-pointer group backdrop-blur-sm"
+            >
+              <FiArrowLeft size={16} className="group-hover:-translate-x-0.5 transition-transform" />
+              Go Back
+            </button>
+          </div>
 
           {/* Main Product Frame */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
