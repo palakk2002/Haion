@@ -19,7 +19,7 @@ export default function Footer({ onCareersClick }) {
           <div className="lg:col-span-4 text-center md:text-left flex flex-col items-center md:items-start">
             <a href="#" className="flex items-center justify-center md:justify-start gap-2 mb-6 group inline-block">
               <img 
-                src="/haionlogo-removebg-preview.png" 
+                src="/haionlogo-removebg-preview.webp" 
                 alt="Haion Logo" 
                 className="h-10 md:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
               />

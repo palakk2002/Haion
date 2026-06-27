@@ -6,17 +6,17 @@ const advantageCards = [
   {
     title: 'Nationwide Charging Grids',
     desc: 'Access over 5,900+ high-speed EV charging stations across the country, ensuring your ride is always powered.',
-    image: '/sc012.png',
+    image: '/sc012.webp',
   },
   {
     title: '3-Year Battery Warranty',
     desc: 'Ride with ultimate confidence knowing your battery is covered by our comprehensive long-term warranty shield.',
-    image: '/sc011.png',
+    image: '/sc011.webp',
   },
   {
     title: 'Smart Buyback Options',
     desc: 'Upgrade effortlessly to newer models with assured buyback value built directly into your ownership plan.',
-    image: '/sco8-removebg-preview.png',
+    image: '/sc013.webp',
   }
 ];
 

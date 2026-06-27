@@ -12,7 +12,7 @@ const slidesData = [
     subtitle: "With Battery as a Service, buy Haion starting at ₹ 75,999*",
     accentColor: "from-zinc-950 to-amber-500",
     glowColor: "rgba(99, 102, 241, 0.15)",
-    bgImage: "/haban.jpg",
+    bgImage: "/haban.webp",
     details: [
       { label: "Rough roads", val: "Tackled smoothly" },
       { label: "Parked vehicle movement alerts", val: "Active notifications" },
@@ -31,7 +31,7 @@ const slidesData = [
     subtitle: "Experience 5-star energy efficient cooling with voice control and smart AI mode.",
     accentColor: "from-blue-500 to-indigo-600",
     glowColor: "rgba(59, 130, 246, 0.15)",
-    bgImage: "/haion_ac_banner.png",
+    bgImage: "/haion_ac_banner.webp",
     details: [
       { label: "5-Star Energy Rating", val: "High savings" },
       { label: "Smart WiFi & Voice Control", val: "Alexa & Google Assistant" },
@@ -47,7 +47,7 @@ const slidesData = [
     subtitle: "A spacious electric scooter custom built for comfortable family rides.",
     accentColor: "from-cyan-500 to-blue-600",
     glowColor: "rgba(6, 182, 212, 0.15)",
-    bgImage: "/haban2.jpg",
+    bgImage: "/haban2.webp",
     details: [
       { label: "Scooter of the year", val: "Award winning" },
       { label: "Now with touchscreen dashboard", val: "Interactive display" },
@@ -66,7 +66,7 @@ const slidesData = [
     subtitle: "Convertible multi-zone cooling with smart sensor technology and premium glass finish.",
     accentColor: "from-teal-500 to-emerald-600",
     glowColor: "rgba(20, 184, 166, 0.15)",
-    bgImage: "/haion_fridge_banner.png",
+    bgImage: "/haion_fridge_banner.webp",
     details: [
       { label: "Convertible Triple Zone", val: "Adjustable spacing" },
       { label: "AI Intelli-Sense cooling", val: "Smart adaptation" },
@@ -82,7 +82,7 @@ const slidesData = [
     subtitle: "Sleek and sporty performance with instant throttle response.",
     accentColor: "from-amber-500 to-orange-600",
     glowColor: "rgba(245, 158, 11, 0.15)",
-    bgImage: "/haban3.jpg",
+    bgImage: "/haban3.webp",
     details: [
       { label: "HaionStack 7 updates", val: "Smart software updates" },
       { label: "100 km/h top speed", val: "Hyperfast sport mode" },
@@ -101,7 +101,7 @@ const slidesData = [
     subtitle: "4K Ultra HD QLED display with Dolby Vision, Atmos, and hands-free Google Assistant.",
     accentColor: "from-rose-500 to-red-600",
     glowColor: "rgba(244, 63, 94, 0.15)",
-    bgImage: "/haion_led_banner.png",
+    bgImage: "/haion_led_banner.webp",
     details: [
       { label: "4K QLED Dolby Vision", val: "True colors" },
       { label: "120Hz Refresh Rate", val: "Ultra smooth action" },
@@ -117,7 +117,7 @@ const slidesData = [
     subtitle: "Keep your little ones completely safe with cute, animal-themed smart helmets.",
     accentColor: "from-emerald-500 to-teal-600",
     glowColor: "rgba(16, 185, 129, 0.15)",
-    bgImage: "/haban4.jpg",
+    bgImage: "/haban4.webp",
     details: [
       { label: "Safety rated", val: "Certified protection" },
       { label: "Bluetooth enabled", val: "Voice calls available" },
@@ -136,7 +136,7 @@ const slidesData = [
     subtitle: "Smart home charging with auto-cut-off, surge protection, and mobile app sync.",
     accentColor: "from-amber-400 to-yellow-500",
     glowColor: "rgba(234, 179, 8, 0.15)",
-    bgImage: "/haion_charger_banner.png",
+    bgImage: "/haion_charger_banner.webp",
     details: [
       { label: "Smart App integration", val: "Remote monitor" },
       { label: "Overvoltage protection", val: "Secure charging" },
@@ -152,7 +152,7 @@ const slidesData = [
     subtitle: "High-torque copper motor with hands-free grinding and smart speed control.",
     accentColor: "from-orange-500 to-amber-600",
     glowColor: "rgba(249, 115, 22, 0.15)",
-    bgImage: "/haion_mixer_grinder_banner.png",
+    bgImage: "/haion_mixer_grinder_banner.webp",
     details: [
       { label: "1000W High Torque Motor", val: "Powerful grinding" },
       { label: "Stainless Steel Jars", val: "Durable design" },
@@ -168,7 +168,7 @@ const slidesData = [
     subtitle: "Direct drive motor with steam wash hygiene and smart smartphone diagnostics.",
     accentColor: "from-sky-500 to-blue-600",
     glowColor: "rgba(14, 165, 233, 0.15)",
-    bgImage: "/haion_washing_machine_banner.png",
+    bgImage: "/haion_washing_machine_banner.webp",
     details: [
       { label: "Direct Drive Technology", val: "Super quiet" },
       { label: "99.9% Hygienic Steam Clean", val: "Bacteria removal" },

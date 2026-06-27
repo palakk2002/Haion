@@ -3,26 +3,26 @@ import { GlassCard } from '../ui';
 import { FiArrowRight, FiCpu, FiShield, FiZap, FiTruck, FiBattery, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
-import imgPreventShock from '../../assets/safeguard_prevent_shock.png';
-import imgFastSpeed from '../../assets/safeguard_fast_speed.png';
-import imgGroundMonitoring from '../../assets/safeguard_ground_monitoring.png';
-import imgFireRisk from '../../assets/safeguard_fire_risk.png';
-import imgStandards from '../../assets/safeguard_standards.png';
-import imgIndianConditions from '../../assets/safeguard_indian_conditions.png';
-import imgUsecases from '../../assets/safeguard_protection_usecases.png';
+import imgPreventShock from '../../assets/safeguard_prevent_shock.webp';
+import imgFastSpeed from '../../assets/safeguard_fast_speed.webp';
+import imgGroundMonitoring from '../../assets/safeguard_ground_monitoring.webp';
+import imgFireRisk from '../../assets/safeguard_fire_risk.webp';
+import imgStandards from '../../assets/safeguard_standards.webp';
+import imgIndianConditions from '../../assets/safeguard_indian_conditions.webp';
+import imgUsecases from '../../assets/safeguard_protection_usecases.webp';
 
-const evX1 = '/x1bg2.png';
-const evX1Plus = '/sc06-removebg-preview.png';
-const evX2 = '/sco2-removebg-preview.png';
-import imgBattery from '../../assets/haion-battery.png';
-import imgCharger from '../../assets/haion-charger.png';
-import imgRickshaw from '../../assets/haion-rickshaw.png';
+const evX1 = '/x1bg2.webp';
+const evX1Plus = '/sc06-removebg-preview.webp';
+const evX2 = '/oxplusf1.webp';
+import imgBattery from '../../assets/haion-battery.webp';
+import imgCharger from '../../assets/haion-charger.webp';
+import imgRickshaw from '../../assets/haion-rickshaw.webp';
 
-import bgRemovebgPreview from '../../assets/bg-removebg-preview.png';
-import Hprobg from '../../assets/Hprobg.jpg';
-import iprobg from '../../assets/iprobg.jpg';
-import x3plusbg from '../../assets/x3plusbg.jpg';
-import x4bg from '../../assets/x4bg.jpg';
+import bgRemovebgPreview from '../../assets/bg-removebg-preview.webp';
+import Hprobg from '../../assets/Hprobg.webp';
+import iprobg from '../../assets/iprobg.webp';
+import x3plusbg from '../../assets/x3plusbg.webp';
+import x4bg from '../../assets/x4bg.webp';
 
 const servicesContent = {
   safeguard: {
@@ -106,7 +106,7 @@ const serviceProducts = {
       id: 'x1plus',
       name: 'X1Plus',
       subtitle: 'Your Everyday Green Ride – EV Scooter',
-      image: '/x1plusbg.png',
+      image: '/x1plusbg.webp',
       tag: 'Sale',
       price: '₹78,000'
     },
@@ -114,7 +114,7 @@ const serviceProducts = {
       id: 'x2',
       name: 'X2',
       subtitle: 'Reimagine Urban Travel with Our EV Scooter',
-      image: '/x2f1.png',
+      image: '/x2f1.webp',
       tag: 'Sale',
       price: '₹72,000'
     },
@@ -122,7 +122,7 @@ const serviceProducts = {
       id: 'x2plus',
       name: 'X2Plus',
       subtitle: 'High-Performance Smart EV Scooter',
-      image: '/x2plusbg.png',
+      image: '/x2plusbg.webp',
       tag: 'New',
       price: '₹80,000'
     },
@@ -130,7 +130,7 @@ const serviceProducts = {
       id: 'x3',
       name: 'X3',
       subtitle: 'Adventure Ready Premium EV Scooter',
-      image: '/x3bg1.png',
+      image: '/x3bg1.webp',
       tag: 'New',
       price: '₹85,000'
     },
@@ -138,7 +138,7 @@ const serviceProducts = {
       id: 'x4plus',
       name: 'X4Plus',
       subtitle: 'Ultra Range Smart EV Scooter',
-      image: '/x4plusbg.png',
+      image: '/x4plusbg.webp',
       tag: 'New',
       price: '₹90,000'
     },
@@ -146,7 +146,7 @@ const serviceProducts = {
       id: 'spro',
       name: 'S Pro',
       subtitle: 'Elegant High-Speed Smart EV Scooter',
-      image: '/sprobg.png',
+      image: '/sprobg.webp',
       tag: 'Premium',
       price: '₹1,15,000'
     },
@@ -154,7 +154,7 @@ const serviceProducts = {
       id: 'oxplus',
       name: 'OX Plus',
       subtitle: 'Ultimate Power & Intelligent EV Scooter',
-      image: '/oxplus2.png',
+      image: '/oxplus2.webp',
       tag: 'Elite',
       price: '₹90,000'
     },
@@ -196,7 +196,7 @@ const serviceProducts = {
       id: 'bat_48v',
       name: 'B1-48V PowerPack',
       subtitle: '48V 24Ah Lithium-Ion Battery Pack with Smart BMS',
-      image: '/battery2-removebg-preview.png',
+      image: '/battery2-removebg-preview.webp',
       tag: 'New',
       price: '₹28,999'
     },
@@ -204,7 +204,7 @@ const serviceProducts = {
       id: 'bat_60v',
       name: 'B2-60V EnergyMax',
       subtitle: '60V 30Ah High-Performance Lithium Battery Pack',
-      image: '/battrey3-removebg-preview.png',
+      image: '/battrey3-removebg-preview.webp',
       tag: 'New',
       price: '₹36,999'
     },
@@ -212,7 +212,7 @@ const serviceProducts = {
       id: 'bat_72v',
       name: 'B3-72V UltraPower',
       subtitle: '72V 35Ah Long-Range Lithium-Ion Battery Pack',
-      image: '/battery2-removebg-preview.png',
+      image: '/battery2-removebg-preview.webp',
       tag: 'New',
       price: '₹45,999'
     }
@@ -222,7 +222,7 @@ const serviceProducts = {
       id: 'chg_standard',
       name: 'C1-Standard',
       subtitle: '48V-72V Auto-Detect Smart EV Charger',
-      image: '/charger-removebg-preview.png',
+      image: '/charger-removebg-preview.webp',
       tag: 'Sale',
       price: '₹4,999'
     },
@@ -230,7 +230,7 @@ const serviceProducts = {
       id: 'chg_fast',
       name: 'C2-Fast Charger',
       subtitle: '10A Quick Charging Support for EV Scooters',
-      image: '/charger3-removebg-preview.png',
+      image: '/charger3-removebg-preview.webp',
       tag: 'Best Seller',
       price: '₹7,999'
     },
@@ -238,7 +238,7 @@ const serviceProducts = {
       id: 'chg_smart',
       name: 'C3-Smart IoT Charger',
       subtitle: 'App-Connected Smart Charger with Auto Cut-off',
-      image: '/charger-removebg-preview.png',
+      image: '/charger-removebg-preview.webp',
       tag: 'New',
       price: '₹11,999'
     }
@@ -279,22 +279,22 @@ const serviceSectionTitles = {
 };
 
 const scooterGalleryImages = [
-  { img: '/sc05-removebg-preview.png', title: 'X1 (Matte Black)', desc: 'Front-facing aerodynamic view' },
-  { img: '/sc06-removebg-preview.png', title: 'X1Plus (Aero Pink)', desc: 'Sleek premium commuter look' },
-  { img: '/sco2-removebg-preview.png', title: 'X2 (Carbon Grey)', desc: 'Urban street design profile' },
-  { img: '/sco8-removebg-preview.png', title: 'X2 (Sport Pink)', desc: 'Stylish side profile' },
-  { img: '/scooter-removebg-preview.png', title: 'X1 (Classic Blue)', desc: 'Traditional clean signature finish' }
+  { img: '/OXplusf2.webp', title: 'X1 (Matte Black)', desc: 'Front-facing aerodynamic view' },
+  { img: '/sc06-removebg-preview.webp', title: 'X1Plus (Aero Pink)', desc: 'Sleek premium commuter look' },
+  { img: '/oxplusf1.webp', title: 'X2 (Carbon Grey)', desc: 'Urban street design profile' },
+  { img: '/sc013.webp', title: 'X2 (Sport Pink)', desc: 'Stylish side profile' },
+  { img: '/scooter-removebg-preview.webp', title: 'X1 (Classic Blue)', desc: 'Traditional clean signature finish' }
 ];
 
 const scooter360Images = [
-  '/HRF00193.JPG-removebg-preview.png',
-  '/HRF00195.JPG-removebg-preview.png',
-  '/HRF00196.JPG-removebg-preview.png',
-  '/HRF00197.JPG-removebg-preview.png',
-  '/HRF00199.JPG-removebg-preview.png',
-  '/HRF00200.JPG-removebg-preview.png',
-  '/HRF00201.JPG-removebg-preview.png',
-  '/HRF00202.JPG-removebg-preview.png'
+  '/HRF00193.JPG-removebg-preview.webp',
+  '/OXplusf2.webp',
+  '/OXplusf.webp',
+  '/HRF00197.JPG-removebg-preview.webp',
+  '/HRF00199.JPG-removebg-preview.webp',
+  '/oxplusf1.webp',
+  '/oxplusf3.webp',
+  '/HRF00202.JPG-removebg-preview.webp'
 ];
 
 const AnimatedSpeedometer = () => {
@@ -398,7 +398,7 @@ const AnimatedSpeedometer = () => {
 export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }) {
   const content = servicesContent[serviceId] || servicesContent.safeguard;
   const Icon = content.icon;
-  const [activeScooterImg, setActiveScooterImg] = React.useState('/x1bg2.png');
+  const [activeScooterImg, setActiveScooterImg] = React.useState('/x1bg2.webp');
   const [imageIndex, setImageIndex] = React.useState(0);
 
   const isDragging = React.useRef(false);
@@ -442,7 +442,7 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    setActiveScooterImg('/x1bg2.png');
+    setActiveScooterImg('/x1bg2.webp');
     setImageIndex(0);
 
     // Preload the 8 images to prevent flicker
@@ -461,7 +461,7 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
             ? 'bg-cover bg-center py-10 md:py-24 text-white border-b border-zinc-800 shadow-md' 
             : 'bg-transparent text-zinc-950 py-8 mb-12'
         }`}
-        style={content.id === 'scooter' ? { backgroundImage: 'url("/haion_tropical_scooters.png")' } : {}}
+        style={content.id === 'scooter' ? { backgroundImage: 'url("/haion_tropical_scooters.webp")' } : {}}
       >
         {/* Grid Layout Content */}
         <div className="max-w-7xl mx-auto px-6 relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -798,7 +798,7 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
               {/* Headlight Image */}
               <div className="rounded-3xl overflow-hidden bg-white aspect-[4/5] flex items-center justify-center relative shadow-md group border border-zinc-200/20">
                 <img 
-                  src="/front.jpeg" 
+                  src="/front.webp" 
                   alt="LED Headlight" 
                   className="w-full h-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-500" 
                 />
@@ -807,7 +807,7 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
               {/* Tail Light Image */}
               <div className="rounded-3xl overflow-hidden bg-zinc-950 aspect-[4/5] flex items-center justify-center relative shadow-md group border border-zinc-200/20">
                 <img 
-                  src="/back.jpeg" 
+                  src="/back.webp" 
                   alt="Tail Light" 
                   className="w-full h-full object-cover rotate-90 scale-[1.4] group-hover:scale-[1.5] transition-transform duration-500" 
                 />
@@ -825,7 +825,7 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
             <div className="lg:col-span-7 flex items-center justify-center relative w-full">
               <div className="rounded-3xl overflow-hidden bg-white aspect-[16/10] flex items-center justify-center relative shadow-md group border border-zinc-200/20 w-full">
                 <img 
-                  src="/front.jpeg" 
+                  src="/front.webp" 
                   alt="Digital Meter Console" 
                   className="w-full h-full object-cover mix-blend-multiply group-hover:scale-[1.03] transition-transform duration-500" 
                 />
@@ -863,7 +863,7 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
             <div className="lg:col-span-7 flex items-center justify-center relative w-full">
               <div className="rounded-3xl overflow-hidden bg-zinc-950 aspect-[16/10] flex items-center justify-center relative shadow-md group border border-zinc-200/20 w-full">
                 <img 
-                  src="/back.jpeg" 
+                  src="/back.webp" 
                   alt="Disc Brakes" 
                   className="w-full h-full object-cover rotate-90 scale-[1.8] origin-center group-hover:scale-[1.9] transition-transform duration-500" 
                 />
@@ -881,7 +881,7 @@ export default function ServiceDetailsPage({ serviceId, onViewProduct, onClose }
             <div className="lg:col-span-7 flex items-center justify-center relative w-full">
               <div className="rounded-3xl overflow-hidden bg-zinc-950 aspect-[16/10] flex items-center justify-center relative shadow-md group border border-zinc-200/20 w-full">
                 <img 
-                  src="/back.jpeg" 
+                  src="/back.webp" 
                   alt="Dual Suspension" 
                   className="w-full h-full object-cover rotate-90 scale-[1.4] group-hover:scale-[1.5] transition-transform duration-500" 
                 />

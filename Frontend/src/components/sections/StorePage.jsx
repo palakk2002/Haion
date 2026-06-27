@@ -14,19 +14,19 @@ import StoreGallery from './store/StoreGallery';
 
 const storeImages = [
   {
-    src: '/store1.png',
+    src: '/store1.webp',
     title: 'Premium Retail Experience',
     location: 'Storefront Showcase',
     desc: 'Our state-of-the-art showrooms are designed to give customers a hands-on look at our vehicles and premium diagnostic spaces.'
   },
   {
-    src: '/store2.png',
+    src: '/store2.webp',
     title: 'EV Scooter Lineup Display',
     location: 'Product Showcase',
     desc: 'We showcase all current EV scooter models side by side, allowing customers to easily inspect, compare, and test ride them.'
   },
   {
-    src: '/store3.png',
+    src: '/store3.webp',
     title: 'Interactive Smart Tech Zones',
     location: 'Experience Center',
     desc: 'Explore connected IoT systems, live diagnostics, and smart ecosystems built to complement our modern electric vehicle lineup.'

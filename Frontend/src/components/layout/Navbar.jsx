@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FiMenu, FiX, FiDownload, FiShoppingCart, FiUser } from 'react-icons/fi';
-import logoImg from '../../assets/Screenshot_2026-06-13_155308-removebg-preview.png';
+import logoImg from '../../assets/Screenshot_2026-06-13_155308-removebg-preview.webp';
 
 export default function Navbar({ onAboutUsClick, onHomeAppliancesClick, onHomeClick, onNavLinkClick, onStoreClick, onCareersClick, cartCount = 0, onCartClick, onTrackClick, onProfileClick, onInverterClick }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -54,7 +54,7 @@ export default function Navbar({ onAboutUsClick, onHomeAppliancesClick, onHomeCl
             className="flex items-center gap-2 group"
           >
             <img 
-              src="/haionlogo-removebg-preview.png" 
+              src="/haionlogo-removebg-preview.webp" 
               alt="Haion Logo" 
               className="h-8 md:h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />

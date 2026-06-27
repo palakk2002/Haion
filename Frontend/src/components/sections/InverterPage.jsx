@@ -7,7 +7,7 @@ const invertersData = [
     id: 'inv1',
     name: 'Haion PowerGuard 1100',
     subtitle: 'Smart Sine Wave Home UPS Inverter with IoT Battery Monitoring',
-    image: '/haion_inverter.png',
+    image: '/haion_inverter.webp',
     price: '₹ 6,999',
     tag: 'Best Seller',
     features: ['Pure Sine Wave Output', 'Smart WiFi App Tracking', 'Turbo Charging (Fast recovery)']
@@ -16,7 +16,7 @@ const invertersData = [
     id: 'inv2',
     name: 'Haion SuperCharge 1500',
     subtitle: 'Heavy-Duty Smart Inverter with Eco & UPS Dual Mode Toggle',
-    image: '/haion_inverter.png',
+    image: '/haion_inverter.webp',
     price: '₹ 9,499',
     tag: 'New Launch',
     features: ['High Load Capacity', 'Eco & UPS Dual Mode', 'Short Circuit & Overload protection']
@@ -25,7 +25,7 @@ const invertersData = [
     id: 'inv3',
     name: 'Haion Solar Hybrid 2000',
     subtitle: 'Advanced Solar Hybrid Inverter with Intelligent Grid Sharing',
-    image: '/haion_inverter.png',
+    image: '/haion_inverter.webp',
     price: '₹ 14,999',
     tag: 'Solar Tech',
     features: ['High Efficiency MPPT Charger', 'Solar Grid Intelligent Sharing', 'Digital LCD Status Display']

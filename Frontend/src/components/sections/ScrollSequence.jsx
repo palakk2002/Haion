@@ -78,7 +78,7 @@ export default function ScrollSequence() {
     for (let i = 1; i <= TOTAL_FRAMES; i++) {
       const img = new Image();
       const frameNum = String(i).padStart(3, '0');
-      img.src = `/sequence/ezgif-frame-${frameNum}.jpg`;
+      img.src = `/sequence/ezgif-frame-${frameNum}.webp`;
       
       img.onload = () => {
         loadedCount++;

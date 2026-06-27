@@ -205,10 +205,10 @@ export default function AboutUs({ onClose, onCareersClick }) {
 
       {/* BACKGROUND WATERMARKS (Top-Left Scooter, Top-Right Battery/Blueprint) */}
       <div className="absolute top-10 left-[-60px] w-80 h-80 opacity-[0.04] pointer-events-none select-none z-0">
-        <img src="/haion_scooter_hero.png" alt="" className="w-full h-full object-contain" />
+        <img src="/haion_scooter_hero.webp" alt="" className="w-full h-full object-contain" />
       </div>
       <div className="absolute top-20 right-[-100px] w-[500px] h-[500px] opacity-[0.03] pointer-events-none select-none z-0">
-        <img src="/haion-battery.png" alt="" className="w-full h-full object-contain pointer-events-none" />
+        <img src="/haion-battery.webp" alt="" className="w-full h-full object-contain pointer-events-none" />
       </div>
 
       {/* FLOATING RETRO MUSIC & MOVIE STICKERS IN SIDE MARGINS */}
@@ -246,7 +246,7 @@ export default function AboutUs({ onClose, onCareersClick }) {
           <div className="about-card flex flex-col md:-rotate-1 relative">
             <div className="h-48 overflow-hidden border-b-2 border-zinc-900 bg-zinc-50">
               <img 
-                src="/family_album_left.png" 
+                src="/family_album_left.webp" 
                 alt="Assembly Line" 
                 className="w-full h-full object-cover"
               />
@@ -276,7 +276,7 @@ export default function AboutUs({ onClose, onCareersClick }) {
           <div className="about-card flex flex-col md:rotate-1 relative">
             <div className="h-48 overflow-hidden border-b-2 border-zinc-900 bg-zinc-50">
               <img 
-                src="/family_album_center.png" 
+                src="/family_album_center.webp" 
                 alt="Our Journey" 
                 className="w-full h-full object-cover"
               />
@@ -314,7 +314,7 @@ export default function AboutUs({ onClose, onCareersClick }) {
           <div className="about-card flex flex-col md:-rotate-1 relative">
             <div className="h-48 overflow-hidden border-b-2 border-zinc-900 bg-zinc-50">
               <img 
-                src="/family_album_right.png" 
+                src="/family_album_right.webp" 
                 alt="Green Vision" 
                 className="w-full h-full object-cover"
               />

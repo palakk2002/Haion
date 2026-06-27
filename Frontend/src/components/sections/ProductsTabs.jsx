@@ -3,27 +3,27 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ScrollReveal, GlassCard } from '../ui';
 import { FiArrowRight } from 'react-icons/fi';
 
-const evX1 = '/x1bg2.png';
-const evX1Plus = '/sc06-removebg-preview.png';
-const evX2 = '/sco2-removebg-preview.png';
-import applianceVacuum from '../../assets/appliance-vacuum.png';
-import appliancePurifier from '../../assets/appliance-purifier.png';
-import applianceTv from '../../assets/appliance-tv.png';
-import refri1 from '../../assets/refri-removebg-preview.png';
-import refri2 from '../../assets/refri2-removebg-preview.png';
-import mixer2 from '../../assets/mixer2-removebg-preview.png';
-import mixer1 from '../../assets/mixer1-removebg-preview.png';
-import tv2 from '../../assets/tv2.jpg';
-import tv3 from '../../assets/tv3.jpg';
-import tv4 from '../../assets/tv4.jpg';
-import tv5 from '../../assets/tv5.jpg';
-import ac from '../../assets/ac-removebg-preview.png';
+const evX1 = '/x1bg2.webp';
+const evX1Plus = '/sc06-removebg-preview.webp';
+const evX2 = '/oxplusf1.webp';
+import applianceVacuum from '../../assets/appliance-vacuum.webp';
+import appliancePurifier from '../../assets/appliance-purifier.webp';
+import applianceTv from '../../assets/appliance-tv.webp';
+import refri1 from '../../assets/refri-removebg-preview.webp';
+import refri2 from '../../assets/refri2-removebg-preview.webp';
+import mixer2 from '../../assets/mixer2-removebg-preview.webp';
+import mixer1 from '../../assets/mixer1-removebg-preview.webp';
+import tv2 from '../../assets/tv2.webp';
+import tv3 from '../../assets/tv3.webp';
+import tv4 from '../../assets/tv4.webp';
+import tv5 from '../../assets/tv5.webp';
+import ac from '../../assets/ac-removebg-preview.webp';
 
-import bgRemovebgPreview from '../../assets/bg-removebg-preview.png';
-import Hprobg from '../../assets/Hprobg.jpg';
-import iprobg from '../../assets/iprobg.jpg';
-import x3plusbg from '../../assets/x3plusbg.jpg';
-import x4bg from '../../assets/x4bg.jpg';
+import bgRemovebgPreview from '../../assets/bg-removebg-preview.webp';
+import Hprobg from '../../assets/Hprobg.webp';
+import iprobg from '../../assets/iprobg.webp';
+import x3plusbg from '../../assets/x3plusbg.webp';
+import x4bg from '../../assets/x4bg.webp';
 
 export const productsData = {
   evs: [
@@ -40,7 +40,7 @@ export const productsData = {
       id: 'x1plus',
       name: 'X1Plus',
       subtitle: 'Your Everyday Green Ride – EV Scooter',
-      image: '/x1plusbg.png',
+      image: '/x1plusbg.webp',
       tag: 'Sale',
       price: '₹78,000',
       link: '#product-detail-x1plus'
@@ -49,7 +49,7 @@ export const productsData = {
       id: 'x2',
       name: 'X2',
       subtitle: 'Reimagine Urban Travel with Our EV Scooter',
-      image: '/x2f1.png',
+      image: '/x2f1.webp',
       tag: 'Sale',
       price: '₹72,000',
       link: '#product-detail-x2'
@@ -58,7 +58,7 @@ export const productsData = {
       id: 'x2plus',
       name: 'X2Plus',
       subtitle: 'High-Performance Smart EV Scooter',
-      image: '/x2plusbg.png',
+      image: '/x2plusbg.webp',
       tag: 'New',
       price: '₹80,000',
       link: '#product-detail-x2plus'
@@ -67,7 +67,7 @@ export const productsData = {
       id: 'x3',
       name: 'X3',
       subtitle: 'Adventure Ready Premium EV Scooter',
-      image: '/x3bg1.png',
+      image: '/x3bg1.webp',
       tag: 'New',
       price: '₹85,000',
       link: '#product-detail-x3'
@@ -76,7 +76,7 @@ export const productsData = {
       id: 'x4plus',
       name: 'X4Plus',
       subtitle: 'Ultra Range Smart EV Scooter',
-      image: '/x4plusbg.png',
+      image: '/x4plusbg.webp',
       tag: 'New',
       price: '₹90,000',
       link: '#product-detail-x4plus'
@@ -85,7 +85,7 @@ export const productsData = {
       id: 'spro',
       name: 'S Pro',
       subtitle: 'Elegant High-Speed Smart EV Scooter',
-      image: '/sprobg.png',
+      image: '/sprobg.webp',
       tag: 'Premium',
       price: '₹1,15,000',
       link: '#product-detail-spro'
@@ -94,7 +94,7 @@ export const productsData = {
       id: 'oxplus',
       name: 'OX Plus',
       subtitle: 'Ultimate Power & Intelligent EV Scooter',
-      image: '/oxplus2.png',
+      image: '/oxplus2.webp',
       tag: 'Elite',
       price: '₹90,000',
       link: '#product-detail-oxplus'

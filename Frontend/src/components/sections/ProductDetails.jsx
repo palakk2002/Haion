@@ -3,30 +3,30 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { GlassCard } from '../ui';
 import { FiArrowLeft, FiMaximize2, FiCheck } from 'react-icons/fi';
 
-const evX1 = '/x1bg2.png';
-const evX1Plus = '/sc06-removebg-preview.png';
-const evX2 = '/sco2-removebg-preview.png';
-import applianceVacuum from '../../assets/appliance-vacuum.png';
-import appliancePurifier from '../../assets/appliance-purifier.png';
-import applianceTv from '../../assets/appliance-tv.png';
-import refri1 from '../../assets/refri-removebg-preview.png';
-import refri2 from '../../assets/refri2-removebg-preview.png';
-import mixer2 from '../../assets/mixer2-removebg-preview.png';
-import mixer1 from '../../assets/mixer1-removebg-preview.png';
-import tv2 from '../../assets/tv2.jpg';
-import tv3 from '../../assets/tv3.jpg';
-import tv4 from '../../assets/tv4.jpg';
-import tv5 from '../../assets/tv5.jpg';
-import ac from '../../assets/ac-removebg-preview.png';
-import imgBattery from '../../assets/haion-battery.png';
-import imgCharger from '../../assets/haion-charger.png';
-import imgRickshaw from '../../assets/haion-rickshaw.png';
+const evX1 = '/x1bg2.webp';
+const evX1Plus = '/sc06-removebg-preview.webp';
+const evX2 = '/oxplusf1.webp';
+import applianceVacuum from '../../assets/appliance-vacuum.webp';
+import appliancePurifier from '../../assets/appliance-purifier.webp';
+import applianceTv from '../../assets/appliance-tv.webp';
+import refri1 from '../../assets/refri-removebg-preview.webp';
+import refri2 from '../../assets/refri2-removebg-preview.webp';
+import mixer2 from '../../assets/mixer2-removebg-preview.webp';
+import mixer1 from '../../assets/mixer1-removebg-preview.webp';
+import tv2 from '../../assets/tv2.webp';
+import tv3 from '../../assets/tv3.webp';
+import tv4 from '../../assets/tv4.webp';
+import tv5 from '../../assets/tv5.webp';
+import ac from '../../assets/ac-removebg-preview.webp';
+import imgBattery from '../../assets/haion-battery.webp';
+import imgCharger from '../../assets/haion-charger.webp';
+import imgRickshaw from '../../assets/haion-rickshaw.webp';
 
-import bgRemovebgPreview from '../../assets/bg-removebg-preview.png';
-import Hprobg from '../../assets/Hprobg.jpg';
-import iprobg from '../../assets/iprobg.jpg';
-import x3plusbg from '../../assets/x3plusbg.jpg';
-import x4bg from '../../assets/x4bg.jpg';
+import bgRemovebgPreview from '../../assets/bg-removebg-preview.webp';
+import Hprobg from '../../assets/Hprobg.webp';
+import iprobg from '../../assets/iprobg.webp';
+import x3plusbg from '../../assets/x3plusbg.webp';
+import x4bg from '../../assets/x4bg.webp';
 
 // Full specifications for all products
 const productDetailsData = {
@@ -35,7 +35,7 @@ const productDetailsData = {
     name: 'X1',
     price: '₹70,000',
     subtitle: 'Smart, Eco-Friendly EV Scooter for Urban Commuting',
-    images: ['/x1bg2.png', '/x1bg.png', '/x1bg1.png'],
+    images: ['/x1bg2.webp', '/x1bg.webp', '/x1bg1.webp'],
     colors: ['Glossy Blue', 'Crystal White', 'Matt Grey'],
     specs: {
       'MOTOR': 'BLDC HUB MOTOR',
@@ -57,7 +57,7 @@ const productDetailsData = {
     name: 'X1Plus',
     price: '₹78,000',
     subtitle: 'Your Everyday Green Ride – EV Scooter',
-    images: ['/x1plusbg.png', '/x1plus2-removebg-preview.png', '/x1plusbg3.png'],
+    images: ['/x1plusbg.webp', '/x1plus2-removebg-preview.webp', '/x1plusbg3.webp'],
     colors: ['Crystal White', 'Glossy Blue', 'Matt Grey'],
     specs: {
       'MOTOR': '1200W BLDC HUB MOTOR',
@@ -79,7 +79,7 @@ const productDetailsData = {
     name: 'X2',
     price: '₹72,000',
     subtitle: 'Reimagine Urban Travel with Our EV Scooter',
-    images: ['/x2f1.png', '/x2f.png', '/x2f2.png', '/x2f3.png'],
+    images: ['/x2f1.webp', '/x2f.webp', '/x2f2.webp', '/x2f3.webp'],
     colors: ['Matt Grey', 'Glossy Blue', 'Crystal White'],
     specs: {
       'MOTOR': '1500W HIGH-TORQUE BLDC MOTOR',
@@ -101,7 +101,7 @@ const productDetailsData = {
     name: 'X2Plus',
     price: '₹80,000',
     subtitle: 'High-Performance Smart EV Scooter',
-    images: ['/x2plusbg.png', '/x2plus3-removebg-preview.png', '/x2plusbg1.png'],
+    images: ['/x2plusbg.webp', '/x2plus3-removebg-preview.webp', '/x2plusbg1.webp'],
     colors: ['Carbon Black', 'Neon Green', 'Crimson Red'],
     specs: {
       'MOTOR': '1800W PEAK PERFORMANCE MOTOR',
@@ -123,7 +123,7 @@ const productDetailsData = {
     name: 'X3',
     price: '₹85,000',
     subtitle: 'Adventure Ready Premium EV Scooter',
-    images: ['/x3bg1.png', '/x3bg.png', '/x34-removebg-preview.png'],
+    images: ['/x3bg1.webp', '/x3bg.webp', '/x34-removebg-preview.webp'],
     colors: ['Desert Gold', 'Military Green', 'Carbon Fibre'],
     specs: {
       'MOTOR': '2000W HIGH-POWER BLDC HUB MOTOR',
@@ -145,7 +145,7 @@ const productDetailsData = {
     name: 'X4Plus',
     price: '₹90,000',
     subtitle: 'Ultra Range Smart EV Scooter',
-    images: ['/x4plusbg.png', '/x4plus4-removebg-preview.png', '/x4plus5.png'],
+    images: ['/x4plusbg.webp', '/x4plus4-removebg-preview.webp', '/x4plus5.webp'],
     colors: ['Stellar Blue', 'Titanium Grey', 'Frost White'],
     specs: {
       'MOTOR': '2200W SUPER-TORQUE MOTOR',
@@ -167,7 +167,7 @@ const productDetailsData = {
     name: 'S Pro',
     price: '₹1,15,000',
     subtitle: 'Elegant High-Speed Smart EV Scooter',
-    images: ['/sprobg.png', '/sprobg1.png', '/sprobg2.png'],
+    images: ['/sprobg.webp', '/sprobg1.webp', '/sprobg2.webp'],
     colors: ['Classic White', 'Sleek Black', 'Metallic Rose'],
     specs: {
       'MOTOR': '2500W HIGH-EFFICIENCY MID-DRIVE MOTOR',
@@ -189,7 +189,7 @@ const productDetailsData = {
     name: 'OX Plus',
     price: '₹90,000',
     subtitle: 'Ultimate Power & Intelligent EV Scooter',
-    images: ['/oxplus2.png', '/oxplus1.png', '/oxplus3.png'],
+    images: ['/oxplus2.webp', '/oxplus1.webp', '/oxplus3.webp'],
     colors: ['Midnight Blue', 'Stealth Black', 'Carbon Red'],
     specs: {
       'MOTOR': '3000W ULTRA-TORQUE BLDC MOTOR',
@@ -503,7 +503,7 @@ const productDetailsData = {
     name: 'B1-48V PowerPack',
     price: '₹28,999',
     subtitle: '48V 24Ah Lithium-Ion Battery Pack with Smart BMS',
-    images: ['/battery2-removebg-preview.png', '/battery2-removebg-preview.png', '/battery2-removebg-preview.png'],
+    images: ['/battery2-removebg-preview.webp', '/battery2-removebg-preview.webp', '/battery2-removebg-preview.webp'],
     colors: ['Metal Black'],
     specs: {
       'CHEMISTRY': 'LITHIUM IRON PHOSPHATE (LFP)',
@@ -522,7 +522,7 @@ const productDetailsData = {
     name: 'B2-60V EnergyMax',
     price: '₹36,999',
     subtitle: '60V 30Ah High-Performance Lithium Battery Pack',
-    images: ['/battrey3-removebg-preview.png', '/battrey3-removebg-preview.png', '/battrey3-removebg-preview.png'],
+    images: ['/battrey3-removebg-preview.webp', '/battrey3-removebg-preview.webp', '/battrey3-removebg-preview.webp'],
     colors: ['Metal Black'],
     specs: {
       'CHEMISTRY': 'LITHIUM ION / NMC',
@@ -541,7 +541,7 @@ const productDetailsData = {
     name: 'B3-72V UltraPower',
     price: '₹45,999',
     subtitle: '72V 35Ah Long-Range Lithium-Ion Battery Pack',
-    images: ['/battery2-removebg-preview.png', '/battery2-removebg-preview.png', '/battery2-removebg-preview.png'],
+    images: ['/battery2-removebg-preview.webp', '/battery2-removebg-preview.webp', '/battery2-removebg-preview.webp'],
     colors: ['Metal Black'],
     specs: {
       'CHEMISTRY': 'LITHIUM ION / NMC PREMIUM CELLS',
@@ -560,7 +560,7 @@ const productDetailsData = {
     name: 'C1-Standard',
     price: '₹4,999',
     subtitle: '48V-72V Auto-Detect Smart EV Charger',
-    images: ['/charger-removebg-preview.png', '/charger-removebg-preview.png', '/charger-removebg-preview.png'],
+    images: ['/charger-removebg-preview.webp', '/charger-removebg-preview.webp', '/charger-removebg-preview.webp'],
     colors: ['Brushed Gold/Black'],
     specs: {
       'INPUT VOLTAGE': '180V - 260V AC, 50Hz',
@@ -578,7 +578,7 @@ const productDetailsData = {
     name: 'C2-Fast Charger',
     price: '₹7,999',
     subtitle: '10A Quick Charging Support for EV Scooters',
-    images: ['/charger3-removebg-preview.png', '/charger3-removebg-preview.png', '/charger3-removebg-preview.png'],
+    images: ['/charger3-removebg-preview.webp', '/charger3-removebg-preview.webp', '/charger3-removebg-preview.webp'],
     colors: ['Brushed Gold/Black'],
     specs: {
       'INPUT VOLTAGE': '180V - 260V AC, 50-60Hz',
@@ -596,7 +596,7 @@ const productDetailsData = {
     name: 'C3-Smart IoT Charger',
     price: '₹11,999',
     subtitle: 'App-Connected Smart Charger with Auto Cut-off',
-    images: ['/charger-removebg-preview.png', '/charger-removebg-preview.png', '/charger-removebg-preview.png'],
+    images: ['/charger-removebg-preview.webp', '/charger-removebg-preview.webp', '/charger-removebg-preview.webp'],
     colors: ['Brushed Gold/Black'],
     specs: {
       'INPUT VOLTAGE': '100V - 260V WIDE INPUT range',
@@ -855,7 +855,7 @@ export default function ProductDetails({ productId, onClose, onViewProduct, onAd
             ? 'bg-cover bg-center border-b border-zinc-200' 
             : 'bg-[#f8f9fa]'
         }`}
-        style={isEv ? { backgroundImage: 'url("/haion_scooter_hero.png")' } : {}}
+        style={isEv ? { backgroundImage: 'url("/haion_scooter_hero.webp")' } : {}}
       >
         {isEv && <div className="absolute inset-0 bg-white/75 backdrop-blur-[2px] z-0" />}
 
@@ -1157,7 +1157,7 @@ export default function ProductDetails({ productId, onClose, onViewProduct, onAd
                 {/* Digital Meter */}
                 <div className="relative group overflow-hidden rounded-2xl bg-white border border-zinc-200 aspect-[4/3] flex items-center justify-center">
                   <img 
-                    src="/front.jpeg" 
+                    src="/front.webp" 
                     alt="Digital Meter" 
                     className="w-full h-full object-cover mix-blend-multiply group-hover:scale-105 transition-transform duration-500" 
                   />
@@ -1172,7 +1172,7 @@ export default function ProductDetails({ productId, onClose, onViewProduct, onAd
                 <div className="relative group overflow-hidden rounded-2xl bg-zinc-950 border border-zinc-850 aspect-[4/3] flex items-center justify-center">
                   <div className="w-full h-full overflow-hidden flex items-center justify-center relative">
                     <img 
-                      src="/body.jpeg" 
+                      src="/body.webp" 
                       alt="LED Light" 
                       className="w-full h-full object-cover rotate-90 scale-[1.6] group-hover:scale-[1.7] transition-transform duration-500" 
                     />
@@ -1188,7 +1188,7 @@ export default function ProductDetails({ productId, onClose, onViewProduct, onAd
               {/* Middle Column - Tall Center Card */}
               <div className="relative group overflow-hidden rounded-2xl bg-zinc-950 border border-zinc-850 h-full min-h-[350px] md:min-h-[472px] flex items-center justify-center">
                 <img 
-                  src="/body2.jpeg" 
+                  src="/body2.webp" 
                   alt="Haion Scooter Front Profile" 
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
                 />
@@ -1201,7 +1201,7 @@ export default function ProductDetails({ productId, onClose, onViewProduct, onAd
                 <div className="relative group overflow-hidden rounded-2xl bg-zinc-950 border border-zinc-850 aspect-[4/3] flex items-center justify-center">
                   <div className="w-full h-full overflow-hidden flex items-center justify-center relative">
                     <img 
-                      src="/back.jpeg" 
+                      src="/back.webp" 
                       alt="Dual Suspension" 
                       className="w-full h-full object-cover rotate-90 scale-[1.4] group-hover:scale-[1.5] transition-transform duration-500" 
                     />
@@ -1217,7 +1217,7 @@ export default function ProductDetails({ productId, onClose, onViewProduct, onAd
                 <div className="relative group overflow-hidden rounded-2xl bg-zinc-950 border border-zinc-850 aspect-[4/3] flex items-center justify-center">
                   <div className="w-full h-full overflow-hidden flex items-center justify-center relative">
                     <img 
-                      src="/back.jpeg" 
+                      src="/back.webp" 
                       alt="Disc Brakes" 
                       className="w-full h-full object-cover rotate-90 scale-[1.8] origin-center group-hover:scale-[1.9] transition-transform duration-500" 
                     />

@@ -2,20 +2,20 @@ import React, { useEffect } from 'react';
 import { GlassCard, SectionHeading } from '../ui';
 import { FiArrowRight, FiCpu, FiClock, FiShield } from 'react-icons/fi';
 
-import applianceVacuum from '../../assets/appliance-vacuum.png';
-import appliancePurifier from '../../assets/appliance-purifier.png';
-import applianceTv from '../../assets/appliance-tv.png';
-import refri1 from '../../assets/refri-removebg-preview.png';
-import refri2 from '../../assets/refri2-removebg-preview.png';
-import mixer2 from '../../assets/mixer2-removebg-preview.png';
-import mixer1 from '../../assets/mixer1-removebg-preview.png';
-import tv2 from '../../assets/tv2.jpg';
-import tv3 from '../../assets/tv3.jpg';
-import tv4 from '../../assets/tv4.jpg';
-import tv5 from '../../assets/tv5.jpg';
-import ac from '../../assets/ac-removebg-preview.png';
-import washing1 from '../../assets/wahsing2-removebg-preview.png';
-import washing2 from '../../assets/washing_machine_3-removebg-preview (1).png';
+import applianceVacuum from '../../assets/appliance-vacuum.webp';
+import appliancePurifier from '../../assets/appliance-purifier.webp';
+import applianceTv from '../../assets/appliance-tv.webp';
+import refri1 from '../../assets/refri-removebg-preview.webp';
+import refri2 from '../../assets/refri2-removebg-preview.webp';
+import mixer2 from '../../assets/mixer2-removebg-preview.webp';
+import mixer1 from '../../assets/mixer1-removebg-preview.webp';
+import tv2 from '../../assets/tv2.webp';
+import tv3 from '../../assets/tv3.webp';
+import tv4 from '../../assets/tv4.webp';
+import tv5 from '../../assets/tv5.webp';
+import ac from '../../assets/ac-removebg-preview.webp';
+import washing1 from '../../assets/wahsing2-removebg-preview.webp';
+import washing2 from '../../assets/washing_machine_3-removebg-preview (1).webp';
 
 const appliancesData = [
   {

@@ -4,12 +4,18 @@ import { categoriesData } from '../../data/mockData';
 import { SectionHeading } from '../ui';
 import { FiArrowRight, FiArrowLeft, FiX, FiStar } from 'react-icons/fi';
 
+import acImg from '../../assets/ac-removebg-preview.webp';
+import tvImg from '../../assets/tv2.webp';
+import washingImg from '../../assets/washing_machine_3-removebg-preview (1).webp';
+import refrigeratorImg from '../../assets/refri2-removebg-preview.webp';
+import mixerImg from '../../assets/mixer2-removebg-preview.webp';
+
 const categoryImages = {
-  ac: '/ac-removebg-preview.png',
-  tv: '/tv2.jpg',
-  washing: '/washing_machine_3-removebg-preview (1).png',
-  refrigerator: '/refri2-removebg-preview.png',
-  mixer: '/mixer2-removebg-preview.png'
+  ac: acImg,
+  tv: tvImg,
+  washing: washingImg,
+  refrigerator: refrigeratorImg,
+  mixer: mixerImg
 };
 
 // Custom brand-aligned colors for the background card blocks
@@ -87,6 +93,7 @@ export default function Categories() {
                       <img 
                         src={categoryImages[cat.id]} 
                         alt={cat.title} 
+                        loading="lazy"
                         className="w-full h-full object-contain filter drop-shadow-[0_15px_15px_rgba(0,0,0,0.5)]"
                       />
                     </div>
@@ -186,6 +193,7 @@ export default function Categories() {
                   <img 
                     src={categoryImages[selectedCategory.id]} 
                     alt={selectedCategory.title} 
+                    loading="lazy"
                     className="w-full h-full object-contain filter drop-shadow-[0_20px_20px_rgba(0,0,0,0.35)]"
                   />
                 </motion.div>

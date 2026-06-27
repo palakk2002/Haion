@@ -6,42 +6,42 @@ const GALLERY_DATA = [
   {
     id: 1,
     category: 'Showroom',
-    src: '/storeban.jpg',
+    src: '/storeban.webp',
     title: 'Flagship Entrance',
     desc: 'Grand entrance of our New Delhi flagship store featuring modern lighting.'
   },
   {
     id: 2,
     category: 'EV Scooters',
-    src: '/x1bg2.png',
+    src: '/x1bg2.webp',
     title: 'X1',
     desc: 'Smart, Eco-Friendly EV Scooter for Urban Commuting.'
   },
   {
     id: 4,
     category: 'EV Scooters',
-    src: '/x1plusbg.png',
+    src: '/x1plusbg.webp',
     title: 'X1Plus',
     desc: 'Your Everyday Green Ride – EV Scooter.'
   },
   {
     id: 5,
     category: 'EV Scooters',
-    src: '/x2f1.png',
+    src: '/x2f1.webp',
     title: 'X2',
     desc: 'Reimagine Urban Travel with Our EV Scooter.'
   },
   {
     id: 7,
     category: 'Showroom',
-    src: '/haionban2.jpg',
+    src: '/haionban2.webp',
     title: 'Bengaluru Experience Zone',
     desc: 'Experience our high-tech electric vehicles and interactive zones.'
   },
   {
     id: 8,
     category: 'Showroom',
-    src: '/store1.png',
+    src: '/store1.webp',
     title: 'Experience Lounge',
     desc: 'Premium customer lounge featuring our complete smart appliance ecosystem.'
   }

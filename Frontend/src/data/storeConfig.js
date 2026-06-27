@@ -53,9 +53,9 @@ export const DEFAULT_STORE_CONFIG = {
       "Service Assistance"
     ],
     images: [
-      { id: "img1", src: "/store1.png", title: "Haion Flagship Store", location: "Delhi NCR" },
-      { id: "img2", src: "/store2.png", title: "Haion Hub", location: "Bengaluru" },
-      { id: "img3", src: "/store3.png", title: "Haion Studio", location: "Mumbai" }
+      { id: "img1", src: "/store1.webp", title: "Haion Flagship Store", location: "Delhi NCR" },
+      { id: "img2", src: "/store2.webp", title: "Haion Hub", location: "Bengaluru" },
+      { id: "img3", src: "/store3.webp", title: "Haion Studio", location: "Mumbai" }
     ]
   },
   dealerInfo: {
