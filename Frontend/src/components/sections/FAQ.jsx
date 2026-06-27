@@ -64,7 +64,7 @@ export default function FAQ() {
         <SectionHeading 
           badge="Frequently Asked Questions"
           title="Got Questions?"
-          subtitle="Everything you need to know about purchasing, safety, shipping speeds, and returns."
+          subtitle="Everything you need to know about purchasing, safety, shipping speeds, and warranties."
         />
 
         <div className="space-y-4">

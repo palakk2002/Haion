@@ -8,6 +8,7 @@ const categoryImages = {
   ac: '/ac-removebg-preview.png',
   tv: '/tv2.jpg',
   washing: '/washing_machine_3-removebg-preview (1).png',
+  refrigerator: '/refri2-removebg-preview.png',
   mixer: '/mixer2-removebg-preview.png'
 };
 
@@ -16,6 +17,7 @@ const categoryThemeColors = {
   ac: { bg: 'bg-gradient-to-b from-[#ab7e2c]/80 to-[#e88d01]/90', glow: 'shadow-[#e88d01]/30', text: 'text-amber-100' },
   tv: { bg: 'bg-gradient-to-b from-[#2b1d07]/90 to-[#7e5b1d]/90', glow: 'shadow-[#ab7e2c]/30', text: 'text-amber-200' },
   washing: { bg: 'bg-gradient-to-b from-[#ffd233]/80 to-[#ab7e2c]/90', glow: 'shadow-[#ffd233]/20', text: 'text-amber-950' },
+  refrigerator: { bg: 'bg-gradient-to-b from-[#e88d01]/85 to-[#543b12]/95', glow: 'shadow-[#e88d01]/20', text: 'text-amber-100' },
   mixer: { bg: 'bg-gradient-to-b from-[#543b12]/95 to-[#2b1d07]/95', glow: 'shadow-[#543b12]/30', text: 'text-amber-100' }
 };
 

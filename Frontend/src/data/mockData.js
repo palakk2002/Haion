@@ -27,9 +27,9 @@ export const featuresData = [
     iconName: "lock"
   },
   {
-    title: "Stress-Free 14-Day Returns",
-    description: "Changed your mind? We will pick it up from your doorstep. No questions asked.",
-    iconName: "rotate"
+    title: "1-Year Brand Warranty",
+    description: "Every household appliance comes with an official 1-year manufacturer warranty and free home maintenance.",
+    iconName: "shield"
   },
   {
     title: "Elite 24/7 Expert Support",
@@ -88,6 +88,22 @@ export const categoriesData = [
       { name: "Haion HydroClean Pro 7kg", tag: "Best Seller", price: "₹24,999", rating: "4.8" },
       { name: "Haion HydroClean Max 8.5kg", tag: "Large Family", price: "₹32,999", rating: "4.9" },
       { name: "Haion Semi-Auto Duo 7.5kg", tag: "Eco Wash", price: "₹12,999", rating: "4.7" }
+    ]
+  },
+  {
+    id: "refrigerator",
+    title: "Refrigerators",
+    emoji: "❄️",
+    description: "IoT double-door & multi-door smart refrigerators",
+    count: "Next-Gen Cooling",
+    gradient: "from-amber-600/30 to-yellow-600/30",
+    color: "#d97706",
+    subtitle: "Smart Freshness Technology",
+    longDescription: "Keep your food fresh longer and manage your kitchen effortlessly with Haion's IoT-enabled smart refrigerators. Featuring triple-cooling technology, digital inverter compressors, energy-efficient operations, and Wi-Fi smart controls for temperature adjustments on the fly.",
+    features: ["Digital Inverter Tech", "Triple Cooling System", "Wi-Fi Smart Control"],
+    subProducts: [
+      { name: "Haion SmartChill Pro 450L", tag: "Best Seller", price: "₹54,999", rating: "4.8" },
+      { name: "Haion FrostBreeze Duo 600L", tag: "Luxury French", price: "₹84,999", rating: "4.9" }
     ]
   },
   {
@@ -328,7 +344,7 @@ export const testimonialsData = [
     avatar: "💻"
   },
   {
-    quote: "Returning items in electronics has always been a complete headache. With Haion, I scheduled a return, courier picked it up next morning, refund in 5 mins. Incredible service.",
+    quote: "Setting up my smart AC and television via the Haion app was incredibly seamless. The device synchronized instantly, and I can now schedule cooling routines with ease.",
     rating: 5,
     name: "Marcus Vance",
     role: "Hardware Engineer",
@@ -344,10 +360,6 @@ export const faqsData = [
   {
     question: "How does 2-hour express delivery work?",
     answer: "For major metropolitan areas, we operate local micro-fulfillment hubs. If your address falls within our delivery radius, the option will appear at checkout. A dedicated delivery partner picks up the item and drives directly to you."
-  },
-  {
-    question: "Can I return a product if I open it?",
-    answer: "Yes! We offer a stress-free 14-day return window. Even if you opened the box to inspect the item, you can request a return via the app. The only condition is that all original accessories, documentation, and boxes are returned intact."
   },
   {
     question: "What payment options do you support?",
