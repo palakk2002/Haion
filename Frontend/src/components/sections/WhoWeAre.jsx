@@ -42,7 +42,7 @@ export default function WhoWeAre() {
                 {/* Premium Image Frame */}
                 <div className="rounded-3xl border border-purple-500/20 p-2 bg-gradient-to-r from-white to-purple-50/30 shadow-xl overflow-hidden group-hover:border-purple-500/40 transition-colors duration-500">
                   <img 
-                    src="/haionpart1.jpg" 
+                    src="/haio.jpg" 
                     alt="Haion Corporate Office & Manufacturing Factory" 
                     className="w-full aspect-[4/3] rounded-2xl object-cover shadow-sm group-hover:scale-[1.01] transition-transform duration-700"
                   />
