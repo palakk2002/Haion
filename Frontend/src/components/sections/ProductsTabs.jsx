@@ -225,10 +225,10 @@ export default function ProductsTabs({ onViewDetails }) {
       <div className="max-w-7xl mx-auto px-6 relative z-10">
         
         {/* Tab Headers */}
-        <div className="flex justify-center items-center gap-8 md:gap-12 mb-16 border-b border-zinc-200/60 pb-4 max-w-xl mx-auto">
+        <div className="flex flex-wrap justify-center items-center gap-4 sm:gap-8 md:gap-12 mb-16 border-b border-zinc-200/60 pb-4 max-w-xl mx-auto">
           <button
             onClick={() => setActiveTab('evs')}
-            className="relative pb-4 text-xl md:text-2xl font-bold font-display transition-colors duration-300 focus:outline-none cursor-pointer"
+            className="relative pb-4 text-base sm:text-xl md:text-2xl font-bold font-display transition-colors duration-300 focus:outline-none cursor-pointer"
             style={{ color: activeTab === 'evs' ? '#18181b' : '#a1a1aa' }}
           >
             Electric Vehicles (EVs)
@@ -242,7 +242,7 @@ export default function ProductsTabs({ onViewDetails }) {
           </button>
           <button
             onClick={() => setActiveTab('appliances')}
-            className="relative pb-4 text-xl md:text-2xl font-bold font-display transition-colors duration-300 focus:outline-none cursor-pointer"
+            className="relative pb-4 text-base sm:text-xl md:text-2xl font-bold font-display transition-colors duration-300 focus:outline-none cursor-pointer"
             style={{ color: activeTab === 'appliances' ? '#18181b' : '#a1a1aa' }}
           >
             Home Appliances
@@ -265,7 +265,7 @@ export default function ProductsTabs({ onViewDetails }) {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -15 }}
               transition={{ duration: 0.3 }}
-              className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10"
             >
               {productsData[activeTab].map((product) => (
                 <div key={product.id} className="h-full">

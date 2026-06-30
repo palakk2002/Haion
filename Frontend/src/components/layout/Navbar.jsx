@@ -234,7 +234,7 @@ export default function Navbar({ onAboutUsClick, onHomeAppliancesClick, onHomeCl
       </nav>
 
       {/* Mobile Sidebar Navigation */}
-      <div className={`fixed inset-0 z-40 bg-white/95 backdrop-blur-2xl transition-transform duration-500 md:hidden flex flex-col justify-center items-center gap-6 overflow-y-auto pt-20 ${
+      <div className={`fixed inset-0 z-40 bg-white/95 backdrop-blur-2xl transition-transform duration-500 md:hidden flex flex-col justify-start items-center gap-6 overflow-y-auto pt-28 pb-12 ${
         isOpen ? 'translate-x-0' : 'translate-x-full'
       }`}>
         <a

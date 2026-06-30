@@ -167,7 +167,7 @@ export default function Categories() {
               animate={{ scale: 1, y: 0, opacity: 1 }}
               exit={{ scale: 0.9, y: 50, opacity: 0 }}
               transition={{ type: "spring", damping: 25, stiffness: 200 }}
-              className="relative w-full max-w-4xl bg-white border border-zinc-200/80 rounded-[40px] overflow-hidden flex flex-col md:flex-row shadow-2xl"
+              className="relative w-full max-w-4xl bg-white border border-zinc-200/80 rounded-3xl md:rounded-[40px] overflow-hidden flex flex-col md:flex-row shadow-2xl"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Close Button */}
@@ -232,7 +232,7 @@ export default function Categories() {
                 {/* Sub Products / Clips section (Matches the Clips view of the first image) */}
                 <div>
                   <h4 className="text-xs font-extrabold text-zinc-500 uppercase tracking-widest mb-3">Top Products</h4>
-                  <div className="grid grid-cols-3 gap-3">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                     {selectedCategory.subProducts?.map((prod, idx) => (
                       <div 
                         key={idx} 
