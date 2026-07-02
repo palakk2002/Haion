@@ -377,6 +377,175 @@ export default function AboutUs({ onClose, onCareersClick }) {
             </div>
           </div>
         </div>
+
+        {/* NATIONAL SERVICE HEAD SECTION */}
+        <div className="about-card max-w-5xl mx-auto mb-16 text-left relative md:-rotate-1">
+          <TicketSticker className="-top-12 -right-8 scale-90 md:scale-100" />
+          <HeadphonesSticker className="-bottom-12 -left-8 scale-90 md:scale-100" />
+          
+          <div className="p-8 md:p-10 flex flex-col md:flex-row gap-8 items-start">
+            <div className="flex-1 w-full">
+              <span className="text-xs font-bold text-[#a0825b] block mb-2">[ SERVICE & OPERATIONS ]</span>
+              <h3 className="text-2xl font-black mb-1 text-[#40321f]">Majjid Khan</h3>
+              <p className="text-sm font-bold text-[#a0825b] uppercase tracking-wider mb-6">National Service Head – Haion EV</p>
+              
+              <div className="text-sm leading-relaxed text-zinc-650 space-y-4 font-medium mb-6">
+                <p>
+                  Majjid Khan leads the national service operations of Haion EV with a strong commitment to customer satisfaction, service excellence, and nationwide support network development.
+                </p>
+                <p>
+                  With extensive experience in service management and after-sales operations, he focuses on building efficient service systems, enhancing customer experience, and ensuring reliable support for Haion EV customers across India.
+                </p>
+              </div>
+
+              <div className="border-t-2 border-dashed border-zinc-350 pt-6">
+                <h4 className="text-xs font-bold text-[#40321f] uppercase tracking-wider mb-4">[ Core Responsibilities ]</h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {[
+                    "National Service Strategy & Execution",
+                    "Service Network Development",
+                    "Customer Support & Satisfaction",
+                    "Technical Service Management",
+                    "Dealer Service Coordination",
+                    "Quality & Performance Improvement",
+                    "Nationwide After-Sales Operations"
+                  ].map((resp, i) => (
+                    <div key={i} className="flex items-center gap-2 text-sm text-zinc-700 font-semibold">
+                      <span className="text-[#a0825b] font-bold">✦</span>
+                      <span>{resp}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            
+            <div className="w-full md:w-64 border-t md:border-t-0 md:border-l-2 border-dashed border-zinc-300 pt-6 md:pt-0 md:pl-8 flex flex-col justify-between self-stretch">
+              <div className="bg-[#faf9f6] border-2 border-zinc-900 rounded-2xl p-6 flex flex-col items-center text-center shadow-inner">
+                <div className="w-16 h-16 rounded-full bg-[#a0825b]/10 border-2 border-[#a0825b]/30 flex items-center justify-center font-black text-xl text-[#a0825b] mb-3">
+                  MK
+                </div>
+                <h4 className="text-base font-bold text-[#40321f] mb-1">Majjid Khan</h4>
+                <span className="text-[10px] font-semibold text-zinc-500 uppercase tracking-wider leading-tight">National Service Head</span>
+              </div>
+              <div className="mt-6 italic text-center text-zinc-550 text-xs font-semibold leading-relaxed border-t border-dashed border-zinc-300 pt-4">
+                “Delivering trusted service experiences that power India’s electric mobility future.”
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* NATIONAL SALES HEAD SECTION */}
+        <div className="about-card max-w-5xl mx-auto mb-16 text-left relative md:rotate-1">
+          <FilmCanisterSticker className="-top-12 -left-8 scale-90 md:scale-100" />
+          <PopcornSticker className="-bottom-12 -right-8 scale-90 md:scale-100" />
+          
+          <div className="p-8 md:p-10 flex flex-col md:flex-row gap-8 items-start">
+            <div className="flex-1 w-full">
+              <span className="text-xs font-bold text-[#a0825b] block mb-2">[ SALES & EXPANSION ]</span>
+              <h3 className="text-2xl font-black mb-1 text-[#40321f]">Santosh Kumar Tatwadi</h3>
+              <p className="text-sm font-bold text-[#a0825b] uppercase tracking-wider mb-6">National Sales Head – Haion EV</p>
+              
+              <div className="text-sm leading-relaxed text-zinc-650 space-y-4 font-medium mb-6">
+                <p>
+                  Santosh Kumar Tatwadi leads the national sales operations of Haion EV with a strong focus on dealer network expansion, customer satisfaction, and sustainable business growth across India.
+                </p>
+                <p>
+                  With extensive experience in sales leadership and market development, he is committed to strengthening Haion EV's presence in the rapidly growing electric mobility sector. His strategic approach to channel development, team management, and business partnerships supports Haion EV's mission of delivering innovative, reliable, and eco-friendly mobility solutions.
+                </p>
+              </div>
+
+              <div className="border-t-2 border-dashed border-zinc-350 pt-6">
+                <h4 className="text-xs font-bold text-[#40321f] uppercase tracking-wider mb-4">[ Core Responsibilities ]</h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {[
+                    "National Sales Strategy & Execution",
+                    "Dealer Network Development",
+                    "Business Growth & Market Expansion",
+                    "Sales Team Leadership",
+                    "Customer Relationship Management",
+                    "Channel Partner Support",
+                    "Revenue Growth & Performance Management"
+                  ].map((resp, i) => (
+                    <div key={i} className="flex items-center gap-2 text-sm text-zinc-700 font-semibold">
+                      <span className="text-[#a0825b] font-bold">✦</span>
+                      <span>{resp}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            
+            <div className="w-full md:w-64 border-t md:border-t-0 md:border-l-2 border-dashed border-zinc-300 pt-6 md:pt-0 md:pl-8 flex flex-col justify-between self-stretch">
+              <div className="bg-[#faf9f6] border-2 border-zinc-900 rounded-2xl p-6 flex flex-col items-center text-center shadow-inner">
+                <div className="w-16 h-16 rounded-full bg-[#a0825b]/10 border-2 border-[#a0825b]/30 flex items-center justify-center font-black text-xl text-[#a0825b] mb-3">
+                  ST
+                </div>
+                <h4 className="text-base font-bold text-[#40321f] mb-1">Santosh Kumar Tatwadi</h4>
+                <span className="text-[10px] font-semibold text-zinc-500 uppercase tracking-wider leading-tight">National Sales Head</span>
+              </div>
+              <div className="mt-6 italic text-center text-zinc-550 text-xs font-semibold leading-relaxed border-t border-dashed border-zinc-300 pt-4">
+                “Driving India's electric mobility revolution through innovation, strong partnerships, and customer-centric growth.”
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* NATIONAL PLANT HEAD SECTION */}
+        <div className="about-card max-w-5xl mx-auto mb-16 text-left relative md:-rotate-1">
+          <TicketSticker className="-top-12 -right-8 scale-90 md:scale-100" />
+          <HeadphonesSticker className="-bottom-12 -left-8 scale-90 md:scale-100" />
+          
+          <div className="p-8 md:p-10 flex flex-col md:flex-row gap-8 items-start">
+            <div className="flex-1 w-full">
+              <span className="text-xs font-bold text-[#a0825b] block mb-2">[ MANUFACTURING & PRODUCTION ]</span>
+              <h3 className="text-2xl font-black mb-1 text-[#40321f]">Shivi Choudhary</h3>
+              <p className="text-sm font-bold text-[#a0825b] uppercase tracking-wider mb-6">National Plant Head – Haion EV</p>
+              
+              <div className="text-sm leading-relaxed text-zinc-650 space-y-4 font-medium mb-6">
+                <p>
+                  Shivi Choudhary serves as the National Plant Head at Haion EV, overseeing manufacturing operations, production planning, quality assurance, and operational excellence across the company's production facilities.
+                </p>
+                <p>
+                  With a strong focus on innovation, efficiency, and sustainable manufacturing, Shivi is dedicated to ensuring that every Haion EV product meets the highest standards of quality, safety, and performance. By implementing modern manufacturing practices and continuous process improvements, Shivi plays a key role in supporting Haion EV's mission to deliver reliable electric mobility solutions across India.
+                </p>
+              </div>
+
+              <div className="border-t-2 border-dashed border-zinc-350 pt-6">
+                <h4 className="text-xs font-bold text-[#40321f] uppercase tracking-wider mb-4">[ Core Responsibilities ]</h4>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {[
+                    "National Manufacturing Operations",
+                    "Plant Management & Administration",
+                    "Production Planning & Execution",
+                    "Quality Assurance & Process Improvement",
+                    "Supply Chain & Inventory Coordination",
+                    "Safety, Compliance & Operational Excellence",
+                    "Team Leadership & Workforce Development"
+                  ].map((resp, i) => (
+                    <div key={i} className="flex items-center gap-2 text-sm text-zinc-700 font-semibold">
+                      <span className="text-[#a0825b] font-bold">✦</span>
+                      <span>{resp}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+            
+            <div className="w-full md:w-64 border-t md:border-t-0 md:border-l-2 border-dashed border-zinc-300 pt-6 md:pt-0 md:pl-8 flex flex-col justify-between self-stretch">
+              <div className="bg-[#faf9f6] border-2 border-zinc-900 rounded-2xl p-6 flex flex-col items-center text-center shadow-inner">
+                <div className="w-16 h-16 rounded-full bg-[#a0825b]/10 border-2 border-[#a0825b]/30 flex items-center justify-center font-black text-xl text-[#a0825b] mb-3">
+                  SC
+                </div>
+                <h4 className="text-base font-bold text-[#40321f] mb-1">Shivi Choudhary</h4>
+                <span className="text-[10px] font-semibold text-zinc-500 uppercase tracking-wider leading-tight">National Plant Head</span>
+              </div>
+              <div className="mt-6 italic text-center text-zinc-550 text-xs font-semibold leading-relaxed border-t border-dashed border-zinc-300 pt-4">
+                “Building the future of electric mobility through world-class manufacturing, innovation, and operational excellence.”
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* FILM STRIP TRANSITION ACCENT */}
         <FilmStripSeparator />
 
